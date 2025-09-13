@@ -1,0 +1,243 @@
+/* Liquid Glass Design System - Apple-inspired Glassmorphism */
+
+:root {
+  /* Core Colors */
+  --liquid-primary: #0071e3;
+  --liquid-background: #f5f5f7;
+  --liquid-text: #1d1d1f;
+  --liquid-text-secondary: #6e6e73;
+
+  /* Glass Effects */
+  --liquid-glass-white: rgba(255, 255, 255, 0.72);
+  --liquid-glass-light: rgba(255, 255, 255, 0.85);
+  --liquid-glass-dark: rgba(0, 0, 0, 0.05);
+  --liquid-glass-border: rgba(255, 255, 255, 0.18);
+
+  /* Blur Values */
+  --liquid-blur-sm: 8px;
+  --liquid-blur-md: 16px;
+  --liquid-blur-lg: 24px;
+  --liquid-blur-xl: 40px;
+
+  /* Border Radius */
+  --liquid-radius-sm: 12px;
+  --liquid-radius-md: 20px;
+  --liquid-radius-lg: 28px;
+  --liquid-radius-xl: 36px;
+
+  /* Shadows */
+  --liquid-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --liquid-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --liquid-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --liquid-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.16);
+
+  /* Inner Shadows */
+  --liquid-inner-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+
+  /* Transitions */
+  --liquid-transition-fast: 0.2s ease;
+  --liquid-transition-base: 0.3s ease;
+  --liquid-transition-slow: 0.5s ease;
+}
+
+/* Glass Container Base */
+.liquid-glass {
+  background: var(--liquid-glass-white);
+  backdrop-filter: blur(var(--liquid-blur-md));
+  -webkit-backdrop-filter: blur(var(--liquid-blur-md));
+  border: 1px solid var(--liquid-glass-border);
+  border-radius: var(--liquid-radius-md);
+  box-shadow: var(--liquid-shadow-md), var(--liquid-inner-shadow);
+  transition: all var(--liquid-transition-base);
+}
+
+.liquid-glass:hover {
+  background: var(--liquid-glass-light);
+  box-shadow: var(--liquid-shadow-lg), var(--liquid-inner-shadow);
+  transform: translateY(-2px);
+}
+
+/* Glass Button */
+.liquid-button {
+  background: var(--liquid-glass-white);
+  backdrop-filter: blur(var(--liquid-blur-sm));
+  -webkit-backdrop-filter: blur(var(--liquid-blur-sm));
+  border: 1px solid var(--liquid-glass-border);
+  border-radius: var(--liquid-radius-sm);
+  padding: 12px 24px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--liquid-text);
+  cursor: pointer;
+  transition: all var(--liquid-transition-fast);
+  box-shadow: var(--liquid-shadow-sm), var(--liquid-inner-shadow);
+}
+
+.liquid-button:hover {
+  background: var(--liquid-glass-light);
+  transform: scale(1.02);
+  box-shadow: var(--liquid-shadow-md), var(--liquid-inner-shadow);
+}
+
+.liquid-button:active {
+  transform: scale(0.98);
+}
+
+.liquid-button-primary {
+  background: var(--liquid-primary);
+  color: white;
+  border: none;
+}
+
+.liquid-button-primary:hover {
+  background: #0077ed;
+}
+
+/* Glass Card */
+.liquid-card {
+  background: var(--liquid-glass-white);
+  backdrop-filter: blur(var(--liquid-blur-lg));
+  -webkit-backdrop-filter: blur(var(--liquid-blur-lg));
+  border: 1px solid var(--liquid-glass-border);
+  border-radius: var(--liquid-radius-lg);
+  padding: 32px;
+  box-shadow: var(--liquid-shadow-lg), var(--liquid-inner-shadow);
+  transition: all var(--liquid-transition-base);
+}
+
+.liquid-card:hover {
+  box-shadow: var(--liquid-shadow-xl), var(--liquid-inner-shadow);
+  transform: translateY(-4px);
+}
+
+/* Noise Texture Overlay */
+.liquid-noise::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' /%3E%3C/svg%3E");
+  border-radius: inherit;
+}
+
+/* Frosted Glass Effect */
+.liquid-frosted {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.65)
+  );
+  backdrop-filter: blur(var(--liquid-blur-xl)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--liquid-blur-xl)) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Glass Navigation Bar */
+.liquid-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(var(--liquid-blur-lg)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--liquid-blur-lg)) saturate(180%);
+  border-bottom: 1px solid var(--liquid-glass-border);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Glass Input */
+.liquid-input {
+  background: var(--liquid-glass-white);
+  backdrop-filter: blur(var(--liquid-blur-sm));
+  -webkit-backdrop-filter: blur(var(--liquid-blur-sm));
+  border: 1px solid var(--liquid-glass-border);
+  border-radius: var(--liquid-radius-sm);
+  padding: 12px 16px;
+  font-size: 16px;
+  color: var(--liquid-text);
+  transition: all var(--liquid-transition-fast);
+  box-shadow: var(--liquid-inner-shadow);
+}
+
+.liquid-input:focus {
+  outline: none;
+  border-color: var(--liquid-primary);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1), var(--liquid-inner-shadow);
+}
+
+/* Gradient Overlays */
+.liquid-gradient-overlay {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes liquid-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes liquid-shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.liquid-float {
+  animation: liquid-float 3s ease-in-out infinite;
+}
+
+.liquid-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  background-size: 1000px 100%;
+  animation: liquid-shimmer 3s linear infinite;
+}
+
+/* Responsive Glass Blur - Reduce for performance on mobile */
+@media (max-width: 768px) {
+  .liquid-glass,
+  .liquid-card,
+  .liquid-frosted {
+    backdrop-filter: blur(var(--liquid-blur-sm));
+    -webkit-backdrop-filter: blur(var(--liquid-blur-sm));
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --liquid-glass-white: rgba(0, 0, 0, 0.5);
+    --liquid-glass-light: rgba(0, 0, 0, 0.65);
+    --liquid-glass-dark: rgba(255, 255, 255, 0.05);
+    --liquid-glass-border: rgba(255, 255, 255, 0.1);
+    --liquid-text: #f5f5f7;
+    --liquid-text-secondary: #a1a1a6;
+    --liquid-background: #000000;
+  }
+
+  .liquid-nav {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .liquid-inner-shadow {
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+}

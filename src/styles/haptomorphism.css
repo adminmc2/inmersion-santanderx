@@ -1,0 +1,459 @@
+/* Haptomorphism Design System - True 3D Tactile UI */
+
+:root {
+  /* Base Colors */
+  --hapto-bg: #e0e5ec;
+  --hapto-surface: #e0e5ec;
+
+  /* INMERSION Brand Colors */
+  --hapto-primary: #FF3E01;
+  --hapto-primary-dark: #d63300;
+  --hapto-secondary: #E8871E;
+
+  /* Text Colors */
+  --hapto-text: #2c2c2c;
+  --hapto-text-secondary: #6e6e73;
+  --hapto-text-light: #9baacf;
+}
+
+/* Login Container */
+.hapto-login-container {
+  width: 100vw;
+  height: 100vh;
+  background: #e0e5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Pattern */
+.hapto-gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e0e5ec;
+  opacity: 1;
+}
+
+/* TRUE 3D Login Card - Neumorphism Style */
+.hapto-login-card {
+  position: relative;
+  width: 90%;
+  max-width: 480px;
+  padding: 70px 55px;
+  background: #e0e5ec;
+  border-radius: 50px;
+  box-shadow:
+    /* Light source from top-left */
+    -20px -20px 60px #ffffff,
+    -20px -20px 80px #ffffff70,
+    /* Shadow to bottom-right */
+    20px 20px 60px #a3b1c6,
+    20px 20px 80px #a3b1c670;
+  transform: translateZ(0);
+  transition: all 0.3s ease;
+}
+
+/* Logo Section */
+.hapto-logo-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hapto-logo-text {
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--hapto-text);
+  text-shadow:
+    2px 2px 4px #a3b1c6,
+    -2px -2px 4px #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Logo ION Badge - INSET/HUNDIDO */
+.hapto-logo-accent {
+  background: linear-gradient(145deg, #e53801, #ff4507);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 18px;
+  margin-left: 2px; /* Más pegado a INMERS */
+  display: inline-block;
+  font-weight: 800;
+  position: relative;
+  box-shadow:
+    /* Inset shadow for depth - HUNDIDO */
+    inset 6px 6px 12px #c93000,
+    inset -6px -6px 12px #ff5020,
+    /* Slight outer shadow for definition */
+    1px 1px 2px #a3b1c6,
+    -1px -1px 2px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.hapto-logo-accent:hover {
+  box-shadow:
+    /* Deeper inset on hover */
+    inset 8px 8px 16px #c93000,
+    inset -8px -8px 16px #ff5020,
+    1px 1px 2px #a3b1c6,
+    -1px -1px 2px #ffffff;
+}
+
+/* Subtitle */
+.hapto-subtitle {
+  font-size: 16px;
+  color: #4a4a4a;  /* Color oscuro más visible */
+  margin-bottom: 10px;
+  font-weight: 600;  /* Más grueso */
+  /* Sin text-shadow para más claridad */
+}
+
+.hapto-description {
+  font-size: 13px;
+  color: #5a5a5a;  /* Gris más oscuro */
+  font-weight: 500;  /* Peso medio */
+  opacity: 1;
+  /* Sombra de texto muy sutil */
+  text-shadow:
+    0.5px 0.5px 1px #ffffff,
+    -0.5px -0.5px 1px #a3b1c6;
+}
+
+/* Form Container */
+.hapto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* Input Groups */
+.hapto-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hapto-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--hapto-text);
+  margin-left: 8px;
+  text-shadow:
+    1px 1px 2px #ffffff,
+    -1px -1px 2px #a3b1c6;
+}
+
+/* TRUE NEUMORPHIC Input Fields - INSET */
+.hapto-input-wrapper {
+  position: relative;
+  background: #e0e5ec;
+  border-radius: 25px;
+  padding: 2px;
+  box-shadow:
+    /* Inset shadow for depth */
+    inset 8px 8px 16px #a3b1c6,
+    inset -8px -8px 16px #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect - slightly less deep */
+.hapto-input-wrapper:hover {
+  box-shadow:
+    inset 6px 6px 12px #a3b1c6,
+    inset -6px -6px 12px #ffffff;
+}
+
+/* Focus effect - even less deep with color accent */
+.hapto-input-wrapper:focus-within {
+  box-shadow:
+    inset 4px 4px 8px #a3b1c6,
+    inset -4px -4px 8px #ffffff,
+    0 0 0 2px rgba(255, 62, 1, 0.1);
+}
+
+/* Input Field Styles */
+.hapto-input-field {
+  width: 100%;
+  padding: 18px 52px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: var(--hapto-text);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 2;
+}
+
+.hapto-input-field::placeholder {
+  color: var(--hapto-text-light);
+  font-weight: 400;
+}
+
+/* Input Icons - Embossed effect */
+.hapto-input-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--hapto-text-secondary);
+  transition: all 0.3s ease;
+  z-index: 3;
+  filter: drop-shadow(2px 2px 3px #a3b1c6)
+          drop-shadow(-2px -2px 3px #ffffff);
+}
+
+.hapto-input-wrapper:focus-within .hapto-input-icon {
+  color: var(--hapto-primary);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Toggle Password Button - 3D Pushable */
+.hapto-toggle-password {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: #e0e5ec;
+  border: none;
+  color: var(--hapto-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 3;
+  box-shadow:
+    4px 4px 8px #a3b1c6,
+    -4px -4px 8px #ffffff;
+}
+
+.hapto-toggle-password:hover {
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+.hapto-toggle-password:active {
+  box-shadow:
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+}
+
+/* TRUE 3D Submit Button - Maximum Elevation */
+.hapto-submit-button {
+  margin-top: 20px;
+  padding: 20px 40px;
+  background: linear-gradient(145deg, #e0e5ec, #e0e5ec);
+  color: var(--hapto-primary);
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow:
+    /* Strong elevation */
+    12px 12px 24px #a3b1c6,
+    -12px -12px 24px #ffffff;
+}
+
+/* Primary colored version */
+.hapto-submit-button.primary {
+  background: linear-gradient(145deg, #ff4507, #e53801);
+  color: white;
+  box-shadow:
+    12px 12px 24px #a3b1c6,
+    -12px -12px 24px #ffffff,
+    inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hapto-submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    16px 16px 32px #a3b1c6,
+    -16px -16px 32px #ffffff;
+}
+
+.hapto-submit-button.primary:hover {
+  box-shadow:
+    16px 16px 32px #a3b1c6,
+    -16px -16px 32px #ffffff,
+    inset 2px 2px 5px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Button pressed state - goes inward */
+.hapto-submit-button:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 6px 6px 12px #a3b1c6,
+    inset -6px -6px 12px #ffffff;
+}
+
+.hapto-submit-button.primary:active {
+  box-shadow:
+    inset 6px 6px 12px rgba(0, 0, 0, 0.2),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.1);
+}
+
+.hapto-submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+/* Button Content */
+.hapto-button-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hapto-arrow {
+  transition: transform 0.3s ease;
+}
+
+.hapto-submit-button:hover .hapto-arrow {
+  transform: translateX(4px);
+}
+
+/* Loading State */
+.hapto-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hapto-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: haptoSpin 0.8s linear infinite;
+}
+
+@keyframes haptoSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Soft UI Elements - Additional decorative elements */
+.hapto-divider {
+  width: 100%;
+  height: 2px;
+  background: #e0e5ec;
+  margin: 30px 0;
+  position: relative;
+  box-shadow:
+    inset 2px 2px 5px #a3b1c6,
+    inset -2px -2px 5px #ffffff;
+  border-radius: 2px;
+}
+
+/* Floating animation for subtle movement */
+@keyframes haptoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .hapto-login-card {
+    padding: 50px 35px;
+    border-radius: 35px;
+    box-shadow:
+      -15px -15px 45px #ffffff,
+      15px 15px 45px #a3b1c6;
+  }
+
+  .hapto-logo-text {
+    font-size: 38px;
+  }
+
+  .hapto-input-field {
+    padding: 16px 48px;
+    font-size: 15px;
+  }
+
+  .hapto-submit-button {
+    padding: 18px 36px;
+    font-size: 16px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hapto-bg: #1a1a1a;
+    --hapto-surface: #1a1a1a;
+  }
+
+  .hapto-login-container,
+  .hapto-gradient-bg {
+    background: #1a1a1a;
+  }
+
+  .hapto-login-card {
+    background: #1a1a1a;
+    box-shadow:
+      -20px -20px 60px #252525,
+      20px 20px 60px #0f0f0f;
+  }
+
+  .hapto-input-wrapper {
+    background: #1a1a1a;
+    box-shadow:
+      inset 8px 8px 16px #0f0f0f,
+      inset -8px -8px 16px #252525;
+  }
+
+  .hapto-toggle-password,
+  .hapto-submit-button {
+    background: #1a1a1a;
+    box-shadow:
+      4px 4px 8px #0f0f0f,
+      -4px -4px 8px #252525;
+  }
+
+  .hapto-logo-text,
+  .hapto-label,
+  .hapto-input-field {
+    color: #f5f5f5;
+  }
+
+  .hapto-subtitle {
+    color: #a1a1a6;
+    text-shadow:
+      1px 1px 2px #252525,
+      -1px -1px 2px #0f0f0f;
+  }
+}
