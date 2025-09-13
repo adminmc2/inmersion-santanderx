@@ -150,10 +150,13 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
             <div className="hapto-cta-text">
               <h3 className="hapto-cta-title">¿Interesado en el proyecto?</h3>
               <p className="hapto-cta-subtitle">
-                Únete como inversor, socio o parte del equipo
+                Contacta con nuestro equipo y coméntanos cómo te gustaría colaborar
               </p>
             </div>
-            <button className="hapto-cta-btn">
+            <button
+              className="hapto-cta-btn"
+              onClick={() => window.location.href = 'mailto:mandoc2@inmersion.io'}
+            >
               Contactar
             </button>
           </div>

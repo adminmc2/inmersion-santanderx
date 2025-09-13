@@ -12,7 +12,7 @@
   background: #e0e5ec;
   position: relative;
   z-index: 100;
-  padding: 4px 0;
+  padding: 12px 0;  /* Más padding vertical */
   box-shadow:
     0 8px 16px #a3b1c6,
     0 -8px 16px #ffffff;
@@ -22,7 +22,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 80px;
+  min-height: 90px;  /* Mayor altura */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,28 +30,30 @@
 
 /* Logo with 3D text - MATCHING LOGIN STYLE */
 .hapto-logo {
-  font-size: 32px;
+  font-size: 38px;  /* Más grande */
   font-weight: 800;
   color: #2c2c2c;
   text-shadow:
     2px 2px 4px #a3b1c6,
     -2px -2px 4px #ffffff;
   letter-spacing: -0.5px;
+  line-height: 1;
 }
 
 .hapto-logo-accent {
   background: linear-gradient(145deg, #e53801, #ff4507);
   color: white;
-  padding: 10px 16px;
-  border-radius: 18px;
+  padding: 6px 14px;  /* Rectángulo más pequeño */
+  border-radius: 14px;  /* Menos redondeado */
   margin-left: 2px; /* Más pegado a INMERS */
   display: inline-block;
   font-weight: 800;
+  font-size: 36px;  /* Tamaño ajustado */
   position: relative;
   box-shadow:
     /* Inset shadow for depth - HUNDIDO como en Login */
-    inset 6px 6px 12px #c93000,
-    inset -6px -6px 12px #ff5020,
+    inset 5px 5px 10px #c93000,
+    inset -5px -5px 10px #ff5020,
     /* Slight outer shadow for definition */
     1px 1px 2px #a3b1c6,
     -1px -1px 2px #ffffff;
@@ -68,11 +70,11 @@
 }
 
 .hapto-tagline {
-  font-size: 12px;
-  color: #5a5a5a;  /* Gris más oscuro pero sutil */
-  margin-top: 6px;
-  font-weight: 500;  /* Peso medio */
-  letter-spacing: 0.4px;
+  font-size: 13px;  /* Más grande */
+  color: #4a4a4a;  /* Más oscuro para mejor contraste */
+  margin-top: 8px;
+  font-weight: 600;  /* Más grueso */
+  letter-spacing: 0.3px;
   opacity: 1;
   /* Sombra de texto muy sutil para legibilidad */
   text-shadow:
@@ -364,7 +366,7 @@
 
 /* CTA Button - inverted neumorphism */
 .hapto-cta-btn {
-  background: #FFFEE2;
+  background: white;
   color: #FF3E01;
   padding: 14px 28px;
   border-radius: 14px;
@@ -380,7 +382,7 @@
 }
 
 .hapto-cta-btn:hover {
-  background: white;
+  background: #f8f8f8;
   transform: translateY(-2px);
   box-shadow:
     6px 6px 12px rgba(0, 0, 0, 0.25),
