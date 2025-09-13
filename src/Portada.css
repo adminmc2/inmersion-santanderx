@@ -1,201 +1,289 @@
-/* Estilos para la diapositiva de portada */
+/* Portada Styles with Liquid Glass Design */
+
 .portada-container {
-  min-height: 100vh;
-  display: flex;
-  /* justify-content: center; /* Ya no centramos verticalmente todo el contenedor */
-  /* align-items: flex-start; /* Ya no alineamos todo al inicio */
-  align-items: center; /* Centramos verticalmente el nuevo .content-left-column */
-  padding-left: 5%; /* Reducimos un poco el padding global si es necesario o lo eliminamos */
   position: relative;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Estilo actualizado para los logos (sin cambios respecto a tu versión) */
+/* Gradient Background */
+.liquid-gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #fec6ff 100%);
+  position: relative;
+}
+
+.liquid-gradient-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 247, 0.1) 0%,
+    rgba(245, 245, 247, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* Logo Container */
 .logo-container {
   position: absolute;
-  top: 20px;
-  left: 20px; /* Cambiado a la izquierda */
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: row; /* Ahora en horizontal */
+  gap: 60px;
   align-items: center;
-  gap: 20px; /* Mayor espacio entre logos */
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo más opaco */
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 16px 32px;
+  border-radius: var(--liquid-radius-lg);
+  transition: all 0.5s ease;
 }
 
 .logo-container img {
-  height: 70px; /* Tamaño ajustado */
+  height: 50px;
   width: auto;
-  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
 }
 
-/* ***** NUEVO: Contenedor para la columna de contenido izquierda ***** */
-.content-left-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra horizontalmente el título y el botón DENTRO de esta columna */
-  justify-content: center; /* Centra verticalmente el bloque título/botón */
-  width: 45%; /* Ocupa el espacio izquierdo (ajusta este % si es necesario) */
-  /* Si quitaste padding-left de portada-container, podrías añadir un margin-left aquí: */
-  /* margin-left: 5%; */
-  z-index: 2; /* Asegura que esté sobre los fondos */
-  padding: 20px; /* Añade algo de padding interno si es necesario */
-  box-sizing: border-box;
-}
-
-/* Estilo para el título en dos líneas */
-.title-container {
-  /* text-align: left; /* Eliminado para que el centrado del wrapper funcione */
-  text-align: center; /* Centra el texto dentro del contenedor del título */
-  margin-bottom: 25px; /* Espacio entre título y botón, ajustado */
-  /* z-index: 2; /* No necesario aquí, el wrapper ya tiene z-index */
-}
-
-h1 {
-  font-size: 5.5em;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.1;
-  color: #12055f;
-}
-
-.subtitle {
-  font-size: 5.5em;
-  font-weight: 700;
-  margin: 0;
-  color: #12055f;
-}
-
-/* Estilo para el botón de inicio */
-.start-button {
-  font-size: 1.5em;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  background-color: #e30a18;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  /* z-index: 2; /* No necesario aquí, el wrapper ya tiene z-index */
-  /* display: block; /* No necesario con flex en el wrapper */
-  /* margin: 20px 0; /* Eliminado, el espaciado se maneja en .title-container o con gap en .content-left-column */
-}
-
-.start-button:hover {
+.logo-container img:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Contenedor y estilos para la imagen principal (sin cambios respecto a tu versión) */
-.background-image-container {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 55%; /* Ajustamos el ancho */
-  height: 100%;
-  z-index: 1;
-  display: flex;
-  justify-content: center; /* Centramos la imagen */
-  align-items: center;
-  overflow: hidden;
-}
-
-.background-image {
-  height: 90%; /* Ajustamos la altura para centrarla mejor */
-  width: auto;
-  max-width: 100%;
-  object-fit: contain; /* Mantenemos la proporción */
-  filter: contrast(1.1) saturate(1.2); /* Filtro básico estilo Instagram */
-}
-
-/* Fondo adicional para el lado izquierdo (sin cambios respecto a tu versión) */
+/* Left Background Glass Panel */
 .left-background {
   position: absolute;
   left: 0;
   top: 0;
-  width: 50%; /* Cubre la mitad izquierda */
+  width: 55%;
   height: 100%;
-  background-color: #ffffff; /* Fondo blanco para el lado izquierdo */
-  z-index: 0; /* Detrás de todo excepto el body */
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  transition: all 0.5s ease;
 }
 
-/* Transición de carga de la imagen (sin cambios respecto a tu versión) */
-.image-load-transition {
-  animation: fadeInImage 1.5s ease-in-out forwards;
+/* Background Image Container */
+.background-image-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
 }
 
-@keyframes fadeInImage {
-  0% {
-    opacity: 0;
-    filter: blur(10px) contrast(0.8) saturate(0.8);
-  }
-  100% {
-    opacity: 1; /* Opacidad completa para la imagen */
-    filter: blur(0) contrast(1.1) saturate(1.2);
-  }
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  filter: brightness(1.1) contrast(1.05);
 }
 
-/* Media Query opcional para ajustar en pantallas más pequeñas */
-@media (max-width: 900px) {
-  .portada-container {
-    flex-direction: column; /* Apilar contenido en móvil */
-    padding-left: 0; /* Quitar padding en móvil */
-    align-items: center; /* Centrar todo */
-  }
+.background-image.image-load-transition {
+  opacity: 1;
+}
 
-  .content-left-column {
-    width: 90%; /* Ocupar más ancho */
-    order: 2; /* Poner texto debajo de la imagen */
-    text-align: center; /* Centrar texto */
-    padding: 20px 0;
-  }
+/* Content Left Column */
+.content-left-column {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 500px;
+}
 
-  .title-container {
-    text-align: center;
-  }
+/* Title Container with Glass Effect */
+.title-container {
+  position: relative;
+  padding: 40px;
+  transition: transform 0.3s ease;
+}
 
-  h1,
-  .subtitle {
-    font-size: 3.5em; /* Reducir tamaño de fuente */
-  }
+.title-container:hover {
+  transform: translateY(-8px) scale(1.02);
+}
 
-  .start-button {
-    font-size: 1.3em;
+.title-container h1 {
+  font-size: clamp(60px, 8vw, 120px);
+  font-weight: 800;
+  margin: 0;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+/* Gradient Text Effect */
+.liquid-text-gradient {
+  background: linear-gradient(135deg, var(--liquid-text) 0%, var(--liquid-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.subtitle {
+  font-size: clamp(50px, 6vw, 90px);
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced Button Styles */
+.liquid-button {
+  position: relative;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.button-icon {
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.liquid-button:hover .button-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .left-background {
+    width: 65%;
   }
 
   .background-image-container {
-    position: relative; /* Quitar absoluto */
-    width: 100%;
-    height: 50vh; /* Altura fija para la imagen */
-    order: 1; /* Poner imagen arriba */
+    width: 50%;
   }
 
-  .background-image {
-    height: 100%;
-    width: auto;
-    max-width: 90%;
+  .content-left-column {
+    left: 5%;
+    max-width: 400px;
   }
 
-  .left-background {
-    display: none; /* Ocultar el fondo dividido en móvil */
+  .title-container {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portada-container {
+    flex-direction: column;
   }
 
   .logo-container {
-    position: relative; /* Quitar absoluto */
-    top: 0;
-    left: 0;
-    width: 100%;
-    justify-content: center;
-    padding: 10px 0;
-    box-shadow: none;
-    background-color: transparent;
-    order: 0; /* Logos arriba del todo */
+    top: 20px;
+    gap: 30px;
+    flex-direction: column;
+    padding: 12px 24px;
   }
+
   .logo-container img {
-    height: 50px;
+    height: 35px;
+  }
+
+  .left-background {
+    width: 100%;
+    height: 70%;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .background-image-container {
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    top: auto;
+  }
+
+  .content-left-column {
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+    max-width: 90%;
+    gap: 30px;
+  }
+
+  .title-container {
+    padding: 24px;
+  }
+
+  .title-container h1 {
+    font-size: clamp(40px, 12vw, 70px);
+  }
+
+  .subtitle {
+    font-size: clamp(35px, 10vw, 60px);
+  }
+
+  .liquid-button {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-container h1 {
+    font-size: 50px;
+  }
+
+  .subtitle {
+    font-size: 40px;
+  }
+
+  .liquid-button {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+.liquid-button {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

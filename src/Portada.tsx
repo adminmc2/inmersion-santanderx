@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Portada.css';
+import './styles/liquid-glass.css';
 
 interface PortadaProps {
   // Mantenemos el nombre 'onStartClick' como estaba en tu código original
@@ -18,9 +19,9 @@ const Portada: React.FC<PortadaProps> = ({ onStartClick }) => {
   }, []);
 
   return (
-    <div className="portada-container">
-      {/* Logos sin cambios */}
-      <div className="logo-container">
+    <div className="portada-container liquid-gradient-bg">
+      {/* Logos con efecto glass */}
+      <div className="logo-container liquid-glass">
         <img src="/logo emc2.png" alt="Logo EMC2" />
         <img
           src="/Hablandis_Kit de marca_Logo + tagline-03_Negro.png"
@@ -28,8 +29,8 @@ const Portada: React.FC<PortadaProps> = ({ onStartClick }) => {
         />
       </div>
 
-      {/* Fondo izquierdo sin cambios */}
-      <div className="left-background"></div>
+      {/* Fondo izquierdo con efecto glass */}
+      <div className="left-background liquid-frosted"></div>
 
       {/* Imagen derecha sin cambios */}
       <div className="background-image-container">
@@ -42,20 +43,21 @@ const Portada: React.FC<PortadaProps> = ({ onStartClick }) => {
         />
       </div>
 
-      {/* ***** NUEVO CONTENEDOR PARA EL CONTENIDO IZQUIERDO ***** */}
+      {/* ***** CONTENEDOR PARA EL CONTENIDO IZQUIERDO CON GLASS ***** */}
       <div className="content-left-column">
-        {/* Título en dos líneas (sin cambios internos) */}
-        <div className="title-container">
-          <h1>Málaga</h1>
-          <h1 className="subtitle">sin filtros</h1>
+        {/* Título con efecto glass */}
+        <div className="title-container liquid-card liquid-noise">
+          <h1 className="liquid-text-gradient">Málaga</h1>
+          <h1 className="subtitle liquid-shimmer">sin filtros</h1>
         </div>
 
-        {/* Botón de inicio (sin cambios internos) */}
-        <button className="start-button" onClick={onStartClick}>
+        {/* Botón con estilo Liquid Glass */}
+        <button className="liquid-button liquid-button-primary liquid-float" onClick={onStartClick}>
+          <span className="button-icon">▶</span>
           ¡Dale al Play!
         </button>
       </div>
-      {/* ***** FIN NUEVO CONTENEDOR ***** */}
+      {/* ***** FIN CONTENEDOR ***** */}
     </div>
   );
 };

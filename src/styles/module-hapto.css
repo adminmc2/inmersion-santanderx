@@ -1,0 +1,398 @@
+/* ModuleViewer - Haptomorphism Design System */
+
+/* Container Background */
+.hapto-module-container {
+  min-height: 100vh;
+  background: #e0e5ec;
+  position: relative;
+}
+
+/* Header with 3D effect - Same as Portfolio */
+.hapto-module-header {
+  background: #e0e5ec;
+  position: relative;
+  z-index: 100;
+  padding: 20px 0;
+  box-shadow:
+    0 8px 16px #a3b1c6,
+    0 -8px 16px #ffffff;
+}
+
+.hapto-module-header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Back Button - 3D elevated */
+.hapto-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #e0e5ec;
+  color: #2c2c2c;
+  border: none;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+.hapto-back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    8px 8px 16px #a3b1c6,
+    -8px -8px 16px #ffffff;
+}
+
+.hapto-back-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 2px 2px 4px #a3b1c6,
+    inset -2px -2px 4px #ffffff;
+}
+
+/* Download Button - Primary style */
+.hapto-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(145deg, #ff4507, #e53801);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff,
+    inset 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.hapto-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    8px 8px 16px #a3b1c6,
+    -8px -8px 16px #ffffff,
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Module Hero Section */
+.hapto-module-hero {
+  background: #e0e5ec;
+  padding: 48px 0;
+}
+
+.hapto-module-hero-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Module Icon - 3D elevated */
+.hapto-module-icon {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  background: #e0e5ec;
+  border-radius: 24px;
+  box-shadow:
+    12px 12px 24px #a3b1c6,
+    -12px -12px 24px #ffffff;
+}
+
+/* Module Info */
+.hapto-module-info {
+  flex: 1;
+}
+
+.hapto-module-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+  text-shadow:
+    2px 2px 4px #a3b1c6,
+    -2px -2px 4px #ffffff;
+}
+
+.hapto-module-subtitle {
+  font-size: 20px;
+  color: #6e6e73;
+  margin-bottom: 16px;
+  text-shadow:
+    1px 1px 2px #ffffff,
+    -1px -1px 2px #a3b1c6;
+}
+
+.hapto-module-description {
+  font-size: 16px;
+  color: #86868b;
+  line-height: 1.6;
+}
+
+/* Main Content Area */
+.hapto-module-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+/* Topics Grid */
+.hapto-topics-grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* Topic Card - 3D Neumorphic */
+.hapto-topic-card {
+  background: #e0e5ec;
+  border-radius: 20px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    10px 10px 20px #a3b1c6,
+    -10px -10px 20px #ffffff;
+}
+
+.hapto-topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    14px 14px 28px #a3b1c6,
+    -14px -14px 28px #ffffff;
+}
+
+.hapto-topic-card:active {
+  transform: translateY(-1px);
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+/* Topic Left Content */
+.hapto-topic-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+/* Type Badge - Inset style */
+.hapto-topic-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  box-shadow:
+    inset 3px 3px 6px #a3b1c6,
+    inset -3px -3px 6px #ffffff;
+}
+
+.hapto-topic-type.video {
+  background: linear-gradient(145deg, #ff3e01, #ff5520);
+  color: white;
+}
+
+.hapto-topic-type.document {
+  background: linear-gradient(145deg, #e8871e, #f09530);
+  color: white;
+}
+
+.hapto-topic-type.interactive {
+  background: linear-gradient(145deg, #edb458, #f0c070);
+  color: white;
+}
+
+.hapto-topic-type.quiz {
+  background: linear-gradient(145deg, #bAd4aa, #c5e0b5);
+  color: white;
+}
+
+/* Topic Content */
+.hapto-topic-content {
+  flex: 1;
+}
+
+.hapto-topic-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 6px;
+  text-shadow:
+    1px 1px 2px #ffffff,
+    -1px -1px 2px #a3b1c6;
+}
+
+.hapto-topic-description {
+  font-size: 14px;
+  color: #6e6e73;
+  margin-bottom: 8px;
+}
+
+.hapto-topic-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hapto-topic-duration {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #86868b;
+}
+
+/* Topic Right Content */
+.hapto-topic-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Status Icons */
+.hapto-topic-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e0e5ec;
+  box-shadow:
+    3px 3px 6px #a3b1c6,
+    -3px -3px 6px #ffffff;
+}
+
+.hapto-topic-status.completed {
+  background: linear-gradient(145deg, #4ade80, #22c55e);
+  color: white;
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.hapto-topic-status.locked {
+  background: #e0e5ec;
+  color: #9baacf;
+  box-shadow:
+    inset 2px 2px 4px #a3b1c6,
+    inset -2px -2px 4px #ffffff;
+}
+
+/* Admin Download Button for Topics */
+.hapto-topic-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #e0e5ec;
+  border: none;
+  border-radius: 10px;
+  color: #6e6e73;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    4px 4px 8px #a3b1c6,
+    -4px -4px 8px #ffffff;
+}
+
+.hapto-topic-download:hover {
+  color: #FF3E01;
+  transform: scale(1.1);
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+.hapto-topic-download:active {
+  transform: scale(0.95);
+  box-shadow:
+    inset 2px 2px 4px #a3b1c6,
+    inset -2px -2px 4px #ffffff;
+}
+
+/* Loading State */
+.hapto-loading-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e5ec;
+}
+
+.hapto-spinner-large {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #a3b1c6;
+  border-top-color: #FF3E01;
+  border-radius: 50%;
+  animation: haptoSpin 1s linear infinite;
+}
+
+@keyframes haptoSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hapto-module-hero-content {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .hapto-module-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 48px;
+  }
+
+  .hapto-module-title {
+    font-size: 28px;
+  }
+
+  .hapto-topic-card {
+    padding: 20px;
+  }
+
+  .hapto-topic-left {
+    gap: 16px;
+  }
+
+  .hapto-topic-type {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hapto-topic-title {
+    font-size: 16px;
+  }
+
+  .hapto-topic-description {
+    font-size: 13px;
+  }
+}

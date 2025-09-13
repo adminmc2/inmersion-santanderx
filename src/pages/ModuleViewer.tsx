@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { 
-  ArrowLeft, 
-  Clock, 
-  CheckCircle, 
+import {
+  ArrowLeft,
+  Clock,
+  CheckCircle,
   Lock,
   PlayCircle,
   FileText,
@@ -11,6 +11,7 @@ import {
   Download
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import '../styles/module-hapto.css';
 
 interface ModuleViewerProps {
   isAdmin: boolean;
@@ -118,13 +119,13 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
     }
   };
 
-  const getTypeColor = (type: string) => {
+  const getTypeClass = (type: string) => {
     switch(type) {
-      case 'video': return 'bg-[#FF3E01]/10 text-[#FF3E01]';
-      case 'document': return 'bg-[#E8871E]/10 text-[#E8871E]';
-      case 'interactive': return 'bg-[#EDB458]/10 text-[#EDB458]';
-      case 'quiz': return 'bg-[#FF3E01]/20 text-[#FF3E01]';
-      default: return 'bg-gray-100 text-gray-600';
+      case 'video': return 'video';
+      case 'document': return 'document';
+      case 'interactive': return 'interactive';
+      case 'quiz': return 'quiz';
+      default: return 'document';
     }
   };
 
@@ -139,55 +140,51 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
 
   if (!module) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+      <div className="hapto-loading-container">
+        <div className="hapto-spinner-large"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <button
-              onClick={() => navigate('/')}
-              className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              <ArrowLeft className="h-5 w-5 mr-2" />
-              Volver
-            </button>
-            <button className="bg-[#FF3E01]/20 text-white px-4 py-2 rounded-lg hover:bg-[#FF3E01]/30 transition-colors">
-              Contactar
-            </button>
-          </div>
+    <div className="hapto-module-container">
+      {/* Header with 3D effect */}
+      <header className="hapto-module-header">
+        <div className="hapto-module-header-content">
+          <button
+            onClick={() => navigate('/')}
+            className="hapto-back-btn"
+          >
+            <ArrowLeft className="h-5 w-5" />
+            Volver
+          </button>
+          <button
+            onClick={() => handleDownloadPDF()}
+            className="hapto-download-btn"
+          >
+            <Download className="h-5 w-5" />
+            Descargar PDF
+          </button>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Module Header */}
-        <div className="bg-gradient-to-r from-[#FF3E01] to-[#E8871E] rounded-xl p-8 text-white mb-8">
-          <div className="flex items-start justify-between">
-            <div>
-              <div className="flex items-center mb-4">
-                <span className="text-5xl mr-4">{module.icon}</span>
-                <div>
-                  <h1 className="text-3xl font-bold mb-2">{module.title}</h1>
-                  <p className="text-blue-100">{module.description}</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-6">
-                <p className="text-[#FFFEE2]/90 text-sm">{module.subtitle}</p>
-              </div>
-            </div>
+      {/* Module Hero Section */}
+      <div className="hapto-module-hero">
+        <div className="hapto-module-hero-content">
+          <div className="hapto-module-icon">{module.icon}</div>
+          <div className="hapto-module-info">
+            <h1 className="hapto-module-title">{module.title}</h1>
+            <p className="hapto-module-subtitle">{module.subtitle}</p>
+            <p className="hapto-module-description">{module.description}</p>
           </div>
-          
         </div>
+      </div>
 
-        {/* Documents Section */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Documentos del Proyecto</h2>
+      <main className="hapto-module-main">
+        <h2 className="hapto-section-title">Documentos del Proyecto</h2>
+
+        {/* Topics Grid */}
+        <div className="hapto-topics-grid">
           {topics.map((topic, index) => (
             <div
               key={topic.id}
@@ -200,63 +197,55 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
                   }
                 }
               }}
-              className={`bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 ${
-                topic.locked ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer'
-              }`}
+              className={`hapto-topic-card ${topic.locked ? 'locked' : ''}`}
             >
-              <div className="p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-start space-x-4">
-                    <div className={`p-3 rounded-lg ${getTypeColor(topic.type)}`}>
-                      {getTypeIcon(topic.type)}
+              <div className="hapto-topic-left">
+                <div className={`hapto-topic-type ${getTypeClass(topic.type)}`}>
+                  {getTypeIcon(topic.type)}
+                </div>
+                <div className="hapto-topic-content">
+                  <h3 className="hapto-topic-title">
+                    {index + 1}. {topic.title}
+                  </h3>
+                  <p className="hapto-topic-description">{topic.description}</p>
+                  <div className="hapto-topic-meta">
+                    <div className="hapto-topic-duration">
+                      <Clock className="h-4 w-4" />
+                      <span>Lectura: {topic.duration}</span>
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center mb-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mr-3">
-                          {index + 1}. {topic.title}
-                        </h3>
-                        {topic.completed && (
-                          <CheckCircle className="h-5 w-5 text-green-500" />
-                        )}
-                        {topic.locked && (
-                          <Lock className="h-5 w-5 text-gray-400" />
-                        )}
-                      </div>
-                      <p className="text-gray-600 text-sm mb-3">{topic.description}</p>
-                      <div className="flex items-center space-x-4 text-sm text-gray-500">
-                        <span className="flex items-center">
-                          <Clock className="h-4 w-4 mr-1" />
-                          Lectura: {topic.duration}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    {isAdmin && (
-                      <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleDownloadPDF(topic.title);
-                        }}
-                        className="bg-[#FFFEE2] text-[#FF3E01] p-2 rounded-lg hover:bg-white transition-colors"
-                        title="Descargar PDF"
-                      >
-                        <Download className="h-4 w-4" />
-                      </button>
-                    )}
-                    {!topic.locked && (
-                      <button className="bg-[#FF3E01]/10 text-[#FF3E01] px-4 py-2 rounded-lg hover:bg-[#FF3E01]/20 transition-colors">
-                        Ver Documento
-                      </button>
-                    )}
                   </div>
                 </div>
+              </div>
+
+              <div className="hapto-topic-right">
+                {topic.completed && (
+                  <div className="hapto-topic-status completed">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                )}
+                {topic.locked && (
+                  <div className="hapto-topic-status locked">
+                    <Lock className="h-5 w-5" />
+                  </div>
+                )}
+                {isAdmin && !topic.locked && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDownloadPDF(topic.title);
+                    }}
+                    className="hapto-topic-download"
+                    title="Descargar PDF"
+                  >
+                    <Download className="h-4 w-4" />
+                  </button>
+                )}
               </div>
             </div>
           ))}
         </div>
       </main>
-      
+
       {/* Customer Discovery Map Modal */}
       {showCustomerMap && (
         <CustomerDiscoveryMapV2 onClose={() => setShowCustomerMap(false)} isAdmin={isAdmin} />
