@@ -50,9 +50,38 @@ const Login: React.FC<LoginProps> = ({ setIsAuthenticated, setIsAdmin }) => {
       <div className="hapto-login-card">
         {/* Logo Section */}
         <div className="hapto-logo-section">
-          <h2 className="hapto-logo-text">
-            INMERS<span className="hapto-logo-accent">ION</span>
-          </h2>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '6px',
+            marginBottom: '20px'
+          }}>
+            <span style={{
+              fontSize: '36px',
+              fontWeight: '800',
+              fontFamily: 'Nunito, sans-serif',
+              color: '#2c2c2c',
+              letterSpacing: '-0.5px'
+            }}>
+              INMERS
+            </span>
+            <span style={{
+              display: 'inline-block',
+              background: 'linear-gradient(135deg, #ff4507, #e53801)',
+              color: 'white',
+              padding: '8px 20px',
+              borderRadius: '16px',
+              fontWeight: '800',
+              fontSize: '36px',
+              fontFamily: 'Nunito, sans-serif',
+              letterSpacing: '0.5px',
+              boxShadow: '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff, inset 2px 2px 4px rgba(255, 255, 255, 0.3)',
+              transform: 'perspective(100px) rotateX(-5deg)'
+            }}>
+              ION
+            </span>
+          </div>
           <p className="hapto-subtitle">
             Plataforma IA integral para el turismo lingüístico
           </p>
