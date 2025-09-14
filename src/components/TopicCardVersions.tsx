@@ -13,8 +13,9 @@ import {
   DownloadOutline,
   ChevronRightOutline
 } from './OutlineIcons';
-import valorImg from '../assets/valor.png';
+import valorImg from '../assets/pvalor.png';
 import discoveryImg from '../assets/discovery.png';
+import canvasImg from '../assets/canvas.png';
 
 interface TopicData {
   id: string;
@@ -82,8 +83,21 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
               maxHeight: isMobile ? '100px' : '220px',
               objectFit: 'contain',
               imageRendering: 'pixelated',
-              transform: isMobile ? 'scale(1)' : 'scale(1.2)',
-              filter: 'brightness(0.95) saturate(1.2)' // Aumentar saturación para igualar tonos
+              transform: isMobile ? 'scale(1)' : 'scale(1.2)'
+            }}
+          />
+        ) : topic.id === '2' ? (
+          <img
+            src={canvasImg}
+            alt="Canvas Propuesta de Valor"
+            style={{
+              width: '100%',
+              height: '100%',
+              maxWidth: isMobile ? '100px' : '220px',
+              maxHeight: isMobile ? '100px' : '220px',
+              objectFit: 'contain',
+              imageRendering: 'pixelated',
+              transform: isMobile ? 'scale(1)' : 'scale(1.2)'
             }}
           />
         ) : topic.id === '3' ? (
@@ -97,8 +111,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
               maxHeight: isMobile ? '100px' : '220px',
               objectFit: 'contain',
               imageRendering: 'pixelated',
-              transform: isMobile ? 'scale(1)' : 'scale(1.2)',
-              filter: 'brightness(1.05) saturate(0.9) hue-rotate(5deg)' // Reducir saturación y ajustar tono
+              transform: isMobile ? 'scale(1)' : 'scale(1.2)'
             }}
           />
         ) : topic.type === 'video' ? (
@@ -160,7 +173,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             alignItems: 'center',
             gap: '8px'
           }}>
-            {topic.id === '1' ? 'Análisis del problema' : topic.id === '3' ? 'Propuesta de valor' : 'Descripción'}
+            {topic.id === '1' ? 'Análisis del problema' : topic.id === '2' ? 'Canvas de valor' : topic.id === '3' ? 'Propuesta de valor' : 'Descripción'}
           </div>
           <p style={{
             fontSize: isMobile ? '14px' : '18px',
