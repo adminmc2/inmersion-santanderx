@@ -94,67 +94,67 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
       }
     },
     {
-      id: 'visibles',
-      title: '4. Acciones Visibles',
+      id: 'pensando',
+      title: '4. Qué piensa y siente',
       icon: <EyeOutline size={20} />,
       data: {
         antes: {
-          content: '• Creo cotización manual copiando de 5 Excel diferentes (4 horas)\n• Llamo 10 familias para confirmar una plaza\n• Calculo comisiones con calculadora\n• Genero facturas una por una\n• Respondo 70+ WhatsApp al día\n• Pierdo contratos importantes por responder tarde\n• Trabajo fines de semana para ponerme al día\n• No tenemos tiempo para formación ni mejora'
+          content: '• Ve academia estancada con potencial desperdiciado, tecnológicamente obsoleta\n• Oye clientes frustrados por falta de profesionalización\n• Dice "necesitamos modernizarnos pero no sé cómo empezar sin quebrar"\n• Hace malabares diarios para mantener todo funcionando mínimamente'
         },
         durante: {
-          content: '• Accedo a INMERSION Connect desde cualquier dispositivo\n• Configuro la plataforma con ayuda del consultor\n• Importo todos mis datos existentes\n• Entreno a mi equipo con sesiones guiadas\n• Genero primera propuesta automática en 5 minutos (wow)\n• Veo dashboard con ocupación real por primera vez\n• Familias actualizan su disponibilidad directamente\n• Gestores acceden a su portal B2B profesional\n• Estudiantes completan inscripción online\n• Proveedores reciben reservas automáticas\n• Sistema envía recordatorios y confirmaciones\n• Facturas se generan y envían solas\n• Cobros se procesan automáticamente'
+          content: '• Ve oportunidad real de transformación con acompañamiento adecuado\n• Oye feedback positivo de stakeholders sobre los cambios\n• Dice "por fin tenemos las herramientas que necesitábamos desde hace años"\n• Hace implementación gradual con resultados visibles desde semana 1'
         },
         despues: {
-          content: '• Reviso KPIs semanales en 10 minutos\n• Tomo decisiones basadas en predicciones de IA\n• Presento informes profesionales a inversores\n• Negocio partnerships desde posición de fuerza\n• Mi equipo propone mejoras continuas\n• Implementamos innovaciones rápidamente\n• Replicamos modelo exitoso en nueva sede\n• Compartimos mejores prácticas en conferencias\n• Asesoramos a otras academias\n• Vendemos know-how sistematizado\n• Academia vale 3x más por transformación digital'
+          content: '• Ve negocio transformado, competitivo y escalable\n• Oye reconocimiento del sector y solicitudes de benchmarking\n• Dice "el ROI superó expectativas, deberíamos haberlo hecho antes"\n• Hace planes de expansión con confianza en el modelo probado'
         }
       }
     },
     {
-      id: 'invisibles',
-      title: '5. Acciones Invisibles',
+      id: 'preocupaciones',
+      title: '5. Preocupaciones',
       icon: <EyeOffOutline size={20} />,
       data: {
         antes: {
-          content: 'Todo el conocimiento crítico está en la memoria del equipo. Preferencias de clientes sin documentar. Procesos no estandarizados que solo algunos conocen. Negociaciones en WhatsApp que se pierden. Promesas verbales no registradas. Compensaciones informales no trackeadas. Decisiones basadas en corazonadas. Oportunidades perdidas que ni detectamos. Problemas recurrentes sin identificar patrones.'
+          content: '• MIEDO PRINCIPAL: Perder relevancia mientras competidores se profesionalizan\n• FRUSTRACIÓN: No poder ofrecer la experiencia que estudiantes esperan en 2024\n• OBSTÁCULO: Inversión parece alta sin garantía de retorno claro\n• URGENCIA: Cada día sin sistema integrado es dinero y oportunidades perdidas'
         },
         durante: {
-          content: 'INMERSION captura y sistematiza todo el conocimiento organizacional. Cada interacción queda registrada y analizada. Sistema identifica patrones y tendencias automáticamente. Procesos se estandarizan y documentan digitalmente. Mejores prácticas se comparten entre usuarios. IA aprende preferencias específicas de cada stakeholder. Algoritmos optimizan matching y precios continuamente. Alertas predictivas previenen problemas antes de que ocurran. Consultor analiza datos y sugiere mejoras. Conocimiento se vuelve activo institucional, no personal.'
+          content: '• APRENDIZAJE: Curva inicial requiere dedicación pero consultoría facilita\n• ADAPTACIÓN: Equipo necesita tiempo para adoptar nuevos procesos\n• INVERSIÓN: Compromiso financiero compensado por eficiencias inmediatas\n• CAMBIO: Resistencia natural al cambio superada con resultados rápidos'
         },
         despues: {
-          content: 'La academia tiene un "gemelo digital" completo de su operación. Sistema predice demanda con 85% precisión. IA sugiere acciones específicas para cada situación. Conocimiento acumulado crea barrera competitiva. Procesos optimizados son difíciles de replicar. Datos históricos permiten decisiones estratégicas. Valoración incluye activo tecnológico y know-how. Si alguien renuncia, continuidad garantizada. Modelo de negocio es escalable y vendible. Academia se convierte en activo estratégico valioso.'
+          content: '• CRECIMIENTO: Cómo escalar manteniendo calidad y eficiencia\n• INNOVACIÓN: Mantenerse a la vanguardia con actualizaciones continuas\n• COMPETENCIA: Proteger ventaja competitiva lograda\n• EXPANSIÓN: Replicar modelo en nuevos mercados o servicios'
         }
       }
     },
     {
-      id: 'pains',
-      title: '6. Pains (Puntos de Dolor)',
+      id: 'deseos',
+      title: '6. Deseos y Necesidades',
       icon: <AlertOutline size={20} />,
       data: {
         antes: {
-          content: '• "Trabajo 70 horas/semana y sigo perdiendo oportunidades"\n• "Mi mejor empleada renunció por burnout, perdí años de conocimiento"\n• "Universidad importante nos descartó por \'poco profesionales\'"\n• "No sé si gano o pierdo dinero con cada programa"\n• "Competidores más pequeños parecen más organizados"'
+          content: '• DESEA: Sistema todo-en-uno que elimine el caos operativo actual\n• NECESITA: Visibilidad completa del negocio para tomar decisiones informadas\n• ASPIRA: Liderar la transformación digital del sector educativo lingüístico\n• REQUIERE: Solución probada con ROI demostrable, no experimentos'
         },
         durante: {
-          content: '• "Cambiar 10 años de hábitos requiere esfuerzo inicial"\n• "Migrar datos históricos lleva más tiempo del esperado"\n• "Algunos stakeholders necesitan apoyo extra para adoptar tecnología"\n• "Requiere inversión de tiempo inicial para configuración"'
+          content: '• DESEA: Implementación rápida con mínima disrupción operativa\n• NECESITA: Acompañamiento experto durante toda la transición\n• ASPIRA: Ver mejoras tangibles desde la primera semana\n• REQUIERE: Flexibilidad para adaptar la plataforma a su realidad específica'
         },
         despues: {
-          content: '• "Ahora el reto es gestionar el crecimiento acelerado"\n• "Necesito contratar perfiles más estratégicos"\n• "Competencia intenta copiar nuestro modelo"\n• "Debo invertir en innovación continua para mantener liderazgo"'
+          content: '• DESEA: Seguir innovando y expandiendo capacidades\n• NECESITA: Mantener ventaja competitiva lograda\n• ASPIRA: Ser caso de éxito referente en el sector\n• REQUIERE: Socio tecnológico comprometido a largo plazo, no un proveedor más'
         }
       }
     },
     {
       id: 'solucion',
-      title: '7. Solución INMERSION',
+      title: '💡 NUESTRA SOLUCIÓN',
       icon: <BoltOutline size={20} />,
       isSolution: true,
       data: {
         antes: {
-          content: 'CONSULTORÍA ESPECIALIZADA:\n• Diagnóstico inicial profundo de procesos\n• Rediseño de operaciones para eficiencia máxima\n• Acompañamiento continuo en la transformación\n• Formación del equipo en nuevas metodologías\n• Best practices del sector incorporadas\n\nPLATAFORMA TECNOLÓGICA INTEGRAL:\n• 6 módulos especializados perfectamente integrados\n• Dashboard central con visión 360° del negocio\n• Automatización de procesos administrativos\n• Herramientas profesionales para cada stakeholder\n• Escalabilidad probada hasta 35,000 estudiantes/año'
+          content: '🎯 INMERSION CONNECT - La única plataforma integral diseñada específicamente para el turismo lingüístico.\n\n✅ 6 módulos especializados para cada stakeholder\n✅ 8 agentes de IA trabajando 24/7\n✅ Consultoría incluida (no solo software)\n✅ ROI garantizado de 100%+ en 12 meses\n✅ Implementación en 2 semanas'
         },
         durante: {
-          content: 'INTELIGENCIA ARTIFICIAL SECTORIAL:\n• 8 agentes especializados que potencian cada área\n• Aprendizaje continuo de cada interacción\n• Personalización extrema de experiencias\n• Optimización automática de operaciones\n• Predicciones para decisiones estratégicas\n\nTransformación operativa:\n• 70% reducción trabajo administrativo\n• 25% recuperación ventas perdidas\n• 85% ocupación optimizada\n• 95% retención de clientes'
+          content: '🚀 IMPLEMENTACIÓN ACOMPAÑADA\n\n📊 Semana 1: Diagnóstico y configuración inicial\n🔄 Semana 2: Migración de datos y capacitación\n📈 Mes 1: Optimización y ajustes con datos reales\n💪 Mes 2-3: Consolidación y expansión de uso\n🎯 Mes 3+: Operación optimizada y crecimiento'
         },
         despues: {
-          content: 'Transformación estratégica:\n• De reactivo a proactivo\n• De intuición a datos\n• De caos a control\n• De local a escalable\n\nTransformación del equipo:\n• De operadores a estrategas\n• De saturados a realizados\n• De rotación a retención\n• De individual a colaborativo\n\n"INMERSION no es una herramienta más, es la transformación digital completa que convierte academias tradicionales en empresas tecnológicas líderes del sector educativo."'
+          content: '🏆 RESULTADOS GARANTIZADOS\n\n📈 +25% recuperación de ventas perdidas\n⏰ -70% tiempo en tareas administrativas\n😊 NPS 8.5+ de todos los stakeholders\n💰 ROI 108% documentado\n🚀 Posición de liderazgo sectorial\n♾️ Crecimiento sostenible y escalable'
         }
       }
     }
@@ -179,18 +179,37 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
         {/* Context Section */}
         <div className="hapto-map-context">
           <h2 className="hapto-map-context-title">
-            Academia de Español gestionando 5 stakeholders simultáneamente
+            Journey de Transformación Digital para Academias de Español
           </h2>
+
+          {/* Stakeholders */}
           <div className="hapto-stakeholder-grid">
-            {['Estudiantes', 'Escuelas', 'Gestores', 'Familias', 'Proveedores'].map((s, index) => (
-              <div key={s} className="hapto-stakeholder-item">
-                <div className="hapto-stakeholder-number">
-                  {index + 1}
-                </div>
-                <p className="hapto-stakeholder-label">{s}</p>
-              </div>
-            ))}
+            <div className="hapto-stakeholder-item">
+              <div className="hapto-stakeholder-number">1</div>
+              <div className="hapto-stakeholder-label">Academia</div>
+            </div>
+            <div className="hapto-stakeholder-item">
+              <div className="hapto-stakeholder-number">2</div>
+              <div className="hapto-stakeholder-label">Estudiantes</div>
+            </div>
+            <div className="hapto-stakeholder-item">
+              <div className="hapto-stakeholder-number">3</div>
+              <div className="hapto-stakeholder-label">Gestores</div>
+            </div>
+            <div className="hapto-stakeholder-item">
+              <div className="hapto-stakeholder-number">4</div>
+              <div className="hapto-stakeholder-label">Familias</div>
+            </div>
+            <div className="hapto-stakeholder-item">
+              <div className="hapto-stakeholder-number">5</div>
+              <div className="hapto-stakeholder-label">Proveedores</div>
+            </div>
+            <div className="hapto-stakeholder-item">
+              <div className="hapto-stakeholder-number">6</div>
+              <div className="hapto-stakeholder-label">Promotores</div>
+            </div>
           </div>
+
           <p className="hapto-map-context-text">
             Este mapa muestra el journey completo de una academia de español que debe coordinar simultáneamente
             estudiantes individuales, grupos escolares con menores, profesores acompañantes, gestores educativos
@@ -240,36 +259,15 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
                       <div>
                         {section.data.antes.content.split('\n').map((line: string, idx: number) => (
                           <div key={idx} className="hapto-emotion-item">
-                            <span className="hapto-emotion-icon">{section.data.antes.icons[idx]}</span>
-                            <p className="hapto-emotion-text">{line}</p>
+                            <span className="hapto-emotion-icon">{section.data.antes.icons![idx]}</span>
+                            <span className="hapto-emotion-text">{line}</span>
                           </div>
                         ))}
                       </div>
-                    ) : section.isSolution ? (
-                      <div className="hapto-phase-content">
-                        {section.data.antes.content.split('\n').map((line: string, idx: number) => {
-                          // Detectar líneas que empiezan con mayúsculas y tienen :
-                          const colonIndex = line.indexOf(':');
-                          if (colonIndex > 0) {
-                            const beforeColon = line.substring(0, colonIndex);
-                            const afterColon = line.substring(colonIndex);
-                            // Si todo antes de : está en mayúsculas
-                            if (beforeColon === beforeColon.toUpperCase()) {
-                              return (
-                                <p key={idx} style={{ marginBottom: '8px' }}>
-                                  <span style={{ color: '#FF3E01', fontWeight: '700' }}>{beforeColon}</span>
-                                  {afterColon}
-                                </p>
-                              );
-                            }
-                          }
-                          return <p key={idx} style={{ marginBottom: '8px' }}>{line}</p>;
-                        })}
-                      </div>
                     ) : (
-                      <p className="hapto-phase-content">
+                      <div className="hapto-phase-content">
                         {section.data.antes.content}
-                      </p>
+                      </div>
                     )}
                   </div>
 
@@ -289,34 +287,15 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
                       <div>
                         {section.data.durante.content.split('\n').map((line: string, idx: number) => (
                           <div key={idx} className="hapto-emotion-item">
-                            <span className="hapto-emotion-icon">{section.data.durante.icons[idx]}</span>
-                            <p className="hapto-emotion-text">{line}</p>
+                            <span className="hapto-emotion-icon">{section.data.durante.icons![idx]}</span>
+                            <span className="hapto-emotion-text">{line}</span>
                           </div>
                         ))}
                       </div>
-                    ) : section.isSolution ? (
-                      <div className="hapto-phase-content">
-                        {section.data.durante.content.split('\n').map((line: string, idx: number) => {
-                          const colonIndex = line.indexOf(':');
-                          if (colonIndex > 0) {
-                            const beforeColon = line.substring(0, colonIndex);
-                            const afterColon = line.substring(colonIndex);
-                            if (beforeColon === beforeColon.toUpperCase()) {
-                              return (
-                                <p key={idx} style={{ marginBottom: '8px' }}>
-                                  <span style={{ color: '#FF3E01', fontWeight: '700' }}>{beforeColon}</span>
-                                  {afterColon}
-                                </p>
-                              );
-                            }
-                          }
-                          return <p key={idx} style={{ marginBottom: '8px' }}>{line}</p>;
-                        })}
-                      </div>
                     ) : (
-                      <p className="hapto-phase-content">
+                      <div className="hapto-phase-content">
                         {section.data.durante.content}
-                      </p>
+                      </div>
                     )}
                   </div>
 
@@ -336,42 +315,15 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
                       <div>
                         {section.data.despues.content.split('\n').map((line: string, idx: number) => (
                           <div key={idx} className="hapto-emotion-item">
-                            <span className="hapto-emotion-icon">{section.data.despues.icons[idx]}</span>
-                            <p className="hapto-emotion-text">{line}</p>
+                            <span className="hapto-emotion-icon">{section.data.despues.icons![idx]}</span>
+                            <span className="hapto-emotion-text">{line}</span>
                           </div>
                         ))}
                       </div>
-                    ) : section.isSolution ? (
-                      <div className="hapto-phase-content">
-                        {section.data.despues.content.split('\n').map((line: string, idx: number) => {
-                          const colonIndex = line.indexOf(':');
-                          if (colonIndex > 0) {
-                            const beforeColon = line.substring(0, colonIndex);
-                            const afterColon = line.substring(colonIndex);
-                            if (beforeColon === beforeColon.toUpperCase()) {
-                              return (
-                                <p key={idx} style={{ marginBottom: '8px' }}>
-                                  <span style={{ color: '#FF3E01', fontWeight: '700' }}>{beforeColon}</span>
-                                  {afterColon}
-                                </p>
-                              );
-                            }
-                          }
-                          // Texto entre comillas en cursiva
-                          if (line.includes('"')) {
-                            return (
-                              <p key={idx} style={{ marginBottom: '12px', fontStyle: 'italic', color: '#6e6e73', fontSize: '15px' }}>
-                                {line}
-                              </p>
-                            );
-                          }
-                          return <p key={idx} style={{ marginBottom: '8px' }}>{line}</p>;
-                        })}
-                      </div>
                     ) : (
-                      <p className="hapto-phase-content">
+                      <div className="hapto-phase-content">
                         {section.data.despues.content}
-                      </p>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -380,27 +332,25 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
           ))}
         </div>
 
-        {/* Key Metrics Footer */}
+        {/* Metrics Footer */}
         <div className="hapto-map-footer">
-          <h3 className="hapto-footer-title">
-            Impacto de la Transformación Digital con INMERSION
-          </h3>
+          <h2 className="hapto-footer-title">Métricas de Impacto</h2>
           <div className="hapto-metrics-grid">
             <div className="hapto-metric-item">
+              <div className="hapto-metric-value">25%</div>
+              <div className="hapto-metric-label">Ventas recuperadas</div>
+            </div>
+            <div className="hapto-metric-item">
               <div className="hapto-metric-value">70%</div>
-              <p className="hapto-metric-label">Reducción tiempo operativo</p>
+              <div className="hapto-metric-label">Reducción tiempo admin</div>
             </div>
             <div className="hapto-metric-item">
-              <div className="hapto-metric-value">40%</div>
-              <p className="hapto-metric-label">Aumento en conversión</p>
+              <div className="hapto-metric-value">8.5+</div>
+              <div className="hapto-metric-label">NPS estudiantes</div>
             </div>
             <div className="hapto-metric-item">
-              <div className="hapto-metric-value">85%</div>
-              <p className="hapto-metric-label">Satisfacción del cliente</p>
-            </div>
-            <div className="hapto-metric-item">
-              <div className="hapto-metric-value">300%</div>
-              <p className="hapto-metric-label">ROI primer año</p>
+              <div className="hapto-metric-value">108%</div>
+              <div className="hapto-metric-label">ROI año 1</div>
             </div>
           </div>
         </div>

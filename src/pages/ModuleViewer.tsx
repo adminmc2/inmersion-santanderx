@@ -86,7 +86,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
         id: '3',
         title: 'Declaración de Propuesta de Valor',
         description: 'Sistema Operativo del Turismo Lingüístico que unifica todos los stakeholders',
-        duration: '3 min',
+        duration: '1 min',
         type: 'document',
         completed: false,
         locked: false,

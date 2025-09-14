@@ -14,6 +14,7 @@ import {
   ChevronRightOutline
 } from './OutlineIcons';
 import valorImg from '../assets/valor.png';
+import discoveryImg from '../assets/discovery.png';
 
 interface TopicData {
   id: string;
@@ -71,7 +72,20 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
       }}>
         {/* Iconos con patrón de cuadraditos grandes */}
         {topic.id === '1' ? (
-          <MapDotMatrix size={isMobile ? 90 : 180} color="#ff8c42" />
+          <img
+            src={discoveryImg}
+            alt="Customer Discovery Map"
+            style={{
+              width: '100%',
+              height: '100%',
+              maxWidth: isMobile ? '100px' : '220px',
+              maxHeight: isMobile ? '100px' : '220px',
+              objectFit: 'contain',
+              imageRendering: 'pixelated',
+              transform: isMobile ? 'scale(1)' : 'scale(1.2)',
+              filter: 'brightness(0.95) saturate(1.2)' // Aumentar saturación para igualar tonos
+            }}
+          />
         ) : topic.id === '3' ? (
           <img
             src={valorImg}
@@ -82,8 +96,9 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
               maxWidth: isMobile ? '100px' : '220px',
               maxHeight: isMobile ? '100px' : '220px',
               objectFit: 'contain',
-              imageRendering: 'pixelated', // Para mantener los píxeles nítidos
-              transform: isMobile ? 'scale(1)' : 'scale(1.2)' // Aumentar un poco más el tamaño
+              imageRendering: 'pixelated',
+              transform: isMobile ? 'scale(1)' : 'scale(1.2)',
+              filter: 'brightness(1.05) saturate(0.9) hue-rotate(5deg)' // Reducir saturación y ajustar tono
             }}
           />
         ) : topic.type === 'video' ? (
