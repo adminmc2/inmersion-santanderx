@@ -49,8 +49,8 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
     // Datos de ejemplo - después conectaremos con tu backend
     const modules: any = {
       '1': {
-        title: 'Research & Analysis',
-        subtitle: 'Problema, Mercado y Oportunidad',
+        title: 'Research, Pains & Buys',
+        subtitle: 'Problema, persona y propuesta de valor',
         description: 'Análisis exhaustivo del mercado de turismo lingüístico, identificación de problemas clave y propuesta de valor única de INMERSION.',
         icon: <SearchOutline size={48} color="#6e6e73" />
       }
@@ -58,13 +58,24 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
 
     setModule(modules[moduleId || '1']);
 
-    // Solo Customer Discovery Map por ahora
+    // Documentos del módulo Research, Pains & Buys
     setTopics([
       {
         id: '1',
         title: 'Customer Discovery Map',
         description: 'Análisis detallado del problema y los 5 stakeholders involucrados',
         duration: '5 min',
+        type: 'document',
+        completed: false,
+        locked: false,
+        rating: 0,
+        comments: 0
+      },
+      {
+        id: '3',
+        title: 'Declaración de Propuesta de Valor',
+        description: 'Sistema Operativo del Turismo Lingüístico que unifica todos los stakeholders',
+        duration: '3 min',
         type: 'document',
         completed: false,
         locked: false,
@@ -116,30 +127,67 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
 
   return (
     <div className="hapto-module-container">
-      {/* Header with 3D effect */}
-      <header className="hapto-module-header">
-        <div className="hapto-module-header-content">
+      {/* Header with enhanced Haptomorphism */}
+      <header className="hapto-module-header" style={{
+        background: '#e0e5ec',
+        padding: '24px 48px',
+        boxShadow: '0 10px 30px rgba(163, 177, 198, 0.5)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 100
+      }}>
+        <div className="hapto-module-header-content" style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          maxWidth: '1400px',
+          margin: '0 auto'
+        }}>
           <button
             onClick={() => navigate('/')}
-            className="hapto-back-btn"
+            style={{
+              background: '#e0e5ec',
+              border: 'none',
+              borderRadius: '16px',
+              padding: '12px 24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              fontWeight: '600',
+              color: '#2c2c2c',
+              fontFamily: 'Nunito, sans-serif',
+              boxShadow: '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff';
+            }}
           >
             <ArrowLeftOutline size={20} />
             Volver
           </button>
 
-          {/* Logo INMERSION */}
+          {/* Logo INMERSION with enhanced depth */}
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '4px'
+            gap: '6px'
           }}>
             <h1 style={{
-              fontSize: '28px',
+              fontSize: '32px',
               fontWeight: '800',
               fontFamily: 'Nunito, sans-serif',
               color: '#2c2c2c',
               margin: 0,
-              letterSpacing: '-0.5px'
+              letterSpacing: '-0.5px',
+              textShadow: '2px 2px 4px rgba(163, 177, 198, 0.5)'
             }}>
               INMERS
             </h1>
@@ -147,13 +195,14 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
               display: 'inline-block',
               background: 'linear-gradient(135deg, #ff4507, #e53801)',
               color: 'white',
-              padding: '6px 16px',
-              borderRadius: '14px',
+              padding: '8px 20px',
+              borderRadius: '16px',
               fontWeight: '800',
-              fontSize: '28px',
+              fontSize: '32px',
               fontFamily: 'Nunito, sans-serif',
-              boxShadow: '4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff',
-              letterSpacing: '0.5px'
+              boxShadow: '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff, inset 2px 2px 4px rgba(255, 255, 255, 0.3)',
+              letterSpacing: '0.5px',
+              transform: 'perspective(100px) rotateX(-5deg)'
             }}>
               ION
             </span>
@@ -161,43 +210,172 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
         </div>
       </header>
 
-      {/* Module Hero Section */}
-      <div className="hapto-module-hero">
-        <div className="hapto-module-hero-content">
-          <div className="hapto-module-icon">{module.icon}</div>
-          <div className="hapto-module-info">
-            <h1 className="hapto-module-title">{module.title}</h1>
-            <p className="hapto-module-subtitle">{module.subtitle}</p>
-            <p className="hapto-module-description">{module.description}</p>
+      {/* Module Hero Section with enhanced Haptomorphism */}
+      <div className="hapto-module-hero" style={{
+        background: 'linear-gradient(180deg, #e0e5ec 0%, #d8dde4 100%)',
+        padding: '64px 48px',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div className="hapto-module-hero-content" style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '48px'
+        }}>
+          {/* Icon container with deep inset */}
+          <div style={{
+            width: '180px',
+            height: '180px',
+            borderRadius: '32px',
+            background: '#e0e5ec',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: 'inset 12px 12px 24px #a3b1c6, inset -12px -12px 24px #ffffff',
+            position: 'relative',
+            flexShrink: 0
+          }}>
+            <div style={{
+              transform: 'scale(1.5)',
+              filter: 'drop-shadow(2px 2px 4px rgba(163, 177, 198, 0.5))'
+            }}>
+              {module.icon}
+            </div>
+          </div>
+
+          <div className="hapto-module-info" style={{ flex: 1 }}>
+            <h1 style={{
+              fontSize: '48px',
+              fontWeight: '800',
+              fontFamily: 'Nunito, sans-serif',
+              background: 'linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              marginBottom: '16px',
+              textShadow: '2px 2px 4px rgba(163, 177, 198, 0.3)'
+            }}>
+              {module.title}
+            </h1>
+            <p style={{
+              fontSize: '24px',
+              fontWeight: '600',
+              fontFamily: 'Nunito, sans-serif',
+              color: '#FF3E01',
+              marginBottom: '16px'
+            }}>
+              {module.subtitle}
+            </p>
+            <p style={{
+              fontSize: '18px',
+              fontFamily: 'Nunito, sans-serif',
+              color: '#6e6e73',
+              lineHeight: '1.6',
+              maxWidth: '800px'
+            }}>
+              {module.description}
+            </p>
           </div>
         </div>
+
+        {/* Decorative elements */}
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          width: '100px',
+          height: '100px',
+          borderRadius: '50%',
+          background: '#e0e5ec',
+          boxShadow: 'inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff',
+          opacity: 0.5
+        }} />
+        <div style={{
+          position: 'absolute',
+          bottom: '20px',
+          left: '20px',
+          width: '80px',
+          height: '80px',
+          borderRadius: '50%',
+          background: '#e0e5ec',
+          boxShadow: '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff',
+          opacity: 0.3
+        }} />
       </div>
 
-      <main className="hapto-module-main">
-        <h2 className="hapto-section-title">Documentos del Proyecto</h2>
+      <main className="hapto-module-main" style={{
+        background: '#e0e5ec',
+        minHeight: 'calc(100vh - 400px)',
+        padding: '48px',
+        position: 'relative'
+      }}>
+        <div style={{
+          maxWidth: '1400px',
+          margin: '0 auto'
+        }}>
+          <h2 style={{
+            fontSize: '36px',
+            fontWeight: '700',
+            fontFamily: 'Nunito, sans-serif',
+            color: '#2c2c2c',
+            marginBottom: '48px',
+            textAlign: 'center',
+            textShadow: '2px 2px 4px rgba(163, 177, 198, 0.3)'
+          }}>
+            Documentos del Proyecto
+          </h2>
 
-        {/* Topics - Solo versión Clock */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          {topics.map((topic, index) => (
-            <TopicCardClock
-              key={topic.id}
-              topic={topic}
-              index={index}
-              onClick={() => {
-                if (!topic.locked) {
-                  if (topic.id === '1') {
-                    setShowCustomerMap(true);
-                  } else {
-                    navigate(`/module/${moduleId}/topic/${topic.id}`);
-                  }
-                }
-              }}
-              isAdmin={isAdmin}
-              onDownload={() => handleDownloadPDF(topic.title)}
-            />
-          ))}
-
+          {/* Topics with enhanced spacing and effects */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '32px',
+            marginBottom: '64px'
+          }}>
+            {topics.map((topic, index) => (
+              <div
+                key={topic.id}
+                style={{
+                  animation: 'fadeInUp 0.6s ease-out',
+                  animationDelay: `${index * 0.1}s`,
+                  animationFillMode: 'both'
+                }}
+              >
+                <TopicCardClock
+                  topic={topic}
+                  index={index}
+                  onClick={() => {
+                    if (!topic.locked) {
+                      if (topic.id === '1') {
+                        setShowCustomerMap(true);
+                      } else {
+                        navigate(`/module/${moduleId}/topic/${topic.id}`);
+                      }
+                    }
+                  }}
+                  isAdmin={isAdmin}
+                  onDownload={() => handleDownloadPDF(topic.title)}
+                />
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Add animation keyframes */}
+        <style>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </main>
 
       {/* Customer Discovery Map Modal */}

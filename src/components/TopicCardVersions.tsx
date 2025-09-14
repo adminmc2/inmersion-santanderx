@@ -6,12 +6,14 @@ import {
   DocumentDotMatrix,
   ChartDotMatrix,
   PlayDotMatrix,
+  ValuePropositionDotMatrix,
   ClockOutline,
   DocumentOutline,
   CheckCircleOutline,
   DownloadOutline,
   ChevronRightOutline
 } from './OutlineIcons';
+import valorImg from '../assets/valor.png';
 
 interface TopicData {
   id: string;
@@ -65,13 +67,27 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
       }}>
         {/* Iconos con patrón de cuadraditos grandes */}
         {topic.id === '1' ? (
-          <MapDotMatrix size={180} color="#f09530" />
+          <MapDotMatrix size={180} color="#ff8c42" />
+        ) : topic.id === '3' ? (
+          <img
+            src={valorImg}
+            alt="Propuesta de Valor"
+            style={{
+              width: '100%',
+              height: '100%',
+              maxWidth: '220px',
+              maxHeight: '220px',
+              objectFit: 'contain',
+              imageRendering: 'pixelated', // Para mantener los píxeles nítidos
+              transform: 'scale(1.2)' // Aumentar un poco más el tamaño
+            }}
+          />
         ) : topic.type === 'video' ? (
-          <PlayDotMatrix size={180} color="#f09530" />
+          <PlayDotMatrix size={180} color="#ff8c42" />
         ) : topic.type === 'interactive' ? (
-          <ChartDotMatrix size={180} color="#f09530" />
+          <ChartDotMatrix size={180} color="#ff8c42" />
         ) : (
-          <DocumentDotMatrix size={180} color="#f09530" />
+          <DocumentDotMatrix size={180} color="#ff8c42" />
         )}
       </div>
 
@@ -124,7 +140,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             alignItems: 'center',
             gap: '8px'
           }}>
-            Análisis del problema
+            {topic.id === '1' ? 'Análisis del problema' : topic.id === '3' ? 'Propuesta de valor' : 'Descripción'}
           </div>
           <p style={{
             fontSize: '18px',
@@ -134,7 +150,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             fontWeight: '400',
             margin: 0
           }}>
-            Análisis detallado del problema, propuesta de solución para todos los stakeholders involucrados
+            {topic.description}
           </p>
         </div>
 

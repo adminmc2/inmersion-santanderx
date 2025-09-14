@@ -506,6 +506,107 @@ export const PlayDotMatrix: React.FC<IconProps> = ({ className = "", size = 24, 
   );
 };
 
+// Mano con estrella con patrón de cuadraditos
+export const ValuePropositionDotMatrix: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => {
+  const squares = [];
+  const squareSize = 0.7;
+
+  // Coordenadas exactas de cada cuadradito basado en la imagen original
+  // Estrella arriba
+  const starCoords = [
+    // Punta superior
+    [12, 2],
+    // Segunda fila
+    [11, 3], [13, 3],
+    // Tercera fila
+    [10, 4], [12, 4], [14, 4],
+    // Cuarta fila
+    [9, 5], [11, 5], [13, 5], [15, 5],
+    // Quinta fila - brazos horizontales
+    [8, 6], [9, 6], [10, 6], [11, 6], [12, 6], [13, 6], [14, 6], [15, 6], [16, 6],
+    // Sexta fila
+    [7, 7], [8, 7], [9, 7], [10, 7], [11, 7], [12, 7], [13, 7], [14, 7], [15, 7], [16, 7], [17, 7],
+    // Séptima fila
+    [6, 8], [7, 8], [12, 8], [17, 8], [18, 8],
+    // Octava fila
+    [7, 9], [8, 9], [12, 9], [16, 9], [17, 9],
+    // Novena fila - puntas inferiores
+    [8, 10], [9, 10], [15, 10], [16, 10],
+    // Décima fila
+    [9, 11], [15, 11],
+    // Última fila de la estrella
+    [10, 12], [14, 12]
+  ];
+
+  // Mano con corazón abajo
+  const handCoords = [
+    // Primera fila - parte superior de la mano
+    [6, 14], [7, 14], [8, 14], [9, 14], [15, 14], [16, 14], [17, 14], [18, 14],
+    // Segunda fila
+    [6, 15], [10, 15], [11, 15], [13, 15], [14, 15], [18, 15],
+    // Tercera fila
+    [6, 16], [12, 16], [18, 16],
+    // Cuarta fila
+    [6, 17], [18, 17],
+    // Quinta fila
+    [6, 18], [18, 18],
+    // Sexta fila
+    [6, 19], [18, 19],
+    // Séptima fila - base superior
+    [6, 20], [7, 20], [8, 20], [9, 20], [15, 20], [16, 20], [17, 20], [18, 20],
+    // Corazón en el centro
+    [10, 20], [11, 20], [13, 20], [14, 20],
+    [9, 21], [10, 21], [11, 21], [12, 21], [13, 21], [14, 21], [15, 21],
+    [8, 22], [9, 22], [15, 22], [16, 22],
+    [7, 23], [8, 23], [10, 23], [11, 23], [13, 23], [14, 23], [16, 23], [17, 23],
+    [6, 24], [7, 24], [9, 24], [10, 24], [12, 24], [14, 24], [15, 24], [17, 24], [18, 24],
+    [6, 25], [8, 25], [12, 25], [16, 25], [18, 25],
+    [6, 26], [8, 26], [9, 26], [12, 26], [15, 26], [16, 26], [18, 26],
+    [6, 27], [9, 27], [10, 27], [11, 27], [13, 27], [14, 27], [15, 27], [18, 27],
+    [6, 28], [7, 28], [17, 28], [18, 28],
+    [7, 29], [8, 29], [16, 29], [17, 29],
+    [8, 30], [9, 30], [15, 30], [16, 30],
+    [9, 31], [10, 31], [11, 31], [12, 31], [13, 31], [14, 31], [15, 31],
+    [10, 32], [11, 32], [12, 32], [13, 32], [14, 32]
+  ];
+
+  // Renderizar estrella
+  starCoords.forEach(([x, y]) => {
+    squares.push(
+      <rect
+        key={`star-${x}-${y}`}
+        x={x * 0.9}
+        y={y * 0.6}
+        width={squareSize}
+        height={squareSize}
+        fill={color}
+        rx="0.1"
+      />
+    );
+  });
+
+  // Renderizar mano
+  handCoords.forEach(([x, y]) => {
+    squares.push(
+      <rect
+        key={`hand-${x}-${y}`}
+        x={x * 0.9}
+        y={y * 0.6}
+        width={squareSize}
+        height={squareSize}
+        fill={color}
+        rx="0.1"
+      />
+    );
+  });
+
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {squares}
+    </svg>
+  );
+};
+
 // Journey/Ruta minimalista (para customer journey)
 export const JourneyOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
