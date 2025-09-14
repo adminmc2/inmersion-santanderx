@@ -275,7 +275,6 @@
 
 /* Module icon - elevated */
 .hapto-card-icon {
-  font-size: 48px;
   width: 64px;
   height: 64px;
   display: flex;
@@ -286,6 +285,11 @@
   box-shadow:
     6px 6px 12px #a3b1c6,
     -6px -6px 12px #ffffff;
+}
+
+.hapto-card-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 /* Chevron icon */

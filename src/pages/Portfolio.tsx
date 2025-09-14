@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  ChevronRight,
-  LogOut,
-  Settings
-} from 'lucide-react';
 import toast from 'react-hot-toast';
+import {
+  SearchOutline,
+  SettingsOutline,
+  LogoutOutline,
+  ChevronRightOutline
+} from '../components/OutlineIcons';
 import '../styles/portfolio-hapto.css';
 
 interface PortfolioProps {
@@ -22,7 +23,7 @@ interface Module {
   progress: number;
   topics: number;
   completedTopics: number;
-  icon: string;
+  icon: React.ReactNode;
   color: string;
 }
 
@@ -41,7 +42,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
         progress: 0,
         topics: 0,
         completedTopics: 0,
-        icon: '🔍',
+        icon: <SearchOutline size={32} color="#6e6e73" />,
         color: 'from-[#FF3E01] to-[#E8871E]'
       }
     ]);
@@ -93,7 +94,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                 onClick={() => navigate('/admin')}
                 className="hapto-btn-primary"
               >
-                <Settings className="h-4 w-4 mr-2" />
+                <SettingsOutline size={16} className="mr-2" />
                 Admin Panel
               </button>
             )}
@@ -102,7 +103,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
               onClick={handleLogout}
               className="hapto-btn-ghost"
             >
-              <LogOut className="h-4 w-4 mr-2" />
+              <LogoutOutline size={16} className="mr-2" />
               Cerrar sesión
             </button>
           </div>
@@ -134,7 +135,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                 <div className="hapto-card-content">
                   <div className="hapto-card-header">
                     <div className="hapto-card-icon">{module.icon}</div>
-                    <ChevronRight className="hapto-card-chevron" />
+                    <ChevronRightOutline size={20} className="hapto-card-chevron" />
                   </div>
                   <h4 className="hapto-card-title">{module.title}</h4>
                   <p className="hapto-card-description">{module.description}</p>

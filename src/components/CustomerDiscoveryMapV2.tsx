@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
-import { 
-  Users, 
-  MessageSquare, 
-  Heart, 
-  Eye, 
-  EyeOff, 
-  AlertCircle,
-  ChevronDown,
-  ChevronUp,
-  ArrowRight,
-  X,
-  Clock,
-  Zap,
-  TrendingUp,
-  CheckCircle2,
-  Target,
-  TrendingUp as Growth,
-  Star
-} from 'lucide-react';
 import { SadFace, NeutralFace, ConfusedFace, TiredFace, RelaxedFace, HappyFace, ThinkingFace, ProudFace } from './OutlineEmojis';
+import {
+  UserOutline,
+  MessageOutline,
+  HeartOutline,
+  EyeOutline,
+  EyeOffOutline,
+  AlertOutline,
+  ChevronDownOutline,
+  ChevronUpOutline,
+  CloseOutline,
+  ClockOutline,
+  BoltOutline,
+  TrendUpOutline,
+  TargetOutline,
+  StarOutline
+} from './OutlineIcons';
+import '../styles/customer-map-hapto.css';
 
 interface CustomerDiscoveryMapV2Props {
   onClose?: () => void;
@@ -37,9 +35,7 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
     {
       id: 'fases',
       title: '1. Fases del Cliente',
-      icon: <Users className="h-5 w-5" />,
-      color: 'border-[#FF3E01]',
-      bgColor: 'bg-[#FF3E01]/5',
+      icon: <UserOutline size={20} />,
       data: {
         antes: {
           content: 'Soy director/a de academia gestionando caóticamente 6 tipos de stakeholders simultáneamente. Pierdo 25% de oportunidades por operar con sistemas fragmentados: whatsApp para estudiantes y familias, Excel para gestores y ocupación, email para proveedores, sin sistema para promotores. No tengo visibilidad real del negocio, trabajo 60+ horas/semana en tareas operativas sin tiempo para estrategia. Mi equipo está quemado, renuncian cada 6 meses. Busco una solución integral que transforme mi operación.'
@@ -55,9 +51,7 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
     {
       id: 'contacto',
       title: '2. Puntos de Contacto',
-      icon: <MessageSquare className="h-5 w-5" />,
-      color: 'border-[#E8871E]',
-      bgColor: 'bg-[#E8871E]/5',
+      icon: <MessageOutline size={20} />,
       data: {
         antes: {
           content: '• Gestión fragmentada: 10+ herramientas desconectadas, datos duplicados, sin trazabilidad\n• Comunicación caótica: whatsApp saturado, emails perdidos, llamadas no registradas\n• Procesos manuales: cotizaciones 4h, reportes en Excel, pagos uno a uno\n• Sin visibilidad: no sé ocupación real, demanda futura, rentabilidad por programa\n• Equipo reactivo: apagando fuegos constantemente, sin tiempo para mejorar\n• Decisiones a ciegas: sin datos, por intuición, errores costosos'
@@ -73,9 +67,7 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
     {
       id: 'emociones',
       title: '3. Emociones',
-      icon: <Heart className="h-5 w-5" />,
-      color: 'border-[#EDB458]',
-      bgColor: 'bg-[#EDB458]/5',
+      icon: <HeartOutline size={20} />,
       data: {
         antes: {
           content: 'Desbordamiento total: "No doy abasto, trabajo 14h/día y sigo atrasado"\nAnsiedad constante: "Sé que pierdo oportunidades pero no puedo hacer más"\nFrustración profunda: "Competidores más pequeños parecen más profesionales"\nAgotamiento extremo: "Mi equipo y yo estamos al límite, esto no es sostenible"',
@@ -87,16 +79,14 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
         },
         despues: {
           content: 'Orgullo legítimo: "Mi academia es referencia de profesionalización en el sector"\nEnfoque estratégico: "Por fin puedo pensar en el futuro, no solo en sobrevivir"\nAmbición renovada: "Con este modelo puedo crecer sin límites"\nLiderazgo sectorial: "Otros vienen a aprender de nuestra transformación"',
-          icons: [<ProudFace size={20} color="#EDB458" />, <Target size={20} color="#EDB458" />, <Growth size={20} color="#EDB458" />, <Star size={20} color="#EDB458" />]
+          icons: [<ProudFace size={20} color="#EDB458" />, <TargetOutline size={20} color="#EDB458" />, <TrendUpOutline size={20} color="#EDB458" />, <StarOutline size={20} color="#EDB458" />]
         }
       }
     },
     {
       id: 'visibles',
       title: '4. Acciones Visibles',
-      icon: <Eye className="h-5 w-5" />,
-      color: 'border-[#FF3E01]',
-      bgColor: 'bg-[#FF3E01]/5',
+      icon: <EyeOutline size={20} />,
       data: {
         antes: {
           content: '• Creo cotización manual copiando de 5 Excel diferentes (4 horas)\n• Llamo 10 familias para confirmar una plaza\n• Calculo comisiones con calculadora\n• Genero facturas una por una\n• Respondo 70+ WhatsApp al día\n• Pierdo contratos importantes por responder tarde\n• Trabajo fines de semana para ponerme al día\n• No tenemos tiempo para formación ni mejora'
@@ -112,9 +102,7 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
     {
       id: 'invisibles',
       title: '5. Acciones Invisibles',
-      icon: <EyeOff className="h-5 w-5" />,
-      color: 'border-[#E8871E]',
-      bgColor: 'bg-[#E8871E]/5',
+      icon: <EyeOffOutline size={20} />,
       data: {
         antes: {
           content: 'Todo el conocimiento crítico está en la memoria del equipo. Preferencias de clientes sin documentar. Procesos no estandarizados que solo algunos conocen. Negociaciones en WhatsApp que se pierden. Promesas verbales no registradas. Compensaciones informales no trackeadas. Decisiones basadas en corazonadas. Oportunidades perdidas que ni detectamos. Problemas recurrentes sin identificar patrones.'
@@ -130,9 +118,7 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
     {
       id: 'pains',
       title: '6. Pains (Puntos de Dolor)',
-      icon: <AlertCircle className="h-5 w-5" />,
-      color: 'border-[#FF3E01]',
-      bgColor: 'bg-[#FF3E01]/5',
+      icon: <AlertOutline size={20} />,
       data: {
         antes: {
           content: '• "Trabajo 70 horas/semana y sigo perdiendo oportunidades"\n• "Mi mejor empleada renunció por burnout, perdí años de conocimiento"\n• "Universidad importante nos descartó por \'poco profesionales\'"\n• "No sé si gano o pierdo dinero con cada programa"\n• "Competidores más pequeños parecen más organizados"'
@@ -147,11 +133,9 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
     },
     {
       id: 'solucion',
-      title: '7. Solución INMERSION - Transformación Digital Integral',
-      icon: <Zap className="h-5 w-5 text-white" />,
-      color: 'border-[#FF3E01]',
-      bgColor: 'bg-gradient-to-r from-[#FF3E01] to-[#E8871E]',
-      headerTextColor: 'text-white',
+      title: '7. Solución INMERSION',
+      icon: <BoltOutline size={20} />,
+      isSolution: true,
       data: {
         antes: {
           content: 'CONSULTORÍA ESPECIALIZADA:\n• Diagnóstico inicial profundo de procesos\n• Rediseño de operaciones para eficiencia máxima\n• Acompañamiento continuo en la transformación\n• Formación del equipo en nuevas metodologías\n• Best practices del sector incorporadas\n\nPLATAFORMA TECNOLÓGICA INTEGRAL:\n• 6 módulos especializados perfectamente integrados\n• Dashboard central con visión 360° del negocio\n• Automatización de procesos administrativos\n• Herramientas profesionales para cada stakeholder\n• Escalabilidad probada hasta 35,000 estudiantes/año'
@@ -167,204 +151,246 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
   ];
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 overflow-y-auto">
-      <div className="min-h-screen p-4">
-        <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-2xl">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-[#FF3E01] to-[#E8871E] p-6 rounded-t-xl relative">
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:bg-white/20 p-2 rounded-lg transition-colors"
-            >
-              <X className="h-6 w-6" />
-            </button>
-            <h1 className="text-3xl font-bold text-white text-center">
-              Customer Discovery Map
-            </h1>
-          </div>
+    <div className="hapto-map-overlay">
+      <div className="hapto-map-container">
+        {/* Header */}
+        <div className="hapto-map-header">
+          <button
+            onClick={onClose}
+            className="hapto-map-close"
+          >
+            <CloseOutline size={24} />
+          </button>
+          <h1 className="hapto-map-title">
+            Customer Discovery Map
+          </h1>
+        </div>
 
-          {/* Context Section */}
-          <div className="p-8 bg-[#FF3E01]/10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Academia de Español gestionando 5 stakeholders simultáneamente
-            </h2>
-            <div className="flex justify-center gap-6 mb-4">
-              {['Estudiantes', 'Colegios', 'Gestores', 'Familias', 'Proveedores'].map((s, index) => (
-                <div key={s} className="text-center">
-                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${
-                    index % 2 === 0 ? 'from-[#FF3E01] to-[#E8871E]' : 'from-[#E8871E] to-[#EDB458]'
-                  } flex items-center justify-center text-white font-bold mb-2`}>
-                    {index + 1}
-                  </div>
-                  <p className="text-sm font-medium text-gray-700">{s}</p>
+        {/* Context Section */}
+        <div className="hapto-map-context">
+          <h2 className="hapto-map-context-title">
+            Academia de Español gestionando 5 stakeholders simultáneamente
+          </h2>
+          <div className="hapto-stakeholder-grid">
+            {['Estudiantes', 'Escuelas', 'Gestores', 'Familias', 'Proveedores'].map((s, index) => (
+              <div key={s} className="hapto-stakeholder-item">
+                <div className="hapto-stakeholder-number">
+                  {index + 1}
                 </div>
-              ))}
-            </div>
-            <p className="text-lg text-gray-700 text-center leading-relaxed">
-              Este mapa muestra el journey completo de una academia de español que debe coordinar simultáneamente 
-              estudiantes individuales, grupos escolares con menores, profesores acompañantes, gestores educativos 
-              internacionales, familias anfitrionas y proveedores de actividades - todo sin una plataforma integrada.
-            </p>
-          </div>
-
-          {/* Content */}
-          <div className="p-6 space-y-4">
-            {sections.map((section) => (
-              <div
-                key={section.id}
-                className={`border-2 ${section.color} rounded-lg overflow-hidden`}
-              >
-                <button
-                  onClick={() => setExpandedSection(expandedSection === section.id ? '' : section.id)}
-                  className={`w-full p-4 ${section.bgColor} flex items-center justify-between hover:opacity-90 transition-opacity`}
-                >
-                  <div className="flex items-center gap-3">
-                    {section.icon}
-                    <h2 className={`text-lg font-bold ${section.headerTextColor || 'text-gray-900'}`}>{section.title}</h2>
-                  </div>
-                  {expandedSection === section.id ? (
-                    <ChevronUp className={`h-5 w-5 ${section.headerTextColor === 'text-white' ? 'text-white' : 'text-gray-600'}`} />
-                  ) : (
-                    <ChevronDown className={`h-5 w-5 ${section.headerTextColor === 'text-white' ? 'text-white' : 'text-gray-600'}`} />
-                  )}
-                </button>
-                
-                {expandedSection === section.id && (
-                  <div className="p-6 bg-white">
-                    {section.id === 'solucion' ? (
-                      // Renderizado especial para la sección de solución sin títulos ANTES/DURANTE/DESPUÉS
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="bg-[#FF3E01]/5 rounded-lg p-4">
-                          <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
-                            {section.data.antes.content}
-                          </p>
-                        </div>
-                        <div className="bg-[#FF3E01]/5 rounded-lg p-4">
-                          <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
-                            {section.data.durante.content}
-                          </p>
-                        </div>
-                        <div className="bg-[#FF3E01]/5 rounded-lg p-4">
-                          <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
-                            {section.data.despues.content}
-                          </p>
-                        </div>
-                      </div>
-                    ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      {/* ANTES */}
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2">
-                          <div className="bg-[#FF3E01]/10 p-2 rounded-lg">
-                            <Clock className="h-5 w-5 text-[#FF3E01]" />
-                          </div>
-                          <h3 className="font-bold text-[#FF3E01] text-lg">
-                            ANTES
-                          </h3>
-                        </div>
-                        <div className="bg-[#FF3E01]/5 rounded-lg p-4">
-                          {section.id === 'emociones' && section.data.antes.icons ? (
-                            <div className="space-y-3">
-                              {section.data.antes.content.split('\n').map((line: string, idx: number) => (
-                                <div key={idx} className="flex items-start gap-2">
-                                  <span className="mt-0.5">{section.data.antes.icons[idx]}</span>
-                                  <p className="text-sm text-gray-700 leading-relaxed flex-1">{line}</p>
-                                </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
-                              {section.data.antes.content}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* DURANTE */}
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2">
-                          <div className="bg-[#E8871E]/10 p-2 rounded-lg">
-                            <Zap className="h-5 w-5 text-[#E8871E]" />
-                          </div>
-                          <h3 className="font-bold text-[#E8871E] text-lg">
-                            DURANTE
-                          </h3>
-                        </div>
-                        <div className="bg-[#FF3E01]/5 rounded-lg p-4">
-                          {section.id === 'emociones' && section.data.durante.icons ? (
-                            <div className="space-y-3">
-                              {section.data.durante.content.split('\n').map((line: string, idx: number) => (
-                                <div key={idx} className="flex items-start gap-2">
-                                  <span className="mt-0.5">{section.data.durante.icons[idx]}</span>
-                                  <p className="text-sm text-gray-700 leading-relaxed flex-1">{line}</p>
-                                </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
-                              {section.data.durante.content}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* DESPUÉS */}
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2">
-                          <div className="bg-[#EDB458]/10 p-2 rounded-lg">
-                            <TrendingUp className="h-5 w-5 text-[#EDB458]" />
-                          </div>
-                          <h3 className="font-bold text-[#EDB458] text-lg">
-                            DESPUÉS
-                          </h3>
-                        </div>
-                        <div className="bg-[#FF3E01]/5 rounded-lg p-4">
-                          {section.id === 'emociones' && section.data.despues.icons ? (
-                            <div className="space-y-3">
-                              {section.data.despues.content.split('\n').map((line: string, idx: number) => (
-                                <div key={idx} className="flex items-start gap-2">
-                                  <span className="mt-0.5">{section.data.despues.icons[idx]}</span>
-                                  <p className="text-sm text-gray-700 leading-relaxed flex-1">{line}</p>
-                                </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
-                              {section.data.despues.content}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    )}
-                  </div>
-                )}
+                <p className="hapto-stakeholder-label">{s}</p>
               </div>
             ))}
           </div>
+          <p className="hapto-map-context-text">
+            Este mapa muestra el journey completo de una academia de español que debe coordinar simultáneamente
+            estudiantes individuales, grupos escolares con menores, profesores acompañantes, gestores educativos
+            internacionales, familias anfitrionas y proveedores de actividades - todo sin una plataforma integrada.
+          </p>
+        </div>
 
-          {/* Key Metrics Footer */}
-          <div className="bg-gradient-to-r from-[#FF3E01]/5 to-[#E8871E]/5 p-6 rounded-b-xl">
-            <h3 className="text-center text-lg font-bold text-gray-900 mb-4">
-              Impacto de la Transformación Digital con INMERSION
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-[#FF3E01]">70%</div>
-                <p className="text-sm text-gray-600">Reducción tiempo operativo</p>
+        {/* Content */}
+        <div className="hapto-map-content">
+          {sections.map((section) => (
+            <div
+              key={section.id}
+              className="hapto-map-section"
+            >
+              <div
+                onClick={() => setExpandedSection(expandedSection === section.id ? '' : section.id)}
+                className={`hapto-section-header ${expandedSection === section.id ? 'active' : ''} ${section.isSolution ? 'solution' : ''}`}
+              >
+                <div className="hapto-section-left">
+                  <div className="hapto-section-icon">
+                    {section.icon}
+                  </div>
+                  <h2 className="hapto-section-title">{section.title}</h2>
+                </div>
+                {expandedSection === section.id ? (
+                  <ChevronUpOutline className="hapto-chevron rotated" size={20} />
+                ) : (
+                  <ChevronDownOutline className="hapto-chevron" size={20} />
+                )}
               </div>
-              <div>
-                <div className="text-3xl font-bold text-[#E8871E]">40%</div>
-                <p className="text-sm text-gray-600">Aumento en conversión</p>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[#EDB458]">85%</div>
-                <p className="text-sm text-gray-600">Satisfacción del cliente</p>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[#FF3E01]">300%</div>
-                <p className="text-sm text-gray-600">ROI primer año</p>
-              </div>
+
+              {expandedSection === section.id && (
+                <div className="hapto-section-content">
+                  {/* ANTES */}
+                  <div className="hapto-phase-card">
+                    {!section.isSolution && (
+                      <div className="hapto-phase-header">
+                        <div className="hapto-phase-icon antes">
+                          <ClockOutline size={20} color="white" />
+                        </div>
+                        <h3 className="hapto-phase-title antes">
+                          ANTES
+                        </h3>
+                      </div>
+                    )}
+                    {section.id === 'emociones' && section.data.antes.icons ? (
+                      <div>
+                        {section.data.antes.content.split('\n').map((line: string, idx: number) => (
+                          <div key={idx} className="hapto-emotion-item">
+                            <span className="hapto-emotion-icon">{section.data.antes.icons[idx]}</span>
+                            <p className="hapto-emotion-text">{line}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : section.isSolution ? (
+                      <div className="hapto-phase-content">
+                        {section.data.antes.content.split('\n').map((line: string, idx: number) => {
+                          // Detectar líneas que empiezan con mayúsculas y tienen :
+                          const colonIndex = line.indexOf(':');
+                          if (colonIndex > 0) {
+                            const beforeColon = line.substring(0, colonIndex);
+                            const afterColon = line.substring(colonIndex);
+                            // Si todo antes de : está en mayúsculas
+                            if (beforeColon === beforeColon.toUpperCase()) {
+                              return (
+                                <p key={idx} style={{ marginBottom: '8px' }}>
+                                  <span style={{ color: '#FF3E01', fontWeight: '700' }}>{beforeColon}</span>
+                                  {afterColon}
+                                </p>
+                              );
+                            }
+                          }
+                          return <p key={idx} style={{ marginBottom: '8px' }}>{line}</p>;
+                        })}
+                      </div>
+                    ) : (
+                      <p className="hapto-phase-content">
+                        {section.data.antes.content}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* DURANTE */}
+                  <div className="hapto-phase-card">
+                    {!section.isSolution && (
+                      <div className="hapto-phase-header">
+                        <div className="hapto-phase-icon durante">
+                          <BoltOutline size={20} color="white" />
+                        </div>
+                        <h3 className="hapto-phase-title durante">
+                          DURANTE
+                        </h3>
+                      </div>
+                    )}
+                    {section.id === 'emociones' && section.data.durante.icons ? (
+                      <div>
+                        {section.data.durante.content.split('\n').map((line: string, idx: number) => (
+                          <div key={idx} className="hapto-emotion-item">
+                            <span className="hapto-emotion-icon">{section.data.durante.icons[idx]}</span>
+                            <p className="hapto-emotion-text">{line}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : section.isSolution ? (
+                      <div className="hapto-phase-content">
+                        {section.data.durante.content.split('\n').map((line: string, idx: number) => {
+                          const colonIndex = line.indexOf(':');
+                          if (colonIndex > 0) {
+                            const beforeColon = line.substring(0, colonIndex);
+                            const afterColon = line.substring(colonIndex);
+                            if (beforeColon === beforeColon.toUpperCase()) {
+                              return (
+                                <p key={idx} style={{ marginBottom: '8px' }}>
+                                  <span style={{ color: '#FF3E01', fontWeight: '700' }}>{beforeColon}</span>
+                                  {afterColon}
+                                </p>
+                              );
+                            }
+                          }
+                          return <p key={idx} style={{ marginBottom: '8px' }}>{line}</p>;
+                        })}
+                      </div>
+                    ) : (
+                      <p className="hapto-phase-content">
+                        {section.data.durante.content}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* DESPUÉS */}
+                  <div className="hapto-phase-card">
+                    {!section.isSolution && (
+                      <div className="hapto-phase-header">
+                        <div className="hapto-phase-icon despues">
+                          <TrendUpOutline size={20} color="white" />
+                        </div>
+                        <h3 className="hapto-phase-title despues">
+                          DESPUÉS
+                        </h3>
+                      </div>
+                    )}
+                    {section.id === 'emociones' && section.data.despues.icons ? (
+                      <div>
+                        {section.data.despues.content.split('\n').map((line: string, idx: number) => (
+                          <div key={idx} className="hapto-emotion-item">
+                            <span className="hapto-emotion-icon">{section.data.despues.icons[idx]}</span>
+                            <p className="hapto-emotion-text">{line}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : section.isSolution ? (
+                      <div className="hapto-phase-content">
+                        {section.data.despues.content.split('\n').map((line: string, idx: number) => {
+                          const colonIndex = line.indexOf(':');
+                          if (colonIndex > 0) {
+                            const beforeColon = line.substring(0, colonIndex);
+                            const afterColon = line.substring(colonIndex);
+                            if (beforeColon === beforeColon.toUpperCase()) {
+                              return (
+                                <p key={idx} style={{ marginBottom: '8px' }}>
+                                  <span style={{ color: '#FF3E01', fontWeight: '700' }}>{beforeColon}</span>
+                                  {afterColon}
+                                </p>
+                              );
+                            }
+                          }
+                          // Texto entre comillas en cursiva
+                          if (line.includes('"')) {
+                            return (
+                              <p key={idx} style={{ marginBottom: '12px', fontStyle: 'italic', color: '#6e6e73', fontSize: '15px' }}>
+                                {line}
+                              </p>
+                            );
+                          }
+                          return <p key={idx} style={{ marginBottom: '8px' }}>{line}</p>;
+                        })}
+                      </div>
+                    ) : (
+                      <p className="hapto-phase-content">
+                        {section.data.despues.content}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Key Metrics Footer */}
+        <div className="hapto-map-footer">
+          <h3 className="hapto-footer-title">
+            Impacto de la Transformación Digital con INMERSION
+          </h3>
+          <div className="hapto-metrics-grid">
+            <div className="hapto-metric-item">
+              <div className="hapto-metric-value">70%</div>
+              <p className="hapto-metric-label">Reducción tiempo operativo</p>
+            </div>
+            <div className="hapto-metric-item">
+              <div className="hapto-metric-value">40%</div>
+              <p className="hapto-metric-label">Aumento en conversión</p>
+            </div>
+            <div className="hapto-metric-item">
+              <div className="hapto-metric-value">85%</div>
+              <p className="hapto-metric-label">Satisfacción del cliente</p>
+            </div>
+            <div className="hapto-metric-item">
+              <div className="hapto-metric-value">300%</div>
+              <p className="hapto-metric-label">ROI primer año</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,446 @@
+/* Customer Discovery Map - Haptomorphism Design System */
+
+/* Modal Container */
+.hapto-map-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+/* Main Container - 3D elevated */
+.hapto-map-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+}
+
+/* Header - Natural 3D effect */
+.hapto-map-header {
+  background: linear-gradient(145deg, #e8edf4, #d8dde4);
+  padding: 40px 32px;
+  position: relative;
+  border-bottom: 1px solid rgba(163, 177, 198, 0.3);
+  box-shadow:
+    0 4px 8px rgba(163, 177, 198, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.hapto-map-title {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+  text-shadow:
+    1px 1px 2px rgba(163, 177, 198, 0.5),
+    -1px -1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* Close Button - 3D elevated */
+.hapto-map-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: #e0e5ec;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+.hapto-map-close:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    8px 8px 16px #a3b1c6,
+    -8px -8px 16px #ffffff;
+}
+
+.hapto-map-close:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 2px 2px 4px #a3b1c6,
+    inset -2px -2px 4px #ffffff;
+}
+
+/* Context Section - Elevated panel */
+.hapto-map-context {
+  padding: 40px;
+  background: #e0e5ec;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hapto-map-context-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 24px;
+  text-shadow:
+    2px 2px 4px #a3b1c6,
+    -2px -2px 4px #ffffff;
+}
+
+/* Stakeholder Pills - 3D elevated */
+.hapto-stakeholder-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.hapto-stakeholder-item {
+  text-align: center;
+}
+
+.hapto-stakeholder-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  color: white;
+  margin: 0 auto 12px;
+  background: linear-gradient(145deg, #ff4507, #e53801);
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff,
+    inset 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.hapto-stakeholder-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a4a4a;
+  text-shadow:
+    1px 1px 2px #ffffff,
+    -1px -1px 2px #a3b1c6;
+}
+
+.hapto-map-context-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6e6e73;
+  text-align: center;
+}
+
+/* Main Content Area */
+.hapto-map-content {
+  padding: 32px;
+  padding-top: 32px;
+  background: #e0e5ec;
+}
+
+/* Section Cards - 3D Neumorphic */
+.hapto-map-section {
+  margin-bottom: 24px;
+  background: #e0e5ec;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow:
+    8px 8px 16px #bec3cc,
+    -8px -8px 16px #ffffff;
+}
+
+.hapto-map-section:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    10px 10px 20px #bec3cc,
+    -10px -10px 20px #ffffff;
+}
+
+/* Section Header - Clickable */
+.hapto-section-header {
+  padding: 20px 24px;
+  background: #e0e5ec;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.hapto-section-header:hover {
+  background: linear-gradient(145deg, #d8dde4, #e8edf4);
+}
+
+.hapto-section-header.active {
+  box-shadow:
+    inset 4px 4px 8px #a3b1c6,
+    inset -4px -4px 8px #ffffff;
+}
+
+/* Special styling for Solution section */
+.hapto-section-header.solution {
+  background: #FF3E01;
+  position: relative;
+}
+
+.hapto-section-header.solution .hapto-section-title {
+  color: white !important;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hapto-section-header.solution .hapto-section-icon {
+  background: white;
+  color: #FF3E01 !important;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hapto-section-header.solution .hapto-chevron {
+  color: white !important;
+}
+
+.hapto-section-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hapto-section-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #e0e5ec;
+  color: #6e6e73;
+  box-shadow:
+    inset 3px 3px 6px #a3b1c6,
+    inset -3px -3px 6px #ffffff;
+}
+
+.hapto-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-shadow:
+    1px 1px 2px #ffffff,
+    -1px -1px 2px #a3b1c6;
+}
+
+.hapto-chevron {
+  color: #6e6e73;
+  transition: transform 0.3s ease;
+}
+
+.hapto-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Section Content - 3 Column Grid */
+.hapto-section-content {
+  padding: 24px;
+  background: #e0e5ec;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Phase Cards - Inset style */
+.hapto-phase-card {
+  background: #e0e5ec;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow:
+    inset 6px 6px 12px #a3b1c6,
+    inset -6px -6px 12px #ffffff;
+}
+
+.hapto-phase-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.hapto-phase-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hapto-phase-icon.antes {
+  background: linear-gradient(145deg, #ff4507, #e53801);
+}
+
+.hapto-phase-icon.durante {
+  background: linear-gradient(145deg, #e8871e, #f09530);
+}
+
+.hapto-phase-icon.despues {
+  background: linear-gradient(145deg, #edb458, #f0c070);
+}
+
+.hapto-phase-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.hapto-phase-title.antes {
+  color: #FF3E01;
+  text-shadow: none;
+}
+
+.hapto-phase-title.durante {
+  color: #E8871E;
+  text-shadow: none;
+}
+
+.hapto-phase-title.despues {
+  color: #EDB458;
+  text-shadow: none;
+}
+
+.hapto-phase-content {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #6e6e73;
+  white-space: pre-line;
+}
+
+/* Emotions with icons */
+.hapto-emotion-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hapto-emotion-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hapto-emotion-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6e6e73;
+}
+
+/* Metrics Footer - Elevated */
+.hapto-map-footer {
+  margin: 0;
+  padding: 40px;
+  background: #e0e5ec;
+  border-radius: 0;
+  box-shadow: none;
+  border-top: 1px solid rgba(163, 177, 198, 0.2);
+}
+
+.hapto-footer-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 32px;
+  text-shadow:
+    2px 2px 4px #a3b1c6,
+    -2px -2px 4px #ffffff;
+}
+
+.hapto-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.hapto-metric-item {
+  padding: 20px;
+  background: #e0e5ec;
+  border-radius: 16px;
+  box-shadow:
+    6px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+}
+
+.hapto-metric-value {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: linear-gradient(145deg, #ff4507, #e8871e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hapto-metric-label {
+  font-size: 13px;
+  color: #6e6e73;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hapto-section-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hapto-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hapto-map-overlay {
+    padding: 10px;
+  }
+
+  .hapto-map-header {
+    padding: 24px;
+  }
+
+  .hapto-map-title {
+    font-size: 28px;
+  }
+
+  .hapto-map-context {
+    padding: 24px;
+    margin: 16px;
+  }
+
+  .hapto-stakeholder-grid {
+    gap: 12px;
+  }
+
+  .hapto-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

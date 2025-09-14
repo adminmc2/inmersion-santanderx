@@ -38,7 +38,7 @@ const CustomerDiscoveryMap: React.FC = () => {
       phases: {
         antes: 'Soy una academia con 1,000-3,000 estudiantes/año y necesito gestionar consultas de estudiantes individuales, grupos escolares con profesores, gestores educativos internacionales, mientras coordino familias anfitrionas y proveedores de actividades. Opero con WhatsApp, Excel y Gmail sin conexión entre sistemas.',
         durante: 'Coordino simultáneamente programas para 20-50 estudiantes, 2-3 grupos escolares con menores, reportando a 5-10 gestores activos, gestionando 15-30 familias y 10+ proveedores. Mi equipo dedica 10+ horas/semana solo a coordinación manual entre todos estos actores.',
-        despues: 'Proceso certificados para estudiantes y colegios, reportes para gestores, pagos a familias y proveedores, sin poder analizar datos integrados. Pierdo el 80% del valor post-programa por no tener sistema de seguimiento. El conocimiento se va cuando mi personal renuncia (cada 6 meses).'
+        despues: 'Proceso certificados para estudiantes y escuelas, reportes para gestores, pagos a familias y proveedores, sin poder analizar datos integrados. Pierdo el 80% del valor post-programa por no tener sistema de seguimiento. El conocimiento se va cuando mi personal renuncia (cada 6 meses).'
       }
     },
     {
@@ -47,9 +47,9 @@ const CustomerDiscoveryMap: React.FC = () => {
       icon: <MessageSquare className="h-5 w-5" />,
       color: 'from-[#E8871E] to-[#EDB458]',
       phases: {
-        antes: 'WhatsApp personal con estudiantes, email con colegios, LinkedIn y ferias FEDELE con gestores, WhatsApp grupos con familias, email/teléfono con proveedores. Total: 12+ canales desconectados sin plataforma común.',
+        antes: 'WhatsApp personal con estudiantes, email con escuelas, LinkedIn y ferias FEDELE con gestores, WhatsApp grupos con familias, email/teléfono con proveedores. Total: 12+ canales desconectados sin plataforma común.',
         durante: '5+ grupos WhatsApp activos con estudiantes, llamadas 24/7 de profesores por emergencias con menores, reports manuales sin dashboard para gestores, WhatsApp individual con cada familia por incidencias, confirmaciones diarias por teléfono con proveedores. Total: 70+ interacciones/día todas manuales.',
-        despues: 'Email masivo para certificados estudiantes, PDF informes sin formato estándar para colegios, facturación manual Excel para gestores, WhatsApp para liquidación pagos familias, email reconciliación facturas proveedores. Sin plataforma unificada de cierre y seguimiento.'
+        despues: 'Email masivo para certificados estudiantes, PDF informes sin formato estándar para escuelas, facturación manual Excel para gestores, WhatsApp para liquidación pagos familias, email reconciliación facturas proveedores. Sin plataforma unificada de cierre y seguimiento.'
       }
     },
     {
@@ -58,9 +58,9 @@ const CustomerDiscoveryMap: React.FC = () => {
       icon: <Heart className="h-5 w-5" />,
       color: 'from-[#EDB458] to-[#FF3E01]',
       phases: {
-        antes: '😰 Ansiedad: "Pierdo 25% de ventas por responder tarde". 😤 Frustración: "Gestores piden propuestas que tardo 3 días en crear". 😱 Pánico: "¿Puedo gestionar 30 menores de un colegio?". 😟 Preocupación: "¿Tendré familias apropiadas disponibles?".',
+        antes: '😰 Ansiedad: "Pierdo 25% de ventas por responder tarde". 😤 Frustración: "Gestores piden propuestas que tardo 3 días en crear". 😱 Pánico: "¿Puedo gestionar 30 menores de una escuela?". 😟 Preocupación: "¿Tendré familias apropiadas disponibles?".',
         durante: '😵 Sobrecarga: "Todo es urgente, todo al mismo tiempo". 😨 Terror: "Un menor perdido puede destruir mi reputación". 😩 Agotamiento: "Mi equipo renuncia por burnout cada 6 meses". 🤯 Caos: "5 crisis simultáneas con diferentes stakeholders".',
-        despues: '😔 Resignación: "Sin datos para competir con academias grandes". 😞 Pérdida: "Colegios importantes no repiten y no sé por qué". 😕 Impotencia: "Mis mejores familias migran a la competencia". 😐 Frustración: "No puedo demostrar ROI a inversores ni gestores".'
+        despues: '😔 Resignación: "Sin datos para competir con academias grandes". 😞 Pérdida: "Escuelas importantes no repiten y no sé por qué". 😕 Impotencia: "Mis mejores familias migran a la competencia". 😐 Frustración: "No puedo demostrar ROI a inversores ni gestores".'
       }
     },
     {
@@ -71,7 +71,7 @@ const CustomerDiscoveryMap: React.FC = () => {
       phases: {
         antes: 'Busco disponibilidad en 5 Excel diferentes, creo propuesta manual para gestor (4h trabajo), llamo a 10 familias una por una para confirmar, solicito cotizaciones a proveedores por email, respondo a estudiante 48h tarde. Pierdo el grupo escolar porque la competencia respondió en 24h.',
         durante: 'Envío 70+ WhatsApp/día entre todos los stakeholders, actualizo múltiples Excel sin sincronizar, gestiono crisis de menor enfermo coordinando con familia + padres en el extranjero + profesor + gestor, reorganizo actividades urgentemente con proveedores. Todo manual, todo reactivo, sin protocolos claros.',
-        despues: 'Genero 30+ certificados uno por uno en Word, creo informe para colegio sin plantilla, calculo comisiones gestor con calculadora, proceso pagos familias manualmente uno por uno, reconcilio facturas proveedores en papel. Pido feedback por WhatsApp que nadie completa. Archivo todo en carpetas sin sistema.'
+        despues: 'Genero 30+ certificados uno por uno en Word, creo informe para escuela sin plantilla, calculo comisiones gestor con calculadora, proceso pagos familias manualmente uno por uno, reconcilio facturas proveedores en papel. Pido feedback por WhatsApp que nadie completa. Archivo todo en carpetas sin sistema.'
       }
     },
     {
@@ -93,7 +93,7 @@ const CustomerDiscoveryMap: React.FC = () => {
       phases: {
         antes: '"Mientras atiendo crisis de un grupo escolar, pierdo 3 ventas de estudiantes individuales". "Gestores me comparan con academias que responden en minutos, yo tardo días". "Familias no saben su ocupación hasta último momento y se comprometen con otros". "No puedo dar precios a grupos grandes sin consultar todo manualmente".',
         durante: '"Un profesor me llama a las 11pm por emergencia, mientras respondo pierdo un lead de €50,000 de un gestor importante". "Familia amenaza con no recibir más estudiantes por un menor problemático que no sabíamos gestionar". "Sin protocolos claros, cada crisis es un caos total que desgasta al equipo". "Mi mejor empleada renunció llevándose todo el conocimiento de gestores clave".',
-        despues: '"Colegio que traía 100 estudiantes/año no renovó y no tengo datos para entender por qué". "Competencia muestra dashboards profesionales en tiempo real, yo envío PDFs mal formateados". "Sin sistema de alumni, pierdo 100% del valor post-programa y referencias". "No puedo justificar subir precios sin métricas de valor añadido".'
+        despues: '"Escuela que traía 100 estudiantes/año no renovó y no tengo datos para entender por qué". "Competencia muestra dashboards profesionales en tiempo real, yo envío PDFs mal formateados". "Sin sistema de alumni, pierdo 100% del valor post-programa y referencias". "No puedo justificar subir precios sin métricas de valor añadido".'
       }
     }
   ];
@@ -139,7 +139,7 @@ const CustomerDiscoveryMap: React.FC = () => {
         <div className="bg-white rounded-xl shadow-sm p-6">
           <h3 className="text-sm font-semibold text-gray-500 mb-4">5 STAKEHOLDERS SIMULTÁNEOS</h3>
           <div className="flex justify-around items-center">
-            {['Estudiantes', 'Colegios', 'Gestores', 'Familias', 'Proveedores'].map((stakeholder, index) => (
+            {['Estudiantes', 'Escuelas', 'Gestores', 'Familias', 'Proveedores'].map((stakeholder, index) => (
               <div key={stakeholder} className="text-center">
                 <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${
                   index % 2 === 0 ? 'from-[#FF3E01] to-[#E8871E]' : 'from-[#E8871E] to-[#EDB458]'

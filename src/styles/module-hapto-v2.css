@@ -1,0 +1,285 @@
+/* ModuleViewer - Nueva versión inspirada en el diseño de ejemplo */
+
+/* Topic Card - Diseño limpio con círculo prominente */
+.hapto-topic-card-v2 {
+  background: #e0e5ec;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    10px 10px 20px #a3b1c6,
+    -10px -10px 20px #ffffff;
+  position: relative;
+}
+
+.hapto-topic-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    14px 14px 28px #a3b1c6,
+    -14px -14px 28px #ffffff;
+}
+
+/* Círculo con icono - Más grande y prominente */
+.hapto-topic-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  background: #e0e5ec;
+  box-shadow:
+    inset 8px 8px 16px #a3b1c6,
+    inset -8px -8px 16px #ffffff;
+}
+
+/* Progreso circular (opcional) */
+.hapto-topic-progress {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 126px;
+  height: 126px;
+}
+
+.hapto-topic-progress svg {
+  transform: rotate(-90deg);
+}
+
+.hapto-topic-progress-circle {
+  fill: none;
+  stroke: #FF3E01;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 377; /* 2 * PI * 60 */
+  stroke-dashoffset: 377; /* Sin progreso por defecto */
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* Contenido principal */
+.hapto-topic-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Título y número */
+.hapto-topic-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.hapto-topic-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #FF3E01;
+  line-height: 1;
+}
+
+.hapto-topic-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+/* Info cards - Grid de 2x2 */
+.hapto-topic-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.hapto-info-card {
+  background: #e0e5ec;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow:
+    inset 4px 4px 8px #a3b1c6,
+    inset -4px -4px 8px #ffffff;
+}
+
+.hapto-info-label {
+  font-size: 12px;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hapto-info-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.hapto-info-dots {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.hapto-info-dots:hover {
+  opacity: 1;
+}
+
+.hapto-info-dots::after {
+  content: '•••';
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Estado bloqueado */
+.hapto-topic-card-v2.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hapto-topic-card-v2.locked:hover {
+  transform: none;
+}
+
+/* Estado completado */
+.hapto-topic-card-v2.completed .hapto-topic-progress-circle {
+  stroke-dashoffset: 0; /* Círculo completo */
+}
+
+/* Versión alternativa - Tarjeta horizontal compacta */
+.hapto-topic-card-compact {
+  background: #e0e5ec;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    8px 8px 16px #bec3cc,
+    -8px -8px 16px #ffffff;
+}
+
+.hapto-topic-card-compact:hover {
+  transform: translateX(4px);
+  box-shadow:
+    10px 10px 20px #bec3cc,
+    -10px -10px 20px #ffffff;
+}
+
+/* Icono circular más pequeño para versión compacta */
+.hapto-topic-icon-compact {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: linear-gradient(145deg, #e8edf4, #d8dde4);
+  box-shadow:
+    inset 4px 4px 8px #a3b1c6,
+    inset -4px -4px 8px #ffffff;
+}
+
+.hapto-topic-icon-compact svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* Contenido en línea */
+.hapto-topic-content-inline {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hapto-topic-text {
+  flex: 1;
+}
+
+.hapto-topic-title-compact {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.hapto-topic-subtitle-compact {
+  font-size: 14px;
+  color: #6e6e73;
+}
+
+/* Badges de información */
+.hapto-topic-badges {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.hapto-badge {
+  background: #e0e5ec;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow:
+    inset 2px 2px 4px #a3b1c6,
+    inset -2px -2px 4px #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hapto-badge-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.hapto-badge-value {
+  color: #2c2c2c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hapto-topic-card-v2 {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .hapto-topic-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hapto-topic-number {
+    font-size: 36px;
+  }
+
+  .hapto-topic-name {
+    font-size: 20px;
+  }
+
+  .hapto-topic-circle {
+    width: 100px;
+    height: 100px;
+  }
+}

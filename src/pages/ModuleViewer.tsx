@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {
-  ArrowLeft,
-  Clock,
-  CheckCircle,
-  Lock,
-  PlayCircle,
-  FileText,
-  BarChart3,
-  Download
-} from 'lucide-react';
 import toast from 'react-hot-toast';
+import {
+  SearchOutline,
+  ArrowLeftOutline,
+  ClockOutline,
+  CheckCircleOutline,
+  LockOutline,
+  PlayCircleOutline,
+  DocumentOutline,
+  ChartOutline,
+  DownloadOutline,
+  MapOutline,
+  NetworkOutline,
+  JourneyOutline
+} from '../components/OutlineIcons';
 import '../styles/module-hapto.css';
+import '../styles/module-hapto-v2.css';
 
 interface ModuleViewerProps {
   isAdmin: boolean;
 }
 
 import CustomerDiscoveryMapV2 from '../components/CustomerDiscoveryMapV2';
+import { TopicCardClock } from '../components/TopicCardVersions';
 
 interface Topic {
   id: string;
@@ -37,6 +43,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
   const [module, setModule] = useState<any>(null);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [showCustomerMap, setShowCustomerMap] = useState(false);
+  // Solo usar versión Clock por defecto
 
   useEffect(() => {
     // Datos de ejemplo - después conectaremos con tu backend
@@ -45,13 +52,13 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
         title: 'Research & Analysis',
         subtitle: 'Problema, Mercado y Oportunidad',
         description: 'Análisis exhaustivo del mercado de turismo lingüístico, identificación de problemas clave y propuesta de valor única de INMERSION.',
-        icon: '🔍'
+        icon: <SearchOutline size={48} color="#6e6e73" />
       }
     };
 
     setModule(modules[moduleId || '1']);
 
-    // Documentos profesionales del proyecto
+    // Solo Customer Discovery Map por ahora
     setTopics([
       {
         id: '1',
@@ -63,59 +70,20 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
         locked: false,
         rating: 0,
         comments: 0
-      },
-      {
-        id: '2',
-        title: 'Análisis de Mercado',
-        description: 'Tamaño del mercado, tendencias y proyecciones del turismo lingüístico',
-        duration: '10 min',
-        type: 'interactive',
-        completed: false,
-        locked: false,
-        rating: 0,
-        comments: 0
-      },
-      {
-        id: '3',
-        title: 'Problema y Solución',
-        description: 'Pain points identificados y cómo INMERSION los resuelve',
-        duration: '8 min',
-        type: 'document',
-        completed: false,
-        locked: false,
-        rating: 0,
-        comments: 0
-      },
-      {
-        id: '4',
-        title: 'Propuesta de Valor',
-        description: 'Diferenciadores clave y ventajas competitivas',
-        duration: '7 min',
-        type: 'video',
-        completed: false,
-        locked: false,
-        comments: 0
-      },
-      {
-        id: '5',
-        title: 'Customer Personas',
-        description: 'Perfiles detallados de nuestros clientes objetivo',
-        duration: '6 min',
-        type: 'document',
-        completed: false,
-        locked: false,
-        comments: 0
       }
     ]);
   }, [moduleId]);
 
-  const getTypeIcon = (type: string) => {
+  const getTypeIcon = (type: string, topicId?: string) => {
+    // Iconos especiales para ciertos documentos
+    if (topicId === '1') return <MapOutline size={36} />;  // Customer Discovery Map con localizadores
+
     switch(type) {
-      case 'video': return <PlayCircle className="h-5 w-5" />;
-      case 'document': return <FileText className="h-5 w-5" />;
-      case 'interactive': return <BarChart3 className="h-5 w-5" />;
-      case 'quiz': return <CheckCircle className="h-5 w-5" />;
-      default: return <FileText className="h-5 w-5" />;
+      case 'video': return <PlayCircleOutline size={36} />;
+      case 'document': return <DocumentOutline size={36} />;
+      case 'interactive': return <ChartOutline size={36} />;
+      case 'quiz': return <CheckCircleOutline size={36} />;
+      default: return <DocumentOutline size={36} />;
     }
   };
 
@@ -155,14 +123,14 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
             onClick={() => navigate('/')}
             className="hapto-back-btn"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeftOutline size={20} />
             Volver
           </button>
           <button
             onClick={() => handleDownloadPDF()}
             className="hapto-download-btn"
           >
-            <Download className="h-5 w-5" />
+            <DownloadOutline size={20} />
             Descargar PDF
           </button>
         </div>
@@ -183,11 +151,13 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
       <main className="hapto-module-main">
         <h2 className="hapto-section-title">Documentos del Proyecto</h2>
 
-        {/* Topics Grid */}
-        <div className="hapto-topics-grid">
+        {/* Topics - Solo versión Clock */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           {topics.map((topic, index) => (
-            <div
+            <TopicCardClock
               key={topic.id}
+              topic={topic}
+              index={index}
               onClick={() => {
                 if (!topic.locked) {
                   if (topic.id === '1') {
@@ -197,58 +167,19 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
                   }
                 }
               }}
-              className={`hapto-topic-card ${topic.locked ? 'locked' : ''}`}
-            >
-              <div className="hapto-topic-left">
-                <div className={`hapto-topic-type ${getTypeClass(topic.type)}`}>
-                  {getTypeIcon(topic.type)}
-                </div>
-                <div className="hapto-topic-content">
-                  <h3 className="hapto-topic-title">
-                    {index + 1}. {topic.title}
-                  </h3>
-                  <p className="hapto-topic-description">{topic.description}</p>
-                  <div className="hapto-topic-meta">
-                    <div className="hapto-topic-duration">
-                      <Clock className="h-4 w-4" />
-                      <span>Lectura: {topic.duration}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hapto-topic-right">
-                {topic.completed && (
-                  <div className="hapto-topic-status completed">
-                    <CheckCircle className="h-5 w-5" />
-                  </div>
-                )}
-                {topic.locked && (
-                  <div className="hapto-topic-status locked">
-                    <Lock className="h-5 w-5" />
-                  </div>
-                )}
-                {isAdmin && !topic.locked && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleDownloadPDF(topic.title);
-                    }}
-                    className="hapto-topic-download"
-                    title="Descargar PDF"
-                  >
-                    <Download className="h-4 w-4" />
-                  </button>
-                )}
-              </div>
-            </div>
+              isAdmin={isAdmin}
+              onDownload={() => handleDownloadPDF(topic.title)}
+            />
           ))}
+
         </div>
       </main>
 
       {/* Customer Discovery Map Modal */}
       {showCustomerMap && (
-        <CustomerDiscoveryMapV2 onClose={() => setShowCustomerMap(false)} isAdmin={isAdmin} />
+        <div style={{ position: 'relative', zIndex: 9999 }}>
+          <CustomerDiscoveryMapV2 onClose={() => setShowCustomerMap(false)} isAdmin={isAdmin} />
+        </div>
       )}
     </div>
   );
