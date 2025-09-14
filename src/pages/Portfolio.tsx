@@ -19,6 +19,7 @@ interface PortfolioProps {
 interface Module {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
   progress: number;
   topics: number;
@@ -30,7 +31,16 @@ interface Module {
 const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMode, setAdminViewMode }) => {
   const navigate = useNavigate();
   const [modules, setModules] = useState<Module[]>([]);
-  const userName = localStorage.getItem('user_name') || 'Usuario';
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     // Datos de ejemplo - después conectaremos con tu backend
@@ -38,7 +48,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
       {
         id: '1',
         title: 'Research, Pains & Buys',
-        description: 'Problema, persona y propuesta de valor',
+        subtitle: 'Módulo de Investigación',
+        description: 'Análisis exhaustivo del mercado, identificación de problemas clave y propuesta de valor única de INMERSION',
         progress: 0,
         topics: 0,
         completedTopics: 0,
@@ -73,20 +84,24 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
           maxWidth: '1400px',
           margin: '0 auto',
           display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          gap: isMobile ? '16px' : '0'
         }}>
           <div className="flex items-center">
             <div>
               <h1 style={{
-                fontSize: '36px',
+                fontSize: isMobile ? '24px' : '36px',
                 fontWeight: '800',
                 fontFamily: 'Nunito, sans-serif',
                 color: '#2c2c2c',
                 margin: 0,
                 display: 'flex',
                 alignItems: 'center',
-                gap: '6px'
+                gap: '4px',
+                flexWrap: 'nowrap',
+                whiteSpace: 'nowrap'
               }}>
                 <span style={{
                   textShadow: '3px 3px 6px rgba(163, 177, 198, 0.4)'
@@ -95,8 +110,9 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                   display: 'inline-block',
                   background: 'linear-gradient(135deg, #ff4507, #e53801)',
                   color: 'white',
-                  padding: '8px 22px',
-                  borderRadius: '18px',
+                  padding: isMobile ? '4px 12px' : '8px 22px',
+                  borderRadius: isMobile ? '12px' : '18px',
+                  fontSize: isMobile ? '24px' : '36px',
                   fontWeight: '800',
                   boxShadow: '8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff, inset 2px 2px 4px rgba(255, 255, 255, 0.3)',
                   transform: 'perspective(100px) rotateX(-5deg)'
@@ -108,14 +124,21 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                 fontSize: '14px',
                 color: '#6e6e73',
                 marginTop: '8px',
-                fontFamily: 'Nunito, sans-serif'
+                fontFamily: 'Nunito, sans-serif',
+                display: isMobile ? 'none' : 'block'
               }}>
                 Plataforma IA integral para el turismo lingüístico | Santander X Explorer
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: isMobile ? '8px' : '16px',
+            flexWrap: isMobile ? 'wrap' : 'nowrap',
+            justifyContent: isMobile ? 'center' : 'flex-end'
+          }}>
             {/* Toggle Vista Admin/Pública with enhanced Neumorphism */}
             {isRealAdmin && (
               <div style={{
@@ -170,17 +193,18 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                   background: '#e0e5ec',
                   border: 'none',
                   borderRadius: '16px',
-                  padding: '12px 24px',
+                  padding: isMobile ? '10px 16px' : '12px 24px',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
                   cursor: 'pointer',
-                  fontSize: '16px',
+                  fontSize: isMobile ? '14px' : '16px',
                   fontWeight: '600',
                   color: '#2c2c2c',
                   fontFamily: 'Nunito, sans-serif',
                   boxShadow: '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  whiteSpace: 'nowrap'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
@@ -202,17 +226,18 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                 background: 'linear-gradient(135deg, #e0e5ec, #d8dde4)',
                 border: 'none',
                 borderRadius: '16px',
-                padding: '12px 24px',
+                padding: isMobile ? '10px 16px' : '12px 24px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
                 cursor: 'pointer',
-                fontSize: '16px',
+                fontSize: isMobile ? '14px' : '16px',
                 fontWeight: '600',
                 color: '#6e6e73',
                 fontFamily: 'Nunito, sans-serif',
                 boxShadow: '4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
@@ -238,16 +263,16 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
         {/* Hero Section with enhanced depth */}
         <div style={{
           background: '#e0e5ec',
-          borderRadius: '32px',
-          padding: '64px',
-          marginBottom: '48px',
+          borderRadius: isMobile ? '20px' : '32px',
+          padding: isMobile ? '32px 20px' : '64px',
+          marginBottom: isMobile ? '32px' : '48px',
           boxShadow: '20px 20px 40px #a3b1c6, -20px -20px 40px #ffffff',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden'
         }}>
           <h2 style={{
-            fontSize: '48px',
+            fontSize: isMobile ? '32px' : '48px',
             fontWeight: '800',
             fontFamily: 'Nunito, sans-serif',
             background: 'linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%)',
@@ -260,11 +285,12 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
             Proyecto INMERSION
           </h2>
           <p style={{
-            fontSize: '20px',
+            fontSize: isMobile ? '16px' : '20px',
             fontFamily: 'Nunito, sans-serif',
             color: '#6e6e73',
             maxWidth: '600px',
-            margin: '0 auto'
+            margin: '0 auto',
+            padding: isMobile ? '0 20px' : '0'
           }}>
             Plataforma IA integral para el turismo lingüístico
           </p>
@@ -316,8 +342,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                 onClick={() => navigate(`/module/${module.id}`)}
                 style={{
                   background: '#e0e5ec',
-                  borderRadius: '24px',
-                  padding: '32px',
+                  borderRadius: isMobile ? '20px' : '24px',
+                  padding: isMobile ? '24px' : '32px',
                   cursor: 'pointer',
                   position: 'relative',
                   boxShadow: '12px 12px 24px #a3b1c6, -12px -12px 24px #ffffff',
@@ -346,45 +372,74 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                   borderRadius: '24px 24px 0 0'
                 }} />
 
+                {/* Icon centered */}
                 <div style={{
                   display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'flex-start',
-                  marginBottom: '24px'
+                  justifyContent: 'center',
+                  marginBottom: '32px'
                 }}>
-                  {/* Icon with inset effect */}
+                  {/* Icon centered and larger */}
                   <div style={{
-                    width: '64px',
-                    height: '64px',
-                    borderRadius: '16px',
+                    width: isMobile ? '80px' : '100px',
+                    height: isMobile ? '80px' : '100px',
+                    borderRadius: isMobile ? '20px' : '24px',
                     background: '#e0e5ec',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: 'inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff'
+                    boxShadow: 'inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff',
+                    transform: 'scale(1.1)'
                   }}>
-                    {module.icon}
+                    <div style={{ transform: isMobile ? 'scale(1.2)' : 'scale(1.5)' }}>
+                      {module.icon}
+                    </div>
                   </div>
-                  <ChevronRightOutline size={24} color="#6e6e73" />
                 </div>
 
+                {/* Title larger */}
                 <h4 style={{
-                  fontSize: '24px',
-                  fontWeight: '700',
+                  fontSize: isMobile ? '24px' : '36px',
+                  fontWeight: '800',
                   fontFamily: 'Nunito, sans-serif',
                   color: '#2c2c2c',
-                  marginBottom: '12px'
+                  marginBottom: '12px',
+                  textAlign: 'center'
                 }}>
                   {module.title}
                 </h4>
+
+                {/* Subtitle */}
                 <p style={{
-                  fontSize: '16px',
+                  fontSize: isMobile ? '16px' : '20px',
+                  fontWeight: '600',
+                  fontFamily: 'Nunito, sans-serif',
+                  color: '#FF3E01',
+                  marginBottom: '12px',
+                  textAlign: 'center'
+                }}>
+                  {module.subtitle || 'Documentación completa'}
+                </p>
+
+                {/* Description */}
+                <p style={{
+                  fontSize: isMobile ? '14px' : '16px',
                   fontFamily: 'Nunito, sans-serif',
                   color: '#6e6e73',
-                  lineHeight: '1.5'
+                  lineHeight: '1.6',
+                  textAlign: 'center',
+                  marginBottom: '24px'
                 }}>
                   {module.description}
                 </p>
+
+                {/* Arrow icon at bottom right */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: '24px',
+                  right: '24px'
+                }}>
+                  <ChevronRightOutline size={28} color="#FF3E01" />
+                </div>
               </div>
             ))}
           </div>
@@ -402,9 +457,10 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
         }}>
           <div style={{
             display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '32px',
+            gap: isMobile ? '24px' : '32px',
             position: 'relative',
             zIndex: 1
           }}>
@@ -432,15 +488,16 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
               style={{
                 background: 'white',
                 border: 'none',
-                borderRadius: '20px',
-                padding: '16px 40px',
-                fontSize: '18px',
+                borderRadius: isMobile ? '16px' : '20px',
+                padding: isMobile ? '14px 32px' : '16px 40px',
+                fontSize: isMobile ? '16px' : '18px',
                 fontWeight: '700',
                 fontFamily: 'Nunito, sans-serif',
                 color: '#ff4507',
                 cursor: 'pointer',
                 boxShadow: '8px 8px 16px rgba(0, 0, 0, 0.2)',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                width: isMobile ? '100%' : 'auto'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
@@ -476,7 +533,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
           }} />
         </div>
 
-        {/* Add animation keyframes */}
+        {/* Add animation keyframes and responsive styles */}
         <style>{`
           @keyframes fadeInUp {
             from {
@@ -486,6 +543,35 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
             to {
               opacity: 1;
               transform: translateY(0);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .hapto-header {
+              padding: 16px 20px !important;
+            }
+            .hapto-header-content {
+              flex-direction: column !important;
+              gap: 16px;
+            }
+            .hapto-main {
+              padding: 24px 16px !important;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .hapto-header h1 {
+              font-size: 28px !important;
+            }
+            .hapto-header h1 span:last-child {
+              font-size: 28px !important;
+              padding: 6px 18px !important;
+            }
+            .hapto-header p {
+              display: none !important;
+            }
+            .hapto-main {
+              padding: 20px 12px !important;
             }
           }
         `}</style>

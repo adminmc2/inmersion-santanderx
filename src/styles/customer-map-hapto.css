@@ -444,3 +444,190 @@
     gap: 16px;
   }
 }
+
+/* Mobile specific (480px and below) */
+@media (max-width: 480px) {
+  .hapto-map-overlay {
+    padding: 10px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+  }
+
+  .hapto-map-container {
+    border-radius: 20px;
+    min-height: calc(100vh - 20px);
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-y: visible;
+    background: white;
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.9);
+  }
+
+  .hapto-map-header {
+    padding: 20px 16px;
+    border-radius: 20px 20px 0 0;
+    background: linear-gradient(145deg, #e8edf4, #d8dde4);
+    box-shadow:
+      0 4px 8px rgba(163, 177, 198, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .hapto-map-title {
+    font-size: 24px;
+    padding-right: 40px; /* Space for close button */
+    text-shadow:
+      1px 1px 2px rgba(163, 177, 198, 0.5),
+      -1px -1px 2px rgba(255, 255, 255, 0.9);
+  }
+
+  .hapto-map-close {
+    width: 40px;
+    height: 40px;
+    top: 16px;
+    right: 16px;
+    box-shadow:
+      4px 4px 8px #a3b1c6,
+      -4px -4px 8px #ffffff;
+  }
+
+  .hapto-map-context {
+    padding: 20px 16px;
+    margin: 0;
+    background: #e0e5ec;
+  }
+
+  .hapto-map-context-title {
+    font-size: 18px;
+    line-height: 1.3;
+    text-shadow:
+      1px 1px 2px #a3b1c6,
+      -1px -1px 2px #ffffff;
+  }
+
+  .hapto-stakeholder-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hapto-stakeholder-item {
+    padding: 8px;
+  }
+
+  .hapto-stakeholder-number {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    background: linear-gradient(145deg, #ff4507, #e53801);
+    box-shadow:
+      4px 4px 8px #a3b1c6,
+      -4px -4px 8px #ffffff,
+      inset 1px 1px 2px rgba(255, 255, 255, 0.2);
+  }
+
+  .hapto-stakeholder-label {
+    font-size: 12px;
+    text-shadow:
+      1px 1px 2px #ffffff,
+      -1px -1px 2px #a3b1c6;
+  }
+
+  .hapto-map-content {
+    padding: 20px 16px;
+    background: #e0e5ec;
+  }
+
+  .hapto-map-section {
+    margin-bottom: 16px;
+    box-shadow:
+      6px 6px 12px #bec3cc,
+      -6px -6px 12px #ffffff;
+  }
+
+  .hapto-section-header {
+    padding: 16px;
+    border-radius: 16px;
+    background: #e0e5ec;
+  }
+
+  .hapto-section-icon {
+    box-shadow:
+      inset 2px 2px 4px #a3b1c6,
+      inset -2px -2px 4px #ffffff;
+  }
+
+  .hapto-section-title {
+    font-size: 16px;
+    text-shadow:
+      1px 1px 2px #ffffff,
+      -1px -1px 2px #a3b1c6;
+  }
+
+  .hapto-section-content {
+    padding: 20px 16px;
+    background: #e0e5ec;
+  }
+
+  .hapto-phase-card {
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow:
+      inset 4px 4px 8px #a3b1c6,
+      inset -4px -4px 8px #ffffff;
+  }
+
+  .hapto-phase-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .hapto-phase-content {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .hapto-map-footer {
+    padding: 20px 16px;
+    background: #e0e5ec;
+    border-top: 1px solid rgba(163, 177, 198, 0.2);
+  }
+
+  .hapto-footer-title {
+    font-size: 18px;
+    text-shadow:
+      1px 1px 2px #a3b1c6,
+      -1px -1px 2px #ffffff;
+  }
+
+  .hapto-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hapto-metric-item {
+    padding: 16px;
+    background: #e0e5ec;
+    border-radius: 12px;
+    box-shadow:
+      4px 4px 8px #a3b1c6,
+      -4px -4px 8px #ffffff;
+  }
+
+  .hapto-metric-value {
+    font-size: 24px;
+    background: linear-gradient(145deg, #ff4507, #e8871e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hapto-metric-label {
+    font-size: 12px;
+  }
+}

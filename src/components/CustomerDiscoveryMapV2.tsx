@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SadFace, NeutralFace, ConfusedFace, TiredFace, RelaxedFace, HappyFace, ThinkingFace, ProudFace } from './OutlineEmojis';
 import {
   UserOutline,
@@ -30,6 +30,16 @@ interface SectionData {
 
 const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose, isAdmin = false }) => {
   const [expandedSection, setExpandedSection] = useState<string>('fases');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const sections = [
     {

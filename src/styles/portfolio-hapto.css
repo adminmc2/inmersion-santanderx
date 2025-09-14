@@ -316,6 +316,13 @@
     -1px -1px 2px #a3b1c6;
 }
 
+.hapto-card-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FF3E01;
+  margin-bottom: 8px;
+}
+
 .hapto-card-description {
   font-size: 14px;
   color: #6e6e73;
@@ -403,9 +410,55 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .hapto-header {
+    padding: 8px 0;
+  }
+
+  .hapto-header-content {
+    padding: 0 16px;
+    min-height: 70px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .hapto-logo {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .hapto-logo-accent {
+    font-size: 28px;
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+
+  .hapto-tagline {
+    display: none;
+  }
+
   .hapto-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .hapto-module-card {
+    border-radius: 20px;
+  }
+
+  .hapto-card-content {
+    padding: 24px;
+  }
+
+  .hapto-card-title {
+    font-size: 18px;
+  }
+
+  .hapto-cta {
+    padding: 32px 20px;
+    border-radius: 20px;
   }
 
   .hapto-cta-content {
@@ -414,19 +467,116 @@
     text-align: center;
   }
 
+  .hapto-cta-title {
+    font-size: 20px;
+  }
+
+  .hapto-cta-subtitle {
+    font-size: 14px;
+  }
+
   .hapto-cta-btn {
     width: 100%;
   }
 
   .hapto-hero-title {
     font-size: 28px;
+    text-align: center;
   }
 
-  .hapto-header-content {
-    padding: 0 16px;
+  .hapto-hero-subtitle {
+    font-size: 16px;
+    text-align: center;
   }
 
   .hapto-main {
-    padding: 32px 16px;
+    padding: 24px 16px;
+  }
+
+  .hapto-section-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .hapto-btn-ghost,
+  .hapto-btn-primary {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .hapto-btn-ghost span,
+  .hapto-btn-primary span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hapto-header-content {
+    padding: 0 12px;
+  }
+
+  .hapto-logo {
+    font-size: 24px;
+  }
+
+  .hapto-logo-accent {
+    font-size: 24px;
+    padding: 3px 10px;
+    border-radius: 10px;
+  }
+
+  .hapto-grid {
+    padding: 0;
+  }
+
+  .hapto-module-card {
+    border-radius: 16px;
+    box-shadow:
+      8px 8px 16px #a3b1c6,
+      -8px -8px 16px #ffffff;
+  }
+
+  .hapto-card-content {
+    padding: 20px;
+  }
+
+  .hapto-card-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hapto-card-title {
+    font-size: 16px;
+  }
+
+  .hapto-card-description {
+    font-size: 13px;
+  }
+
+  .hapto-hero-title {
+    font-size: 24px;
+  }
+
+  .hapto-hero-subtitle {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  .hapto-main {
+    padding: 20px 12px;
+  }
+
+  .hapto-cta {
+    margin: 0 -12px;
+    border-radius: 0;
+  }
+
+  .hapto-cta-title {
+    font-size: 18px;
+  }
+
+  .hapto-cta-subtitle {
+    font-size: 13px;
+    padding: 0 20px;
   }
 }

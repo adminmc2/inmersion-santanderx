@@ -32,33 +32,37 @@ interface TopicCardProps {
   onClick: () => void;
   isAdmin?: boolean;
   onDownload?: () => void;
+  isMobile?: boolean;
 }
 
 // ============= OPCIÓN A: ESTILO RELOJ (Como imagen 2) =============
-export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick, isAdmin, onDownload }) => {
+export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick, isAdmin, onDownload, isMobile = false }) => {
+  // Ya no necesitamos el estado local, usamos el prop directamente
+
   return (
     <div
       className="topic-card-clock"
       style={{
         background: '#e0e5ec',
-        borderRadius: '32px',
-        padding: '32px',
+        borderRadius: isMobile ? '20px' : '32px',
+        padding: isMobile ? '20px' : '32px',
         cursor: 'default',
         opacity: topic.locked ? 0.6 : 1,
         position: 'relative',
         boxShadow: '20px 20px 40px #a3b1c6, -20px -20px 40px #ffffff',
         transition: 'all 0.3s ease',
         display: 'flex',
-        gap: '32px',
+        flexDirection: isMobile ? 'column' : 'row',
+        gap: isMobile ? '20px' : '32px',
         alignItems: 'center'
       }}
     >
       {/* Imagen grande de cuadraditos a la izquierda - HUNDIDA */}
       <div style={{
-        width: '240px',
-        height: '240px',
+        width: isMobile ? '120px' : '240px',
+        height: isMobile ? '120px' : '240px',
         flexShrink: 0,
-        borderRadius: '24px',
+        borderRadius: isMobile ? '16px' : '24px',
         background: '#e0e5ec',
         display: 'flex',
         alignItems: 'center',
@@ -67,7 +71,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
       }}>
         {/* Iconos con patrón de cuadraditos grandes */}
         {topic.id === '1' ? (
-          <MapDotMatrix size={180} color="#ff8c42" />
+          <MapDotMatrix size={isMobile ? 90 : 180} color="#ff8c42" />
         ) : topic.id === '3' ? (
           <img
             src={valorImg}
@@ -75,28 +79,28 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             style={{
               width: '100%',
               height: '100%',
-              maxWidth: '220px',
-              maxHeight: '220px',
+              maxWidth: isMobile ? '100px' : '220px',
+              maxHeight: isMobile ? '100px' : '220px',
               objectFit: 'contain',
               imageRendering: 'pixelated', // Para mantener los píxeles nítidos
-              transform: 'scale(1.2)' // Aumentar un poco más el tamaño
+              transform: isMobile ? 'scale(1)' : 'scale(1.2)' // Aumentar un poco más el tamaño
             }}
           />
         ) : topic.type === 'video' ? (
-          <PlayDotMatrix size={180} color="#ff8c42" />
+          <PlayDotMatrix size={isMobile ? 90 : 180} color="#ff8c42" />
         ) : topic.type === 'interactive' ? (
-          <ChartDotMatrix size={180} color="#ff8c42" />
+          <ChartDotMatrix size={isMobile ? 90 : 180} color="#ff8c42" />
         ) : (
-          <DocumentDotMatrix size={180} color="#ff8c42" />
+          <DocumentDotMatrix size={isMobile ? 90 : 180} color="#ff8c42" />
         )}
       </div>
 
       {/* Contenido a la derecha */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '24px', width: '100%' }}>
         {/* Título principal con número destacado */}
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
           <span style={{
-            fontSize: '48px',
+            fontSize: isMobile ? '32px' : '48px',
             fontWeight: '800',
             fontFamily: 'Nunito, sans-serif',
             background: 'linear-gradient(135deg, #FF3E01 0%, #f09530 100%)',
@@ -108,11 +112,12 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             {index + 1}.
           </span>
           <h3 style={{
-            fontSize: '32px',
+            fontSize: isMobile ? '20px' : '32px',
             fontWeight: '700',
             fontFamily: 'Nunito, sans-serif',
             color: '#1a1a1a',
-            flex: 1
+            flex: 1,
+            lineHeight: '1.2'
           }}>
             {topic.title}
           </h3>
@@ -121,8 +126,8 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
         {/* Tarjeta de Descripción - HUNDIDA */}
         <div style={{
           background: '#e0e5ec',
-          borderRadius: '24px',
-          padding: '28px',
+          borderRadius: isMobile ? '16px' : '24px',
+          padding: isMobile ? '16px' : '28px',
           boxShadow: 'inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff',
           position: 'relative',
           overflow: 'hidden'
@@ -143,7 +148,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             {topic.id === '1' ? 'Análisis del problema' : topic.id === '3' ? 'Propuesta de valor' : 'Descripción'}
           </div>
           <p style={{
-            fontSize: '18px',
+            fontSize: isMobile ? '14px' : '18px',
             fontFamily: 'Nunito, sans-serif',
             color: '#2c2c2c',
             lineHeight: '1.7',
@@ -157,20 +162,22 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
         {/* Tarjeta de Tiempo de lectura - HUNDIDA */}
         <div style={{
           background: '#e0e5ec',
-          borderRadius: '24px',
-          padding: '24px',
+          borderRadius: isMobile ? '16px' : '24px',
+          padding: isMobile ? '16px' : '24px',
           boxShadow: 'inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff',
           display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
+          gap: isMobile ? '16px' : '0',
           position: 'relative'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '20px' }}>
             {/* Icono de reloj - también hundido */}
             <div style={{
-              width: '60px',
-              height: '60px',
-              borderRadius: '16px',
+              width: isMobile ? '48px' : '60px',
+              height: isMobile ? '48px' : '60px',
+              borderRadius: isMobile ? '12px' : '16px',
               background: '#e0e5ec',
               display: 'flex',
               alignItems: 'center',
@@ -178,23 +185,23 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
               position: 'relative',
               boxShadow: 'inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff'
             }}>
-              <ClockOutline size={32} color="#f09530" />
+              <ClockOutline size={isMobile ? 24 : 32} color="#f09530" />
             </div>
 
             <div>
               <div style={{
-                fontSize: '13px',
+                fontSize: isMobile ? '11px' : '13px',
                 fontFamily: 'Nunito, sans-serif',
                 color: '#86868b',
                 textTransform: 'uppercase',
                 letterSpacing: '0.8px',
-                marginBottom: '6px',
+                marginBottom: '4px',
                 fontWeight: '600'
               }}>
-                Tiempo estimado de lectura
+                {isMobile ? 'Tiempo' : 'Tiempo estimado de lectura'}
               </div>
               <div style={{
-                fontSize: '32px',
+                fontSize: isMobile ? '24px' : '32px',
                 fontWeight: '700',
                 fontFamily: 'Nunito, sans-serif',
                 background: 'linear-gradient(135deg, #f09530 0%, #e8871e 100%)',
@@ -211,9 +218,9 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
           <button
             onClick={onClick}
             style={{
-              width: '100px',
-              height: '60px',
-              borderRadius: '30px',
+              width: isMobile ? '100%' : '100px',
+              height: isMobile ? '50px' : '60px',
+              borderRadius: isMobile ? '25px' : '30px',
               background: topic.completed
                 ? 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)'
                 : 'linear-gradient(135deg, #ff4507 0%, #e53801 100%)',
@@ -247,7 +254,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
                 gap: '8px'
               }}>
                 <span style={{
-                  fontSize: '18px',
+                  fontSize: isMobile ? '16px' : '18px',
                   fontWeight: '700',
                   fontFamily: 'Nunito, sans-serif',
                   color: 'white',
@@ -271,10 +278,10 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
           }}
           style={{
             position: 'absolute',
-            top: '32px',
-            right: '32px',
-            width: '48px',
-            height: '48px',
+            top: isMobile ? '16px' : '32px',
+            right: isMobile ? '16px' : '32px',
+            width: isMobile ? '40px' : '48px',
+            height: isMobile ? '40px' : '48px',
             borderRadius: '50%',
             background: '#e0e5ec',
             border: 'none',
@@ -286,7 +293,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             transition: 'all 0.3s ease'
           }}
         >
-          <DownloadOutline size={20} />
+          <DownloadOutline size={isMobile ? 16 : 20} />
         </button>
       )}
     </div>

@@ -45,6 +45,16 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
   const [topics, setTopics] = useState<Topic[]>([]);
   const [showCustomerMap, setShowCustomerMap] = useState(false);
   const [showPropuestaValor, setShowPropuestaValor] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     // Datos de ejemplo - después conectaremos con tu backend
@@ -131,7 +141,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
       {/* Header with enhanced Haptomorphism */}
       <header className="hapto-module-header" style={{
         background: '#e0e5ec',
-        padding: '24px 48px',
+        padding: isMobile ? '16px 20px' : '24px 48px',
         boxShadow: '0 10px 30px rgba(163, 177, 198, 0.5)',
         position: 'sticky',
         top: 0,
@@ -139,10 +149,12 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
       }}>
         <div className="hapto-module-header-content" style={{
           display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
           maxWidth: '1400px',
-          margin: '0 auto'
+          margin: '0 auto',
+          gap: isMobile ? '16px' : '0'
         }}>
           <button
             onClick={() => navigate('/')}
@@ -150,17 +162,18 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
               background: '#e0e5ec',
               border: 'none',
               borderRadius: '16px',
-              padding: '12px 24px',
+              padding: isMobile ? '10px 16px' : '12px 24px',
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
               cursor: 'pointer',
-              fontSize: '16px',
+              fontSize: isMobile ? '14px' : '16px',
               fontWeight: '600',
               color: '#2c2c2c',
               fontFamily: 'Nunito, sans-serif',
               boxShadow: '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              alignSelf: isMobile ? 'flex-start' : 'auto'
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-2px)';
@@ -182,7 +195,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
             gap: '6px'
           }}>
             <h1 style={{
-              fontSize: '32px',
+              fontSize: isMobile ? '24px' : '32px',
               fontWeight: '800',
               fontFamily: 'Nunito, sans-serif',
               color: '#2c2c2c',
@@ -196,10 +209,10 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
               display: 'inline-block',
               background: 'linear-gradient(135deg, #ff4507, #e53801)',
               color: 'white',
-              padding: '8px 20px',
-              borderRadius: '16px',
+              padding: isMobile ? '4px 12px' : '8px 20px',
+              borderRadius: isMobile ? '12px' : '16px',
               fontWeight: '800',
-              fontSize: '32px',
+              fontSize: isMobile ? '24px' : '32px',
               fontFamily: 'Nunito, sans-serif',
               boxShadow: '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff, inset 2px 2px 4px rgba(255, 255, 255, 0.3)',
               letterSpacing: '0.5px',
@@ -214,7 +227,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
       {/* Module Hero Section with enhanced Haptomorphism */}
       <div className="hapto-module-hero" style={{
         background: 'linear-gradient(180deg, #e0e5ec 0%, #d8dde4 100%)',
-        padding: '64px 48px',
+        padding: isMobile ? '32px 20px' : '64px 48px',
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -222,14 +235,15 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
           maxWidth: '1400px',
           margin: '0 auto',
           display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
           alignItems: 'center',
-          gap: '48px'
+          gap: isMobile ? '24px' : '48px'
         }}>
           {/* Icon container with deep inset */}
           <div style={{
-            width: '180px',
-            height: '180px',
-            borderRadius: '32px',
+            width: isMobile ? '120px' : '180px',
+            height: isMobile ? '120px' : '180px',
+            borderRadius: isMobile ? '24px' : '32px',
             background: '#e0e5ec',
             display: 'flex',
             alignItems: 'center',
@@ -248,7 +262,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
 
           <div className="hapto-module-info" style={{ flex: 1 }}>
             <h1 style={{
-              fontSize: '48px',
+              fontSize: isMobile ? '32px' : '48px',
               fontWeight: '800',
               fontFamily: 'Nunito, sans-serif',
               background: 'linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%)',
@@ -256,25 +270,28 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               marginBottom: '16px',
-              textShadow: '2px 2px 4px rgba(163, 177, 198, 0.3)'
+              textShadow: '2px 2px 4px rgba(163, 177, 198, 0.3)',
+              textAlign: isMobile ? 'center' : 'left'
             }}>
               {module.title}
             </h1>
             <p style={{
-              fontSize: '24px',
+              fontSize: isMobile ? '18px' : '24px',
               fontWeight: '600',
               fontFamily: 'Nunito, sans-serif',
               color: '#FF3E01',
-              marginBottom: '16px'
+              marginBottom: '16px',
+              textAlign: isMobile ? 'center' : 'left'
             }}>
               {module.subtitle}
             </p>
             <p style={{
-              fontSize: '18px',
+              fontSize: isMobile ? '16px' : '18px',
               fontFamily: 'Nunito, sans-serif',
               color: '#6e6e73',
               lineHeight: '1.6',
-              maxWidth: '800px'
+              maxWidth: '800px',
+              textAlign: isMobile ? 'center' : 'left'
             }}>
               {module.description}
             </p>
@@ -309,7 +326,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
       <main className="hapto-module-main" style={{
         background: '#e0e5ec',
         minHeight: 'calc(100vh - 400px)',
-        padding: '48px',
+        padding: isMobile ? '20px' : '48px',
         position: 'relative'
       }}>
         <div style={{
@@ -317,11 +334,11 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
           margin: '0 auto'
         }}>
           <h2 style={{
-            fontSize: '36px',
+            fontSize: isMobile ? '24px' : '36px',
             fontWeight: '700',
             fontFamily: 'Nunito, sans-serif',
             color: '#2c2c2c',
-            marginBottom: '48px',
+            marginBottom: isMobile ? '32px' : '48px',
             textAlign: 'center',
             textShadow: '2px 2px 4px rgba(163, 177, 198, 0.3)'
           }}>
@@ -332,8 +349,8 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '32px',
-            marginBottom: '64px'
+            gap: isMobile ? '20px' : '32px',
+            marginBottom: isMobile ? '48px' : '64px'
           }}>
             {topics.map((topic, index) => (
               <div
@@ -347,6 +364,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
                 <TopicCardClock
                   topic={topic}
                   index={index}
+                  isMobile={isMobile}
                   onClick={() => {
                     if (!topic.locked) {
                       if (topic.id === '1') {
