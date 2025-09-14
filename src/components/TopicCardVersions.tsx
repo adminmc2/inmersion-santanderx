@@ -124,12 +124,6 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             alignItems: 'center',
             gap: '8px'
           }}>
-            <span style={{
-              width: '4px',
-              height: '4px',
-              borderRadius: '50%',
-              background: '#FF3E01'
-            }} />
             Análisis del problema
           </div>
           <p style={{

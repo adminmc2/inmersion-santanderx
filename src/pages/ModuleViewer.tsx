@@ -126,13 +126,38 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
             <ArrowLeftOutline size={20} />
             Volver
           </button>
-          <button
-            onClick={() => handleDownloadPDF()}
-            className="hapto-download-btn"
-          >
-            <DownloadOutline size={20} />
-            Descargar PDF
-          </button>
+
+          {/* Logo INMERSION */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px'
+          }}>
+            <h1 style={{
+              fontSize: '28px',
+              fontWeight: '800',
+              fontFamily: 'Nunito, sans-serif',
+              color: '#2c2c2c',
+              margin: 0,
+              letterSpacing: '-0.5px'
+            }}>
+              INMERS
+            </h1>
+            <span style={{
+              display: 'inline-block',
+              background: 'linear-gradient(135deg, #ff4507, #e53801)',
+              color: 'white',
+              padding: '6px 16px',
+              borderRadius: '14px',
+              fontWeight: '800',
+              fontSize: '28px',
+              fontFamily: 'Nunito, sans-serif',
+              boxShadow: '4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff',
+              letterSpacing: '0.5px'
+            }}>
+              ION
+            </span>
+          </div>
         </div>
       </header>
 

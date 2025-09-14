@@ -61,8 +61,28 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
         <div className="hapto-header-content">
           <div className="flex items-center">
             <div>
-              <h1 className="hapto-logo">
-                INMERS<span className="hapto-logo-accent">ION</span>
+              <h1 style={{
+                fontSize: '32px',
+                fontWeight: '800',
+                fontFamily: 'Nunito, sans-serif',
+                color: '#2c2c2c',
+                margin: 0,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}>
+                <span>INMERS</span>
+                <span style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #ff4507, #e53801)',
+                  color: 'white',
+                  padding: '6px 18px',
+                  borderRadius: '16px',
+                  fontWeight: '800',
+                  boxShadow: '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff'
+                }}>
+                  ION
+                </span>
               </h1>
               <p className="hapto-tagline">
                 Plataforma IA integral para el turismo lingüístico | Santander X Explorer
