@@ -23,6 +23,7 @@ interface ModuleViewerProps {
 }
 
 import CustomerDiscoveryMapV2 from '../components/CustomerDiscoveryMapV2';
+import PropuestaValorDeclaracion from '../components/PropuestaValorDeclaracion';
 import { TopicCardClock } from '../components/TopicCardVersions';
 
 interface Topic {
@@ -43,7 +44,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
   const [module, setModule] = useState<any>(null);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [showCustomerMap, setShowCustomerMap] = useState(false);
-  // Solo usar versión Clock por defecto
+  const [showPropuestaValor, setShowPropuestaValor] = useState(false);
 
   useEffect(() => {
     // Datos de ejemplo - después conectaremos con tu backend
@@ -350,6 +351,8 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
                     if (!topic.locked) {
                       if (topic.id === '1') {
                         setShowCustomerMap(true);
+                      } else if (topic.id === '3') {
+                        setShowPropuestaValor(true);
                       } else {
                         navigate(`/module/${moduleId}/topic/${topic.id}`);
                       }
@@ -380,9 +383,12 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
 
       {/* Customer Discovery Map Modal */}
       {showCustomerMap && (
-        <div style={{ position: 'relative', zIndex: 9999 }}>
-          <CustomerDiscoveryMapV2 onClose={() => setShowCustomerMap(false)} isAdmin={isAdmin} />
-        </div>
+        <CustomerDiscoveryMapV2 onClose={() => setShowCustomerMap(false)} isAdmin={isAdmin} />
+      )}
+
+      {/* Propuesta de Valor Modal */}
+      {showPropuestaValor && (
+        <PropuestaValorDeclaracion onClose={() => setShowPropuestaValor(false)} isAdmin={isAdmin} />
       )}
     </div>
   );
