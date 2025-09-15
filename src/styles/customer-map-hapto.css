@@ -331,6 +331,11 @@
   line-height: 1.7;
   color: #6e6e73;
   white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  padding: 12px 0;
 }
 
 /* Emotions with icons */
@@ -590,6 +595,8 @@
   .hapto-phase-content {
     font-size: 14px;
     line-height: 1.5;
+    min-height: 100px;
+    padding: 10px 0;
   }
 
   .hapto-map-footer {
