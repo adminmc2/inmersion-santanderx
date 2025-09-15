@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { CloseOutline } from './OutlineIcons';
+import React, { useState, useEffect, useRef } from 'react';
+import { CloseOutline, DownloadOutline } from './OutlineIcons';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import toast from 'react-hot-toast';
 import '../styles/customer-map-hapto.css';
 
 interface PropuestaValorDeclaracionProps {
@@ -10,6 +13,8 @@ interface PropuestaValorDeclaracionProps {
 const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ onClose }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -19,6 +24,44 @@ const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ o
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  const handleDownloadPDF = async () => {
+    if (!contentRef.current) return;
+
+    setIsGeneratingPDF(true);
+    toast.loading('Generando PDF...', { id: 'pdf-generation' });
+
+    try {
+      // Capturar el contenido
+      const canvas = await html2canvas(contentRef.current, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#e0e5ec'
+      });
+
+      // Crear PDF
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      const imgWidth = 210; // A4 width in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+      pdf.save('declaracion-propuesta-valor.pdf');
+
+      toast.success('PDF descargado exitosamente', { id: 'pdf-generation' });
+    } catch (error) {
+      console.error('Error generando PDF:', error);
+      toast.error('Error al generar el PDF', { id: 'pdf-generation' });
+    } finally {
+      setIsGeneratingPDF(false);
+    }
+  };
 
   return (
     <div className="hapto-map-overlay">
@@ -34,10 +77,48 @@ const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ o
           <h1 className="hapto-map-title">
             Propuesta de Valor
           </h1>
+          <button
+            onClick={handleDownloadPDF}
+            disabled={isGeneratingPDF}
+            className="hapto-map-download"
+            style={{
+              position: 'absolute',
+              right: '80px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: '48px',
+              height: '48px',
+              borderRadius: '12px',
+              background: '#e0e5ec',
+              border: 'none',
+              cursor: isGeneratingPDF ? 'not-allowed' : 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: isGeneratingPDF
+                ? 'inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff'
+                : '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff',
+              transition: 'all 0.3s ease',
+              opacity: isGeneratingPDF ? 0.6 : 1
+            }}
+            onMouseEnter={(e) => {
+              if (!isGeneratingPDF) {
+                e.currentTarget.style.boxShadow = 'inset 2px 2px 4px #a3b1c6, inset -2px -2px 4px #ffffff';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!isGeneratingPDF) {
+                e.currentTarget.style.boxShadow = '6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff';
+              }
+            }}
+            title="Descargar PDF"
+          >
+            <DownloadOutline size={24} color="#ff4507" />
+          </button>
         </div>
 
         {/* Content Section - Propuesta de Valor */}
-        <div className="hapto-map-content" style={{
+        <div className="hapto-map-content" ref={contentRef} style={{
           padding: isMobile ? '20px' : '40px',
           background: '#e0e5ec'
         }}>
