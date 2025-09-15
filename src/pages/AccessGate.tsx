@@ -299,8 +299,7 @@ const AccessGate: React.FC<AccessGateProps> = ({ onAccessGranted }) => {
                 textAlign: 'center',
                 lineHeight: '1.6'
               }}>
-                El código fue compartido en el grupo de WhatsApp.<br/>
-                Si no lo tienes, contacta al coordinador.
+                El código fue compartido en el grupo de WhatsApp.
               </p>
             </div>
 
@@ -355,33 +354,6 @@ const AccessGate: React.FC<AccessGateProps> = ({ onAccessGranted }) => {
             </button>
           </form>
 
-          {/* Admin Link */}
-          <div style={{
-            textAlign: 'center',
-            marginTop: '25px'
-          }}>
-            <a
-              href="/admin-login"
-              style={{
-                fontSize: '12px',
-                color: '#b8bcc4',
-                textDecoration: 'none',
-                opacity: 0.7,
-                transition: 'all 0.3s ease',
-                fontWeight: '500'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.opacity = '1';
-                e.currentTarget.style.color = '#8e8e93';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.opacity = '0.7';
-                e.currentTarget.style.color = '#b8bcc4';
-              }}
-            >
-              Acceso administrativo
-            </a>
-          </div>
         </div>
       </div>
 
