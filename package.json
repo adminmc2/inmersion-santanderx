@@ -17,7 +17,7 @@
     "axios": "^1.7.2",
     "jspdf": "^2.5.1",
     "html2canvas": "^1.4.1",
-    "lucide-react": "^0.395.0",
+    "lucide-react": "^0.544.0",
     "@headlessui/react": "^2.1.0",
     "react-hot-toast": "^2.4.1",
     "date-fns": "^3.6.0"
