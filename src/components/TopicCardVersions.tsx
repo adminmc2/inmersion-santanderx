@@ -294,8 +294,8 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
         </div>
       </div>
 
-      {/* Botón Download flotante */}
-      {isAdmin && (
+      {/* Botón Download flotante - Solo para Propuesta de Valor (id: 3) o si es admin */}
+      {(isAdmin || topic.id === '3') && (
         <button
           onClick={(e) => {
             e.stopPropagation();

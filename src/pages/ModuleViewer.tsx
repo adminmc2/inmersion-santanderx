@@ -101,12 +101,20 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
 
 
   const handleDownloadPDF = (documentTitle?: string) => {
-    if (documentTitle) {
+    if (documentTitle === 'Declaración de Propuesta de Valor') {
+      // Descargar el PDF estático de propuesta de valor
+      const link = document.createElement('a');
+      link.href = '/canvas propuesta de valor.pdf';
+      link.download = 'declaracion-propuesta-valor.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      toast.success('PDF descargado exitosamente');
+    } else if (documentTitle) {
       toast.success(`Descargando PDF: ${documentTitle}`);
     } else {
       toast.success('Generando PDF completo del módulo...');
     }
-    // Aquí implementarás la lógica para generar el PDF de cada documento
   };
 
   if (!module) {
