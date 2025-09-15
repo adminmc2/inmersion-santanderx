@@ -23,23 +23,9 @@ interface CustomerDiscoveryMapV2Props {
   isAdmin?: boolean;
 }
 
-interface SectionData {
-  content: string;
-  icons?: React.ReactElement[];
-}
-
-const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose, isAdmin = false }) => {
+const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose }) => {
   const [expandedSection, setExpandedSection] = useState<string>('fases');
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const sections = [
     {

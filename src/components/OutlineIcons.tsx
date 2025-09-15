@@ -508,7 +508,7 @@ export const PlayDotMatrix: React.FC<IconProps> = ({ className = "", size = 24, 
 
 // Mano con estrella con patrón de cuadraditos
 export const ValuePropositionDotMatrix: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => {
-  const squares = [];
+  const squares: React.ReactElement[] = [];
   const squareSize = 0.7;
 
   // Coordenadas exactas de cada cuadradito basado en la imagen original

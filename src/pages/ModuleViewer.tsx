@@ -4,16 +4,11 @@ import toast from 'react-hot-toast';
 import {
   SearchOutline,
   ArrowLeftOutline,
-  ClockOutline,
   CheckCircleOutline,
-  LockOutline,
   PlayCircleOutline,
   DocumentOutline,
   ChartOutline,
-  DownloadOutline,
-  MapOutline,
-  NetworkOutline,
-  JourneyOutline
+  MapOutline
 } from '../components/OutlineIcons';
 import '../styles/module-hapto.css';
 import '../styles/module-hapto-v2.css';
@@ -109,28 +104,6 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
     ]);
   }, [moduleId]);
 
-  const getTypeIcon = (type: string, topicId?: string) => {
-    // Iconos especiales para ciertos documentos
-    if (topicId === '1') return <MapOutline size={36} />;  // Customer Discovery Map con localizadores
-
-    switch(type) {
-      case 'video': return <PlayCircleOutline size={36} />;
-      case 'document': return <DocumentOutline size={36} />;
-      case 'interactive': return <ChartOutline size={36} />;
-      case 'quiz': return <CheckCircleOutline size={36} />;
-      default: return <DocumentOutline size={36} />;
-    }
-  };
-
-  const getTypeClass = (type: string) => {
-    switch(type) {
-      case 'video': return 'video';
-      case 'document': return 'document';
-      case 'interactive': return 'interactive';
-      case 'quiz': return 'quiz';
-      default: return 'document';
-    }
-  };
 
   const handleDownloadPDF = (documentTitle?: string) => {
     if (documentTitle) {

@@ -13,7 +13,7 @@ import {
   Send
 } from 'lucide-react';
 import toast from 'react-hot-toast';
-import CustomerDiscoveryMap from '../components/CustomerDiscoveryMap';
+import CustomerDiscoveryMapV2 from '../components/CustomerDiscoveryMapV2';
 
 interface DocumentViewerProps {
   isAdmin: boolean;
@@ -107,7 +107,7 @@ const DocumentViewer: React.FC<DocumentViewerProps> = ({ isAdmin }) => {
 
   // Check if this is the Executive Summary document
   if (topicId === '1') {
-    return <CustomerDiscoveryMap />;
+    return <CustomerDiscoveryMapV2 />;
   }
 
   const renderSlide = (slide: any) => {

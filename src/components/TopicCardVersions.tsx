@@ -1,12 +1,9 @@
 import React from 'react';
 import {
   MapOutline,
-  MapDotMatrix,
-  MapDotPattern,
   DocumentDotMatrix,
   ChartDotMatrix,
   PlayDotMatrix,
-  ValuePropositionDotMatrix,
   ClockOutline,
   DocumentOutline,
   CheckCircleOutline,
