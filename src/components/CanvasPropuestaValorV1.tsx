@@ -28,8 +28,8 @@ const CanvasPropuestaValorV1: React.FC<CanvasPropuestaValorV1Props> = ({ onClose
       {
         id: 'products',
         title: 'Product & Services',
-        icon: '🎯',
-        color: '#FF3E01',
+        icon: '',
+        color: '#ff4507',
         content: ['Plataforma online para encontrar y contratar talento']
       },
       {
@@ -146,7 +146,7 @@ const CanvasPropuestaValorV1: React.FC<CanvasPropuestaValorV1Props> = ({ onClose
           fontFamily: 'Nunito, sans-serif',
           color: 'white',
           background: side === 'propuesta'
-            ? 'linear-gradient(135deg, #FF3E01, #ff8c42)'
+            ? 'linear-gradient(135deg, #ff4507, #ff8c42)'
             : 'linear-gradient(135deg, #4a90e2, #5ba3f5)',
           padding: '4px 8px',
           borderRadius: '8px',
@@ -229,7 +229,7 @@ const CanvasPropuestaValorV1: React.FC<CanvasPropuestaValorV1Props> = ({ onClose
               fontSize: isMobile ? '18px' : '24px',
               fontWeight: '800',
               fontFamily: 'Nunito, sans-serif',
-              background: 'linear-gradient(135deg, #FF3E01, #ff8c42)',
+              background: 'linear-gradient(135deg, #ff4507, #ff8c42)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',

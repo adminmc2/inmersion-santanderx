@@ -35,7 +35,7 @@ const CanvasPropuestaValorV3: React.FC<CanvasPropuestaValorV3Props> = ({ onClose
   const canvasContent = {
     propuesta: {
       title: 'Propuesta de Valor',
-      color: '#FF3E01',
+      color: '#ff4507',
       sections: [
         {
           id: 'products',
@@ -238,7 +238,7 @@ const CanvasPropuestaValorV3: React.FC<CanvasPropuestaValorV3Props> = ({ onClose
               marginBottom: index < section.items.length - 1 ? '12px' : '0',
               padding: '8px 12px',
               borderRadius: '10px',
-              background: sideColor === '#FF3E01'
+              background: sideColor === '#ff4507'
                 ? 'linear-gradient(135deg, rgba(255, 140, 66, 0.15), rgba(240, 149, 48, 0.1))' // Naranja claro para propuesta
                 : 'linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(74, 222, 128, 0.1))', // Verde claro para cliente
               transition: 'all 0.2s ease'
@@ -354,14 +354,14 @@ const CanvasPropuestaValorV3: React.FC<CanvasPropuestaValorV3Props> = ({ onClose
                     boxShadow: 'inset 8px 8px 16px #a3b1c6, inset -8px -8px 16px #ffffff',
                     marginBottom: '24px'
                   }}>
-                    <HeartOutline size={32} color="#FF3E01" />
+                    <HeartOutline size={32} color="#ff4507" />
                   </div>
 
                   {/* Línea conectora */}
                   <div style={{
                     width: '2px',
                     height: '80px',
-                    background: 'linear-gradient(180deg, #FF3E01, #22c55e)',
+                    background: 'linear-gradient(180deg, #ff4507, #22c55e)',
                     marginBottom: '24px'
                   }}></div>
 
@@ -374,7 +374,7 @@ const CanvasPropuestaValorV3: React.FC<CanvasPropuestaValorV3Props> = ({ onClose
                       width: '8px',
                       height: '8px',
                       borderRadius: '50%',
-                      background: '#FF3E01',
+                      background: '#ff4507',
                       animation: 'pulse 2s infinite'
                     }}></div>
                     <div style={{
@@ -406,7 +406,7 @@ const CanvasPropuestaValorV3: React.FC<CanvasPropuestaValorV3Props> = ({ onClose
                   <div style={{
                     flex: 1,
                     height: '2px',
-                    background: 'linear-gradient(90deg, #FF3E01, transparent)'
+                    background: 'linear-gradient(90deg, #ff4507, transparent)'
                   }}></div>
                   <div style={{
                     width: '48px',
@@ -418,7 +418,7 @@ const CanvasPropuestaValorV3: React.FC<CanvasPropuestaValorV3Props> = ({ onClose
                     justifyContent: 'center',
                     boxShadow: 'inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff'
                   }}>
-                    <HeartOutline size={20} color="#FF3E01" />
+                    <HeartOutline size={20} color="#ff4507" />
                   </div>
                   <div style={{
                     flex: 1,
@@ -481,7 +481,7 @@ const CanvasPropuestaValorV3: React.FC<CanvasPropuestaValorV3Props> = ({ onClose
                   width: '16px',
                   height: '16px',
                   borderRadius: '4px',
-                  background: 'linear-gradient(135deg, #FF3E01, #ff8c42)'
+                  background: 'linear-gradient(135deg, #ff4507, #ff8c42)'
                 }}></div>
                 <span style={{
                   fontSize: isMobile ? '13px' : '14px',

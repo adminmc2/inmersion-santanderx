@@ -54,7 +54,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
         topics: 0,
         completedTopics: 0,
         icon: <SearchOutline size={32} color="#6e6e73" />,
-        color: 'from-[#FF3E01] to-[#E8871E]'
+        color: 'from-[#ff4507] to-[#e53801]'
       }
     ]);
   }, []);
@@ -413,7 +413,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                   fontSize: isMobile ? '16px' : '20px',
                   fontWeight: '600',
                   fontFamily: 'Nunito, sans-serif',
-                  color: '#FF3E01',
+                  color: '#ff4507',
                   marginBottom: '12px',
                   textAlign: 'center'
                 }}>
@@ -438,7 +438,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ isAdmin, isRealAdmin, adminViewMo
                   bottom: '24px',
                   right: '24px'
                 }}>
-                  <ChevronRightOutline size={28} color="#FF3E01" />
+                  <ChevronRightOutline size={28} color="#ff4507" />
                 </div>
               </div>
             ))}

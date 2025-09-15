@@ -131,7 +131,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             fontSize: isMobile ? '32px' : '48px',
             fontWeight: '800',
             fontFamily: 'Nunito, sans-serif',
-            background: 'linear-gradient(135deg, #FF3E01 0%, #f09530 100%)',
+            background: 'linear-gradient(135deg, #ff4507 0%, #f09530 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -164,7 +164,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
           <div style={{
             fontSize: '14px',
             fontFamily: 'Nunito, sans-serif',
-            color: '#FF3E01',
+            color: '#ff4507',
             textTransform: 'uppercase',
             letterSpacing: '1px',
             fontWeight: '600',
@@ -360,7 +360,7 @@ export const TopicCardDashboard: React.FC<TopicCardProps> = ({ topic, index, onC
           flexDirection: 'column',
           boxShadow: 'inset 8px 8px 16px #a3b1c6, inset -8px -8px 16px #ffffff'
         }}>
-          <div style={{ fontSize: '48px', fontWeight: '800', fontFamily: 'Nunito, sans-serif', color: '#FF3E01' }}>{index + 1}</div>
+          <div style={{ fontSize: '48px', fontWeight: '800', fontFamily: 'Nunito, sans-serif', color: '#ff4507' }}>{index + 1}</div>
           <MapOutline size={36} color="#6e6e73" />
         </div>
 
@@ -372,7 +372,7 @@ export const TopicCardDashboard: React.FC<TopicCardProps> = ({ topic, index, onC
               cy="73"
               r="70"
               fill="none"
-              stroke="#FF3E01"
+              stroke="#ff4507"
               strokeWidth="3"
               strokeLinecap="round"
               strokeDasharray="440"
@@ -448,7 +448,7 @@ export const TopicCardDashboard: React.FC<TopicCardProps> = ({ topic, index, onC
             boxShadow: 'inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff'
           }}>
             <div style={{ fontSize: '11px', fontFamily: 'Nunito, sans-serif', color: '#86868b', marginBottom: '4px' }}>ESTADO</div>
-            <div style={{ fontSize: '16px', fontWeight: '600', fontFamily: 'Nunito, sans-serif', color: topic.completed ? '#22c55e' : '#FF3E01' }}>
+            <div style={{ fontSize: '16px', fontWeight: '600', fontFamily: 'Nunito, sans-serif', color: topic.completed ? '#22c55e' : '#ff4507' }}>
               {topic.completed ? 'Completado' : 'Disponible'}
             </div>
           </div>
@@ -506,7 +506,7 @@ export const TopicCardMinimal: React.FC<TopicCardProps> = ({ topic, index, onCli
         fontSize: '72px',
         fontWeight: '800',
         fontFamily: 'Nunito, sans-serif',
-        color: '#FF3E01',
+        color: '#ff4507',
         lineHeight: '1',
         marginBottom: '24px',
         textShadow: '4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff'

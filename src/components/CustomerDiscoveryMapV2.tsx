@@ -81,11 +81,11 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
       data: {
         antes: {
           content: 'Desbordamiento total: "No doy abasto, trabajo 14h/día y sigo atrasado"\nAnsiedad constante: "Sé que pierdo oportunidades pero no puedo hacer más"\nFrustración profunda: "Competidores más pequeños parecen más profesionales"\nAgotamiento extremo: "Mi equipo y yo estamos al límite, esto no es sostenible"',
-          icons: [<TiredFace size={20} color="#FF3E01" />, <NeutralFace size={20} color="#FF3E01" />, <ConfusedFace size={20} color="#FF3E01" />, <SadFace size={20} color="#FF3E01" />]
+          icons: [<TiredFace size={20} color="#ff4507" />, <NeutralFace size={20} color="#ff4507" />, <ConfusedFace size={20} color="#ff4507" />, <SadFace size={20} color="#ff4507" />]
         },
         durante: {
           content: 'Respiro por primera vez: "La consultoría me está ayudando a reorganizar todo"\nEsperanza real: "Veo luz al final del túnel, esto puede funcionar"\nAprendizaje continuo: "Descubro capacidades que no sabía que necesitaba"\nEmpoderamiento progresivo: "Mi equipo está motivado con las nuevas herramientas"',
-          icons: [<RelaxedFace size={20} color="#E8871E" />, <HappyFace size={20} color="#E8871E" />, <ThinkingFace size={20} color="#E8871E" />, <ProudFace size={20} color="#E8871E" />]
+          icons: [<RelaxedFace size={20} color="#e53801" />, <HappyFace size={20} color="#e53801" />, <ThinkingFace size={20} color="#e53801" />, <ProudFace size={20} color="#e53801" />]
         },
         despues: {
           content: 'Orgullo legítimo: "Mi academia es referencia de profesionalización en el sector"\nEnfoque estratégico: "Por fin puedo pensar en el futuro, no solo en sobrevivir"\nAmbición renovada: "Con este modelo puedo crecer sin límites"\nLiderazgo sectorial: "Otros vienen a aprender de nuestra transformación"',
@@ -143,18 +143,18 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
     },
     {
       id: 'solucion',
-      title: '💡 NUESTRA SOLUCIÓN',
+      title: 'NUESTRA SOLUCIÓN',
       icon: <BoltOutline size={20} />,
       isSolution: true,
       data: {
         antes: {
-          content: '🎯 INMERSION CONNECT - La única plataforma integral diseñada específicamente para el turismo lingüístico.\n\n✅ 6 módulos especializados para cada stakeholder\n✅ 8 agentes de IA trabajando 24/7\n✅ Consultoría incluida (no solo software)\n✅ ROI garantizado de 100%+ en 12 meses\n✅ Implementación en 2 semanas'
+          content: 'INMERSION CONNECT - La única plataforma integral diseñada específicamente para el turismo lingüístico.\n\n• 6 módulos especializados para cada stakeholder\n• 8 agentes de IA trabajando 24/7\n• Consultoría incluida (no solo software)\n• ROI garantizado de 100%+ en 12 meses\n• Implementación en 2 semanas'
         },
         durante: {
-          content: '🚀 IMPLEMENTACIÓN ACOMPAÑADA\n\n📊 Semana 1: Diagnóstico y configuración inicial\n🔄 Semana 2: Migración de datos y capacitación\n📈 Mes 1: Optimización y ajustes con datos reales\n💪 Mes 2-3: Consolidación y expansión de uso\n🎯 Mes 3+: Operación optimizada y crecimiento'
+          content: 'IMPLEMENTACIÓN ACOMPAÑADA\n\nSemana 1: Diagnóstico y configuración inicial\nSemana 2: Migración de datos y capacitación\nMes 1: Optimización y ajustes con datos reales\nMes 2-3: Consolidación y expansión de uso\nMes 3+: Operación optimizada y crecimiento'
         },
         despues: {
-          content: '🏆 RESULTADOS GARANTIZADOS\n\n📈 +25% recuperación de ventas perdidas\n⏰ -70% tiempo en tareas administrativas\n😊 NPS 8.5+ de todos los stakeholders\n💰 ROI 108% documentado\n🚀 Posición de liderazgo sectorial\n♾️ Crecimiento sostenible y escalable'
+          content: 'RESULTADOS GARANTIZADOS\n\n+25% recuperación de ventas perdidas\n-70% tiempo en tareas administrativas\nNPS 8.5+ de todos los stakeholders\nROI 108% documentado\nPosición de liderazgo sectorial\nCrecimiento sostenible y escalable'
         }
       }
     }
@@ -266,7 +266,18 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
                       </div>
                     ) : (
                       <div className="hapto-phase-content">
-                        {section.data.antes.content}
+                        {section.isSolution && section.data.antes.content.includes('\n') ? (
+                          <>
+                            <div style={{ color: '#ff4507', fontWeight: '700', marginBottom: '12px', fontSize: '16px' }}>
+                              {section.data.antes.content.split('\n')[0]}
+                            </div>
+                            <div>
+                              {section.data.antes.content.split('\n').slice(1).join('\n')}
+                            </div>
+                          </>
+                        ) : (
+                          section.data.antes.content
+                        )}
                       </div>
                     )}
                   </div>
@@ -294,7 +305,18 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
                       </div>
                     ) : (
                       <div className="hapto-phase-content">
-                        {section.data.durante.content}
+                        {section.isSolution && section.data.durante.content.includes('\n') ? (
+                          <>
+                            <div style={{ color: '#ff4507', fontWeight: '700', marginBottom: '12px', fontSize: '16px' }}>
+                              {section.data.durante.content.split('\n')[0]}
+                            </div>
+                            <div>
+                              {section.data.durante.content.split('\n').slice(1).join('\n')}
+                            </div>
+                          </>
+                        ) : (
+                          section.data.durante.content
+                        )}
                       </div>
                     )}
                   </div>
@@ -322,7 +344,18 @@ const CustomerDiscoveryMapV2: React.FC<CustomerDiscoveryMapV2Props> = ({ onClose
                       </div>
                     ) : (
                       <div className="hapto-phase-content">
-                        {section.data.despues.content}
+                        {section.isSolution && section.data.despues.content.includes('\n') ? (
+                          <>
+                            <div style={{ color: '#ff4507', fontWeight: '700', marginBottom: '12px', fontSize: '16px' }}>
+                              {section.data.despues.content.split('\n')[0]}
+                            </div>
+                            <div>
+                              {section.data.despues.content.split('\n').slice(1).join('\n')}
+                            </div>
+                          </>
+                        ) : (
+                          section.data.despues.content
+                        )}
                       </div>
                     )}
                   </div>

@@ -83,7 +83,7 @@ const AdminPanel: React.FC = () => {
   const tabButtonStyle = (isActive: boolean) => ({
     ...haptoButtonStyle,
     background: isActive
-      ? 'linear-gradient(145deg, #FF3E01, #E8871E)'
+      ? 'linear-gradient(145deg, #ff4507, #e53801)'
       : 'linear-gradient(145deg, #f0f5fd, #cdd2db)',
     color: isActive ? '#ffffff' : '#2c2c2c',
     boxShadow: isActive
@@ -224,7 +224,7 @@ const AdminPanel: React.FC = () => {
                       <p style={{ color: '#6e6e73', margin: '0 0 4px 0' }}>{user.email}</p>
                       <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginTop: '8px' }}>
                         <span style={{
-                          background: user.role === 'admin' ? '#FF3E01' : '#22c55e',
+                          background: user.role === 'admin' ? '#ff4507' : '#22c55e',
                           color: '#ffffff',
                           padding: '4px 12px',
                           borderRadius: '20px',
@@ -239,7 +239,7 @@ const AdminPanel: React.FC = () => {
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                       <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: '24px', fontWeight: '700', color: '#FF3E01' }}>{user.progress}%</div>
+                        <div style={{ fontSize: '24px', fontWeight: '700', color: '#ff4507' }}>{user.progress}%</div>
                         <div style={{ fontSize: '12px', color: '#6e6e73' }}>Progreso</div>
                       </div>
                       <div style={{ display: 'flex', gap: '8px' }}>
@@ -255,7 +255,7 @@ const AdminPanel: React.FC = () => {
                           padding: '8px',
                           borderRadius: '50%'
                         }}>
-                          <Trash2 size={18} color="#FF3E01" />
+                          <Trash2 size={18} color="#ff4507" />
                         </button>
                       </div>
                     </div>
@@ -305,7 +305,7 @@ const AdminPanel: React.FC = () => {
                       ...haptoButtonStyle,
                       padding: '12px',
                       borderRadius: '50%',
-                      background: 'linear-gradient(145deg, #FF3E01, #E8871E)'
+                      background: 'linear-gradient(145deg, #ff4507, #e53801)'
                     }}>
                       <GraduationCap size={24} color="#ffffff" />
                     </div>
@@ -376,7 +376,7 @@ const AdminPanel: React.FC = () => {
                 <div style={{
                   fontSize: '48px',
                   fontWeight: '800',
-                  color: '#FF3E01',
+                  color: '#ff4507',
                   marginBottom: '8px'
                 }}>
                   {users.length}
@@ -444,7 +444,7 @@ const AdminPanel: React.FC = () => {
                     <div style={{
                       width: '65%',
                       height: '100%',
-                      background: 'linear-gradient(145deg, #FF3E01, #E8871E)',
+                      background: 'linear-gradient(145deg, #ff4507, #e53801)',
                       borderRadius: '6px',
                       transition: 'width 0.3s ease'
                     }} />

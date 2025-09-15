@@ -27,7 +27,7 @@ const CanvasPropuestaValorV2: React.FC<CanvasPropuestaValorV2Props> = ({ onClose
   const propuestaData = {
     'Product & Services': {
       icon: '🎯',
-      color: '#FF3E01',
+      color: '#ff4507',
       items: ['Plataforma online para encontrar y contratar talento']
     },
     'Pain Relievers': {
@@ -117,7 +117,7 @@ const CanvasPropuestaValorV2: React.FC<CanvasPropuestaValorV2Props> = ({ onClose
                 flex: 1,
                 padding: isMobile ? '12px' : '16px',
                 background: activeTab === 'propuesta'
-                  ? 'linear-gradient(135deg, #FF3E01, #ff8c42)'
+                  ? 'linear-gradient(135deg, #ff4507, #ff8c42)'
                   : '#e0e5ec',
                 color: activeTab === 'propuesta' ? 'white' : '#2c2c2c',
                 border: 'none',
@@ -306,13 +306,13 @@ const CanvasPropuestaValorV2: React.FC<CanvasPropuestaValorV2Props> = ({ onClose
                 height: '12px',
                 borderRadius: '50%',
                 background: activeTab === 'propuesta'
-                  ? 'linear-gradient(135deg, #FF3E01, #ff8c42)'
+                  ? 'linear-gradient(135deg, #ff4507, #ff8c42)'
                   : '#a3b1c6'
               }}></div>
               <span style={{
                 fontSize: '12px',
                 fontFamily: 'Nunito, sans-serif',
-                color: activeTab === 'propuesta' ? '#FF3E01' : '#86868b',
+                color: activeTab === 'propuesta' ? '#ff4507' : '#86868b',
                 fontWeight: activeTab === 'propuesta' ? '700' : '400'
               }}>
                 Propuesta
@@ -321,7 +321,7 @@ const CanvasPropuestaValorV2: React.FC<CanvasPropuestaValorV2Props> = ({ onClose
             <div style={{
               width: '40px',
               height: '2px',
-              background: 'linear-gradient(90deg, #FF3E01, #4a90e2)'
+              background: 'linear-gradient(90deg, #ff4507, #4a90e2)'
             }}></div>
             <div style={{
               display: 'flex',

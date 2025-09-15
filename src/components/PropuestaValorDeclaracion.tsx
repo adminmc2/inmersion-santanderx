@@ -103,7 +103,7 @@ const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ o
               style={{
                 width: isMobile ? '100%' : '180px',
                 padding: isMobile ? '10px 16px' : '12px 20px',
-                background: 'linear-gradient(135deg, #FF3E01, #ff8c42)',
+                background: 'linear-gradient(135deg, #ff4507, #ff8c42)',
                 color: 'white',
                 fontSize: isMobile ? '14px' : '16px',
                 fontWeight: '700',
@@ -156,7 +156,7 @@ const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ o
               style={{
                 width: isMobile ? '100%' : '180px',
                 padding: isMobile ? '10px 16px' : '12px 20px',
-                background: 'linear-gradient(135deg, #FF3E01, #ff8c42)',
+                background: 'linear-gradient(135deg, #ff4507, #ff8c42)',
                 color: 'white',
                 fontSize: isMobile ? '14px' : '16px',
                 fontWeight: '700',
@@ -208,7 +208,7 @@ const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ o
               style={{
                 width: isMobile ? '100%' : '180px',
                 padding: isMobile ? '10px 16px' : '12px 20px',
-                background: 'linear-gradient(135deg, #FF3E01, #ff8c42)',
+                background: 'linear-gradient(135deg, #ff4507, #ff8c42)',
                 color: 'white',
                 fontSize: isMobile ? '14px' : '16px',
                 fontWeight: '700',
@@ -261,7 +261,7 @@ const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ o
               style={{
                 width: isMobile ? '100%' : '180px',
                 padding: isMobile ? '10px 16px' : '12px 20px',
-                background: 'linear-gradient(135deg, #FF3E01, #ff8c42)',
+                background: 'linear-gradient(135deg, #ff4507, #ff8c42)',
                 color: 'white',
                 fontSize: isMobile ? '14px' : '16px',
                 fontWeight: '700',
@@ -314,7 +314,7 @@ const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ o
               style={{
                 width: isMobile ? '100%' : '180px',
                 padding: isMobile ? '10px 16px' : '12px 20px',
-                background: 'linear-gradient(135deg, #FF3E01, #ff8c42)',
+                background: 'linear-gradient(135deg, #ff4507, #ff8c42)',
                 color: 'white',
                 fontSize: isMobile ? '14px' : '16px',
                 fontWeight: '700',
@@ -367,7 +367,7 @@ const PropuestaValorDeclaracion: React.FC<PropuestaValorDeclaracionProps> = ({ o
                 width: isMobile ? '100%' : '180px',
                 padding: isMobile ? '10px 16px' : '12px 20px',
                 background: 'white',
-                color: '#FF3E01',
+                color: '#ff4507',
                 fontSize: isMobile ? '14px' : '16px',
                 fontWeight: '700',
                 fontFamily: 'Nunito, sans-serif',

@@ -34,7 +34,7 @@ const CustomerDiscoveryMap: React.FC = () => {
       id: 'fases',
       title: 'Fases del Cliente',
       icon: <Users className="h-5 w-5" />,
-      color: 'from-[#FF3E01] to-[#E8871E]',
+      color: 'from-[#ff4507] to-[#e53801]',
       phases: {
         antes: 'Soy una academia con 1,000-3,000 estudiantes/año y necesito gestionar consultas de estudiantes individuales, grupos escolares con profesores, gestores educativos internacionales, mientras coordino familias anfitrionas y proveedores de actividades. Opero con WhatsApp, Excel y Gmail sin conexión entre sistemas.',
         durante: 'Coordino simultáneamente programas para 20-50 estudiantes, 2-3 grupos escolares con menores, reportando a 5-10 gestores activos, gestionando 15-30 familias y 10+ proveedores. Mi equipo dedica 10+ horas/semana solo a coordinación manual entre todos estos actores.',
@@ -45,7 +45,7 @@ const CustomerDiscoveryMap: React.FC = () => {
       id: 'contacto',
       title: 'Puntos de Contacto',
       icon: <MessageSquare className="h-5 w-5" />,
-      color: 'from-[#E8871E] to-[#EDB458]',
+      color: 'from-[#e53801] to-[#EDB458]',
       phases: {
         antes: 'WhatsApp personal con estudiantes, email con escuelas, LinkedIn y ferias FEDELE con gestores, WhatsApp grupos con familias, email/teléfono con proveedores. Total: 12+ canales desconectados sin plataforma común.',
         durante: '5+ grupos WhatsApp activos con estudiantes, llamadas 24/7 de profesores por emergencias con menores, reports manuales sin dashboard para gestores, WhatsApp individual con cada familia por incidencias, confirmaciones diarias por teléfono con proveedores. Total: 70+ interacciones/día todas manuales.',
@@ -89,7 +89,7 @@ const CustomerDiscoveryMap: React.FC = () => {
       id: 'pains',
       title: 'Pains (Puntos de Dolor)',
       icon: <AlertCircle className="h-5 w-5" />,
-      color: 'from-[#FF3E01] to-[#E8871E]',
+      color: 'from-[#ff4507] to-[#e53801]',
       phases: {
         antes: '"Mientras atiendo crisis de un grupo escolar, pierdo 3 ventas de estudiantes individuales". "Gestores me comparan con academias que responden en minutos, yo tardo días". "Familias no saben su ocupación hasta último momento y se comprometen con otros". "No puedo dar precios a grupos grandes sin consultar todo manualmente".',
         durante: '"Un profesor me llama a las 11pm por emergencia, mientras respondo pierdo un lead de €50,000 de un gestor importante". "Familia amenaza con no recibir más estudiantes por un menor problemático que no sabíamos gestionar". "Sin protocolos claros, cada crisis es un caos total que desgasta al equipo". "Mi mejor empleada renunció llevándose todo el conocimiento de gestores clave".',
@@ -123,7 +123,7 @@ const CustomerDiscoveryMap: React.FC = () => {
               onClick={() => setActivePhase(phase)}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${
                 activePhase === phase
-                  ? 'bg-gradient-to-r from-[#FF3E01] to-[#E8871E] text-white shadow-lg transform scale-105'
+                  ? 'bg-gradient-to-r from-[#ff4507] to-[#e53801] text-white shadow-lg transform scale-105'
                   : 'bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
@@ -142,7 +142,7 @@ const CustomerDiscoveryMap: React.FC = () => {
             {['Estudiantes', 'Escuelas', 'Gestores', 'Familias', 'Proveedores'].map((stakeholder, index) => (
               <div key={stakeholder} className="text-center">
                 <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${
-                  index % 2 === 0 ? 'from-[#FF3E01] to-[#E8871E]' : 'from-[#E8871E] to-[#EDB458]'
+                  index % 2 === 0 ? 'from-[#ff4507] to-[#e53801]' : 'from-[#e53801] to-[#EDB458]'
                 } flex items-center justify-center text-white font-bold text-xl mb-2`}>
                   {index + 1}
                 </div>
@@ -198,7 +198,7 @@ const CustomerDiscoveryMap: React.FC = () => {
 
       {/* Key Insights */}
       <div className="max-w-6xl mx-auto mt-12">
-        <div className="bg-gradient-to-r from-[#FF3E01] to-[#E8871E] rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-[#ff4507] to-[#e53801] rounded-xl p-8 text-white">
           <h2 className="text-2xl font-bold mb-4">Insights Clave</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>

@@ -292,7 +292,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
               fontSize: isMobile ? '18px' : '24px',
               fontWeight: '600',
               fontFamily: 'Nunito, sans-serif',
-              color: '#FF3E01',
+              color: '#ff4507',
               marginBottom: '16px',
               textAlign: isMobile ? 'center' : 'left'
             }}>
