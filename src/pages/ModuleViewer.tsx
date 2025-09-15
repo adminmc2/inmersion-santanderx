@@ -24,6 +24,7 @@ interface ModuleViewerProps {
 
 import CustomerDiscoveryMapV2 from '../components/CustomerDiscoveryMapV2';
 import PropuestaValorDeclaracion from '../components/PropuestaValorDeclaracion';
+import CanvasPropuestaValor from '../components/CanvasPropuestaValor';
 import { TopicCardClock } from '../components/TopicCardVersions';
 
 interface Topic {
@@ -45,6 +46,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
   const [topics, setTopics] = useState<Topic[]>([]);
   const [showCustomerMap, setShowCustomerMap] = useState(false);
   const [showPropuestaValor, setShowPropuestaValor] = useState(false);
+  const [showCanvas, setShowCanvas] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -76,6 +78,17 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
         title: 'Customer Discovery Map',
         description: 'Análisis detallado del problema y los 5 stakeholders involucrados',
         duration: '5 min',
+        type: 'document',
+        completed: false,
+        locked: false,
+        rating: 0,
+        comments: 0
+      },
+      {
+        id: '2',
+        title: 'Canvas propuesta de valor',
+        description: 'Lienzo de propuesta de valor para el turismo lingüístico',
+        duration: '3 min',
         type: 'document',
         completed: false,
         locked: false,
@@ -369,6 +382,8 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
                     if (!topic.locked) {
                       if (topic.id === '1') {
                         setShowCustomerMap(true);
+                      } else if (topic.id === '2') {
+                        setShowCanvas(true);
                       } else if (topic.id === '3') {
                         setShowPropuestaValor(true);
                       } else {
@@ -402,6 +417,11 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
       {/* Customer Discovery Map Modal */}
       {showCustomerMap && (
         <CustomerDiscoveryMapV2 onClose={() => setShowCustomerMap(false)} isAdmin={isAdmin} />
+      )}
+
+      {/* Canvas Modal */}
+      {showCanvas && (
+        <CanvasPropuestaValor onClose={() => setShowCanvas(false)} isAdmin={isAdmin} />
       )}
 
       {/* Propuesta de Valor Modal */}

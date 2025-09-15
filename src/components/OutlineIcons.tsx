@@ -608,6 +608,112 @@ export const ValuePropositionDotMatrix: React.FC<IconProps> = ({ className = "",
 };
 
 // Journey/Ruta minimalista (para customer journey)
+// Package/Box outline para Product & Services
+export const PackageOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M12 2 L20 7 L20 17 L12 22 L4 17 L4 7 Z" stroke={color} strokeWidth="1.5" fill="none"/>
+    <path d="M12 2 L12 22" stroke={color} strokeWidth="1.5"/>
+    <path d="M4 7 L12 12 L20 7" stroke={color} strokeWidth="1.5"/>
+  </svg>
+);
+
+// Shield para Pain Relievers
+export const ShieldCheckOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M12 2 L4 7 L4 11 C4 16 7 20 12 21 C17 20 20 16 20 11 L20 7 Z" stroke={color} strokeWidth="1.5" fill="none"/>
+    <path d="M8 12 L11 15 L16 9" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+// Gift para Gain Creators
+export const GiftOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <rect x="3" y="8" width="18" height="13" rx="1" stroke={color} strokeWidth="1.5" fill="none"/>
+    <rect x="3" y="8" width="18" height="4" stroke={color} strokeWidth="1.5" fill="none"/>
+    <path d="M12 8 L12 21" stroke={color} strokeWidth="1.5"/>
+    <path d="M7 8 C7 5 8 3 10 3 C11 3 12 4 12 5 C12 4 13 3 14 3 C16 3 17 5 17 8" stroke={color} strokeWidth="1.5" fill="none"/>
+  </svg>
+);
+
+// Briefcase para Customer Jobs
+export const BriefcaseOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <rect x="2" y="8" width="20" height="12" rx="1" stroke={color} strokeWidth="1.5" fill="none"/>
+    <path d="M8 8 L8 6 C8 5 9 4 10 4 L14 4 C15 4 16 5 16 6 L16 8" stroke={color} strokeWidth="1.5" fill="none"/>
+    <path d="M2 12 L22 12" stroke={color} strokeWidth="1.5"/>
+  </svg>
+);
+
+// Lightning para Pains
+export const LightningOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M13 2 L3 14 L12 14 L11 22 L21 10 L12 10 Z" stroke={color} strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+  </svg>
+);
+
+// Trophy para Gains
+export const TrophyOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M6 9 C3 9 3 6 3 6 L3 3 L7 3 M18 9 C21 9 21 6 21 6 L21 3 L17 3" stroke={color} strokeWidth="1.5" fill="none"/>
+    <path d="M7 3 L17 3 L17 12 C17 14 15 16 12 16 C9 16 7 14 7 12 Z" stroke={color} strokeWidth="1.5" fill="none"/>
+    <path d="M12 16 L12 19 M8 22 L16 22" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+// Link/Chain para conexión
+export const LinkOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M10 13 C10 13 8 11 8 9 C8 7 10 5 12 5 L16 5 C18 5 20 7 20 9 C20 11 18 13 16 13" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M14 11 C14 11 16 13 16 15 C16 17 14 19 12 19 L8 19 C6 19 4 17 4 15 C4 13 6 11 8 11" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+// Arrows bidirectional para intercambio
+export const ArrowsExchangeOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M7 10 L3 10 L3 6" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M21 14 L21 18 L17 18" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M3 10 L12 19" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M21 14 L12 5" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+// Bridge/Connection simple para conexión
+export const BridgeOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <circle cx="6" cy="12" r="3" stroke={color} strokeWidth="1.5" fill="none"/>
+    <circle cx="18" cy="12" r="3" stroke={color} strokeWidth="1.5" fill="none"/>
+    <line x1="9" y1="12" x2="15" y2="12" stroke={color} strokeWidth="1.5"/>
+  </svg>
+);
+
+// Handshake/Apretón de manos para relación
+export const HandshakeOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    {/* Mano izquierda */}
+    <path d="M3 10 L8 10 L10 12 L10 14 L8 16 L3 16 Z" stroke={color} strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+    {/* Mano derecha */}
+    <path d="M21 10 L16 10 L14 12 L14 14 L16 16 L21 16 Z" stroke={color} strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+    {/* Unión central */}
+    <path d="M10 12 L14 12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+    {/* Líneas de movimiento */}
+    <path d="M8 8 L10 10" stroke={color} strokeWidth="1" opacity="0.5"/>
+    <path d="M16 8 L14 10" stroke={color} strokeWidth="1" opacity="0.5"/>
+  </svg>
+);
+
+// Puzzle pieces/Piezas de puzzle que encajan
+export const PuzzleOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    {/* Pieza izquierda con saliente */}
+    <path d="M3 8 L10 8 L10 10 C11 10 12 11 12 12 C12 13 11 14 10 14 L10 16 L3 16 Z"
+          stroke={color} strokeWidth="1.5" fill="none"/>
+    {/* Pieza derecha con hueco */}
+    <path d="M14 8 L21 8 L21 16 L14 16 L14 14 C13 14 12 13 12 12 C12 11 13 10 14 10 Z"
+          stroke={color} strokeWidth="1.5" fill="none"/>
+  </svg>
+);
+
 export const JourneyOutline: React.FC<IconProps> = ({ className = "", size = 24, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
     <circle cx="6" cy="6" r="2" stroke={color} strokeWidth="1.5" fill="none"/>

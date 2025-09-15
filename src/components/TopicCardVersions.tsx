@@ -173,7 +173,7 @@ export const TopicCardClock: React.FC<TopicCardProps> = ({ topic, index, onClick
             alignItems: 'center',
             gap: '8px'
           }}>
-            {topic.id === '1' ? 'Análisis del problema' : topic.id === '2' ? 'Canvas de valor' : topic.id === '3' ? 'Propuesta de valor' : 'Descripción'}
+            {topic.id === '1' ? 'Análisis del problema' : topic.id === '2' ? 'CANVAS' : topic.id === '3' ? 'Propuesta de valor' : 'Descripción'}
           </div>
           <p style={{
             fontSize: isMobile ? '14px' : '18px',
