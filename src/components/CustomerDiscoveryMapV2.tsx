@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { SadFace, NeutralFace, ConfusedFace, TiredFace, RelaxedFace, HappyFace, ThinkingFace, ProudFace } from './OutlineEmojis';
 import {
   UserOutline,

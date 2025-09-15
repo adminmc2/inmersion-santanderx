@@ -3,12 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import {
   SearchOutline,
-  ArrowLeftOutline,
-  CheckCircleOutline,
-  PlayCircleOutline,
-  DocumentOutline,
-  ChartOutline,
-  MapOutline
+  ArrowLeftOutline
 } from '../components/OutlineIcons';
 import '../styles/module-hapto.css';
 import '../styles/module-hapto-v2.css';
@@ -348,7 +343,7 @@ const ModuleViewer: React.FC<ModuleViewerProps> = ({ isAdmin }) => {
                 }}
               >
                 <TopicCardClock
-                  topic={topic}
+                  topic={{...topic, index}}
                   index={index}
                   isMobile={isMobile}
                   onClick={() => {
